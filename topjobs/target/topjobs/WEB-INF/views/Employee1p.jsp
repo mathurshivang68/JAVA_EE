@@ -11,7 +11,7 @@
 <body style="background-color: lightsalmon">
 <header class="headerhome"></header>
 
-
+<p><a href="logout">Logout</a></p>
 <div class="row p-3 mb-2 bg-secondary text-primary">
 <h1> WELCOME JOB SEEKER</h1>
 

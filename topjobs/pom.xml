@@ -16,6 +16,16 @@
 
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/jstl/jstl -->
+<dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+
+
+
+
 
 <!-- https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher -->
 <dependency>
@@ -71,6 +81,7 @@
     <artifactId>hibernate-entitymanager</artifactId>
     <version>5.3.7.Final</version>
 </dependency>
+
 
  
 <!-- https://mvnrepository.com/artifact/org.codehaus.cargo/cargo-maven2-plugin -->

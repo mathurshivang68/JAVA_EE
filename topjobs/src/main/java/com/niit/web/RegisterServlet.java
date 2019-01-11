@@ -59,10 +59,18 @@ public class RegisterServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	
+	{
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+	
+	
+	
+	
+	
 	private void printAllParameters(HttpServletRequest request, PrintWriter pw) {
 		pw.println("Parameters");
 		
@@ -86,30 +94,46 @@ public class RegisterServlet extends HttpServlet {
 		String insertRole = "INSERT INTO USER_ROLES"
 				+ "(USER_NAME,ROLE_NAME) VALUES"
 				+ "(?,?)";
+		String insertDesc = "INSERT INTO USER_DESC"
+				+ "(FNAME, LNAME, EMAIL) VALUES"
+				+ "(?,?,?)";
+		
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		final String DB_DRIVER = "oracle.jdbc.driver.OracleDriver";
 		final String DB_CONNECTION = "jdbc:oracle:thin:@localhost:1521:xe";
-
+		
 		Connection con=null;
 		try {
 			
 			 con = DriverManager.getConnection(DB_CONNECTION,"topjobs", "1234");
 			PreparedStatement preparedStatement = null;
 			PreparedStatement preparedStatement1 = null;
-
+			PreparedStatement preparedStatement2 = null;
+			
 			preparedStatement =con.prepareStatement(insertTableSQL);
 			preparedStatement.setString(1,request.getParameter("userid"));
 			preparedStatement.setString(2,request.getParameter("psw"));
+			
 			preparedStatement1 =con.prepareStatement(insertRole);
-
 			preparedStatement1.setString(1,request.getParameter("userid"));
 			preparedStatement1.setString(2,request.getParameter("role"));
 
+			preparedStatement2 =con.prepareStatement(insertDesc);
+			preparedStatement2.setString(1,request.getParameter("fname"));
+			preparedStatement2.setString(2,request.getParameter("lname"));
+			preparedStatement2.setString(3,request.getParameter("email"));
+
+			
 			preparedStatement.executeUpdate();
+			preparedStatement1.executeUpdate();
+			preparedStatement2.executeUpdate();
+			
 			System.out.println("Record is inserted into USER table!");
 			preparedStatement1.executeUpdate();
 			System.out.println("Record is inserted into USER Role table!");
-		
+			preparedStatement2.executeUpdate();
+			System.out.println("Record is inserted into User Desc table!");
+			
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 

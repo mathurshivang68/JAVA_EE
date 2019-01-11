@@ -12,6 +12,8 @@
 
 <header class="headerhome"></header>
 
+
+<p><a href="logout">Logout</a></p>
 <div class="row p-3 mb-2 bg-secondary text-primary">
 <h>WELCOME EMPLOYER</h>
 
