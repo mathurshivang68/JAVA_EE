@@ -42,6 +42,18 @@ public class JobsDao {
 		   
 		}
 	
-	
+	public  Job findJobByID(Long Id) {
+		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
+	    em.getTransaction()
+	        .begin();
+	    Job entity=em.find(Job.class, Id);
+	    em.getTransaction()
+        .commit();
+    em.close();
+    PersistenceManager.INSTANCE.close();
+    return entity;
+	    
+	    
+	}
 	
 }

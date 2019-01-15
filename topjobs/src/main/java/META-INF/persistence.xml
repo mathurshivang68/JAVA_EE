@@ -10,7 +10,7 @@
 	  <class>com.niit.domain.Job</class>	
 	  <class>com.niit.domain.JobSkillLoc</class>
 	  <class>com.niit.domain.User</class>
-	
+      
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>

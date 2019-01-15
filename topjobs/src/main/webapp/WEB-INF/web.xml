@@ -175,7 +175,14 @@
 </login-config>
   
 
-
+<servlet>
+   <servlet-name>applyjob</servlet-name>
+   <jsp-file>/WEB-INF/views/ApplyJob.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+   <servlet-name>applyjob</servlet-name>
+   <url-pattern>/applyjob</url-pattern>
+ </servlet-mapping>
 
 <servlet>
    <servlet-name>newJob</servlet-name>

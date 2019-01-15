@@ -21,6 +21,7 @@ class ResumeTest {
 	@Test
 	void testToJSON() throws IOException {
 	Resume rs=new Resume();
+	
 	rs.setName("Shivang");
 	rs.setEmail("mathur@gmail.com");
 	rs.setContactNum("9818282189");

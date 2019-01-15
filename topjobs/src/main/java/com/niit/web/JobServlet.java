@@ -28,7 +28,7 @@ public class JobServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
+	/**0
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,6 +40,7 @@ public class JobServlet extends HttpServlet {
 		req.setJobName(request.getParameter("companyName"));
 		req.setJobTitle(request.getParameter("jobTitle"));
 		req.setJobDescription(request.getParameter("jobDesc"));
+		
 		
 		System.out.println(req.getJobName()+" "+req.getJobTitle()+" "+"IN JOB SERVLET");
 		JobService js=new JobService();

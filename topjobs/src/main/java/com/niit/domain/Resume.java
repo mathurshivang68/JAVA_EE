@@ -18,13 +18,14 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-@Access(AccessType.PROPERTY)
 @Entity
 public class Resume {
 	
 	
 	
-	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "res_Sequence")
+	@SequenceGenerator(name = "res_Sequence", sequenceName = "RES_SEQ")
 	Long resumeId;
 	
 	@Column
@@ -72,10 +73,7 @@ public class Resume {
 		this.name = name;
 	}
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "res_Sequence")
-	@SequenceGenerator(name = "res_Sequence", sequenceName = "RES_SEQ")
-	public Long getResumeId() {
+		public Long getResumeId() {
 		return resumeId;
 	}
 
@@ -134,8 +132,7 @@ public class Resume {
 		this.jsMarks = jsMarks;
 	}
 
-	@Column(name="resumeText")
-	@Access(AccessType.PROPERTY)
+
 	String toJSON() throws JsonProcessingException
 	{
 		ObjectMapper objectMapper = new ObjectMapper();

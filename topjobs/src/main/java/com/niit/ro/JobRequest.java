@@ -4,6 +4,11 @@ public class JobRequest {
 	String jobName;
 	String jobTitle;
 	String jobDescription;
+	
+	
+	
+	
+	
 	public String getJobName() {
 		return jobName;
 	}

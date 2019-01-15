@@ -76,4 +76,11 @@ class JobsDaoTest {
 	}
     
 
+	@Test
+	void testFindJobById()
+	{
+		JobsDao jd=new JobsDao();
+		List<Job> js=(List<Job>) jd.findJobByID(502L);
+		Assert.assertTrue(js.size()>0);
+	}
 }
