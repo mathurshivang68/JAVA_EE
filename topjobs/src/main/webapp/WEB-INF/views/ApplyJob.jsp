@@ -1,16 +1,68 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page 
+language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="java.util.*"%>
+    <%@ page import="com.niit.domain.Job" %>
+    <%@ page import="com.niit.service.*" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+
+
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Jobs by You</title>
+<link rel="stylesheet" type="text/css" href="C:\Users\Shivang\eclipse-workspace\topjobs\topjobs\src\main\webapp\WEB-INF\CSS\TopjobsStyle.css" />
+
 </head>
-<body>
+<body style="background-color: lightsalmon">
+<header class="headerhome"></header>
 
-<p>APPLY FOR A JOB</p>
+<div class=""row p-3 mb-2 bg-secondary text-primary">
+
+<% 
+   JobService js=new JobService();
+   List<Job> ls =js.getAllJobs();
+    
+%>
+
+<h1>Apply from these jobs</h1>
+<h2><%=ls.size()%> Jobs</h2>
+
+<form action="/topjobs/job/ApplyJobServlet" id="jobApply">
+
+<table>
+<div class="form-group">
 
 
+<c:set var="jobList" value="<%=ls%>" /> 
+<c:forEach var="job" items="${jobList}">
+				
+				<tr>
+					
+					<td>Job Title: <c:out value="${job.jobTitle}"></c:out></td>
+					<td>Company Name: <c:out value="${job.jobName}"></c:out></td>
+					<td>Job Description<c:out value="${job.jobDescription}"></c:out></td>
+					<td>${job.jobId}<input type="checkbox" name="jobs" value="${job.jobId}"></td>
+				</tr>
+</c:forEach>
+
+</table>
+<button type="submit" class="btn btn-primary" value="SUBMIT">APPLY JOBS</button>
+</form>
+</div>
+
+
+
+
+
+
+</div>
 
 </body>
 </html>

@@ -18,13 +18,13 @@
   <div class=""row p-3 mb-2 bg-secondary text-primary">
     <div class="form-group col-md-6">
       <p><label for="jobTitle">Job Title:</label>
-      <input type="text" class="form-control" id="jobTitle" placeholder="jobTitle"></p>
+      <input type="text" class="form-control" name="jobTitle" placeholder="jobTitle"></p>
     </div>
     
   </div>
   <div class="form-group">
     <label for="companyName">Company Name:</label>
-    <input type="text" class="form-control" id="companyName" form="newjob">
+    <input type="text" class="form-control" name="companyName" form="newjob">
      
   </div>
 
@@ -141,7 +141,7 @@ HTML/CSS <input type="checkbox" name="jobskills" value="html"  /><br />
 
 </form>
 
-<p><a href="/topjobs/empjob">Show Jobs</p></a>
+<p><a href="/topjobs/ShowJobServlet">Show Jobs</p></a>
 
 
 

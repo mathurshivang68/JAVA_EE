@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.niit.domain.JSMarks;
 import com.niit.ro.ResumeRequest;
 import com.niit.service.ResumeService;
@@ -14,7 +15,7 @@ import com.niit.service.ResumeService;
 class ResumeServiceTest {
 
 	@Test
-	void ServiceTest()
+	void ServiceTest() throws JsonProcessingException
 	{
 		ResumeService rs=new ResumeService();
 		ResumeRequest req=new ResumeRequest();

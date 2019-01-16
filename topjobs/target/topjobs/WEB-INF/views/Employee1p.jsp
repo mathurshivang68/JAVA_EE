@@ -23,11 +23,26 @@
 <p>Email: <%=request.getParameter("email") %></p>
 
 
-<form id="resume">
+<form id="resume" action="ResumeServlet">
+  <div class=""row p-3 mb-2 bg-secondary text-primary">
+    <div class="form-group col-md-6">
+      <p><label for="name">Name:</label>
+      <input type="text" class="form-control" name="name" placeholder="Full Name"></p>
+    </div>
+
+  <div class=""row p-3 mb-2 bg-secondary text-primary">
+    <div class="form-group col-md-6">
+      <p><label for="email">Email:</label>
+      <input type="text" class="form-control" name="email" placeholder="Email ID"></p>
+    </div>
+
+
+
+
   <div class=""row p-3 mb-2 bg-secondary text-primary">
     <div class="form-group col-md-6">
       <p><label for="contactNo">Contact No:</label>
-      <input type="text" class="form-control" id="contactNo" placeholder="Contact Number"></p>
+      <input type="text" class="form-control" name="contactNo" placeholder="Contact Number"></p>
     </div>
     <div class="form-group col-md-6">
       <label for="resumeText">Resume Text</label>
@@ -97,21 +112,21 @@
   </div>
     <div class="form-group col-md-2">
       <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
+      <input type="text" class="form-control" name="inputZip">
     </div>
   </div>
   
 <div>
 <div class="form-group col-md-2">
  <label for="marks10">Marks in 10th: </label>
- <input type= "text" class="form-control" id="marks10">
+ <input type= "text" class="form-control" name="marks10">
  </div>
 </div> 
 
 <div>
 <div class="form-group col-md-2">
  <label for="marks12">Marks in 12th: </label>
- <input type= "text" class="form-control" id="marks12">
+ <input type= "text" class="form-control" name="marks12">
  </div>
 </div> 
 
@@ -119,7 +134,7 @@
 <div>
 <div class="form-group col-md-2">
  <label for="marksgrad">Marks in Graduation: </label>
- <input type= "text" class="form-control" id="marksgrad">
+ <input type= "text" class="form-control" name="marksgrad">
  </div>
 </div> 
 
@@ -155,5 +170,7 @@ HTML/CSS <input type="checkbox" name="skills" value="html"  /><br />
 </div>
 
 </form>
+
+<a href="/applyJobs">APPLY JOBS</a>
 
 </html>

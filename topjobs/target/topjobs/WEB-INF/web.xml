@@ -33,6 +33,16 @@
 
 
 <servlet>
+   <servlet-name>applyJob</servlet-name>
+   <jsp-file>/WEB-INF/views/ApplyJob.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+   <servlet-name>applyJob</servlet-name>
+   <url-pattern>/applyJob</url-pattern>
+ </servlet-mapping>
+
+
+<servlet>
    <servlet-name>empjob</servlet-name>
    <jsp-file>/WEB-INF/views/ShowEmpJobs.jsp</jsp-file>  
  </servlet>
@@ -175,7 +185,14 @@
 </login-config>
   
 
-
+<servlet>
+   <servlet-name>applyjob</servlet-name>
+   <jsp-file>/WEB-INF/views/ApplyJob.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+   <servlet-name>applyjob</servlet-name>
+   <url-pattern>/applyjob</url-pattern>
+ </servlet-mapping>
 
 <servlet>
    <servlet-name>newJob</servlet-name>
@@ -202,6 +219,13 @@
 	<servlet-name>ShowJobServlet</servlet-name>
 	<servlet-class>com.niit.web.ShowJobServlet</servlet-class>
 </servlet>
+<servlet>
+	<description>
+	</description>
+	<display-name>ApplyJobServlet</display-name>
+	<servlet-name>ApplyJobServlet</servlet-name>
+	<servlet-class>com.niit.web.ApplyJobServlet</servlet-class>
+</servlet>
  <servlet-mapping>
    <servlet-name>newJob</servlet-name>
    <url-pattern>/newJob</url-pattern>
@@ -217,6 +241,10 @@
  <servlet-mapping>
  	<servlet-name>ShowJobServlet</servlet-name>
  	<url-pattern>/ShowJobServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+ 	<servlet-name>ApplyJobServlet</servlet-name>
+ 	<url-pattern>/ApplyJobServlet</url-pattern>
  </servlet-mapping>
 
 
