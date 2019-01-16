@@ -59,8 +59,7 @@ public class ApplyJobServlet extends HttpServlet {
 		
 		JobSeekerService jss=new JobSeekerService();
 		jss.applyJob(req);
-		
-		}
+				}
 		
 		
 		
