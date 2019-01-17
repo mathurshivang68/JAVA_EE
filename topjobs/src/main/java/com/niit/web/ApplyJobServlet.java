@@ -48,6 +48,10 @@ public class ApplyJobServlet extends HttpServlet {
 		for(String s:jobIdList)
 		{
 			
+			
+			
+			
+			
 		
 		User user=new User();
 		user.setUserName(request.getRemoteUser());
