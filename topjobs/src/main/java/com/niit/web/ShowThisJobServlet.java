@@ -38,7 +38,7 @@ public class ShowThisJobServlet extends HttpServlet {
 		
 		
 		JobsDao jd=new JobsDao();
-		Job req=new Job();
+		Job req=new Job(); 				//Calling from job object using job entity
 		
 		req.setJobId(Long.valueOf(id));
 		Job js=jd.findJobByID(req);
@@ -59,7 +59,7 @@ public class ShowThisJobServlet extends HttpServlet {
 		request.setAttribute("thisJob", js);
 		
 				
-		System.out.println("SHOW THIS JOB SERVLET ENTERED");
+		System.out.println("SHOWTHIS JOB SERVLET ENTERED");
 				
 		RequestDispatcher rd=request.getRequestDispatcher("/job/showthisjob");
 		rd.forward(request, response);
