@@ -6,11 +6,11 @@ import com.niit.ro.JobApplyRequest;
 
 public class JobSeekerService {
 
-	public void applyJob(JobApplyRequest request)
+	public void applyJob(JobApplyRequest req)
 	{
-		JobSeekerEvents jse=new JobSeekerEvents();
-		JobApplyRequest req=new JobApplyRequest();
 		
+		
+		JobSeekerEvents jse=new JobSeekerEvents();
 		jse.setEventId(req.getEventId());
 		jse.setJob(req.getJob());
 		jse.setUser(req.getUser());

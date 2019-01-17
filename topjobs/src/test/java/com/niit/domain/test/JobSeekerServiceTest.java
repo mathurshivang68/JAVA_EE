@@ -18,12 +18,12 @@ class JobSeekerServiceTest {
 		JobApplyRequest request= new JobApplyRequest();
 		
 		Job job=new Job();
-		job.setJobId(102L);
+		job.setJobId(502L);
 		request.setJob(job);
 		
 
 		User user=new User();
-		user.setUserName("shivang");
+		user.setUserName("diwakar10");
 		request.setUser(user);
 		
 		jss.applyJob(request);

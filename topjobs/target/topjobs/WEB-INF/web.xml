@@ -53,6 +53,16 @@
 
 
 <servlet>
+   <servlet-name>showapplyjob</servlet-name>
+   <jsp-file>/WEB-INF/views/AppliedJobsShow.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+   <servlet-name>showapplyjob</servlet-name>
+   <url-pattern>/showapplyjob</url-pattern>
+ </servlet-mapping>
+
+
+<servlet>
 	<servlet-name>web1</servlet-name>
 	<jsp-file>/index.jsp</jsp-file>
 </servlet>
@@ -191,7 +201,7 @@
  </servlet>
  <servlet-mapping>
    <servlet-name>applyjob</servlet-name>
-   <url-pattern>/applyjob</url-pattern>
+   <url-pattern>/job/applyjob</url-pattern>
  </servlet-mapping>
 
 <servlet>
@@ -244,7 +254,7 @@
  </servlet-mapping>
  <servlet-mapping>
  	<servlet-name>ApplyJobServlet</servlet-name>
- 	<url-pattern>/ApplyJobServlet</url-pattern>
+ 	<url-pattern>/job/ApplyJobServlet</url-pattern>
  </servlet-mapping>
 
 

@@ -38,7 +38,7 @@
  </servlet>
  <servlet-mapping>
    <servlet-name>applyJob</servlet-name>
-   <url-pattern>job/applyJob</url-pattern>
+   <url-pattern>/applyJob</url-pattern>
  </servlet-mapping>
 
 
@@ -201,7 +201,7 @@
  </servlet>
  <servlet-mapping>
    <servlet-name>applyjob</servlet-name>
-   <url-pattern>/applyjob</url-pattern>
+   <url-pattern>/job/applyjob</url-pattern>
  </servlet-mapping>
 
 <servlet>

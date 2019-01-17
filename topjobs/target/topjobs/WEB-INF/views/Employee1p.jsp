@@ -171,6 +171,6 @@ HTML/CSS <input type="checkbox" name="skills" value="html"  /><br />
 
 </form>
 
-<a href="/applyJobs">APPLY JOBS</a>
+<a href="job/applyjob">APPLY JOBS</a>
 
 </html>
