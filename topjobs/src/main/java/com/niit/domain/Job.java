@@ -27,6 +27,12 @@ public class Job {
 	@Column
 	String jobTitle;
 	
+	@Override
+	public String toString() {
+		return "Job\\\njobId=" + jobId + "\njobName=" + jobName + "\njobTitle=" + jobTitle + "\njobDescription="
+				+ jobDescription + "\nusr=" + usr + "\njskill=" + jskill;
+	}
+
 	@Column
 	String jobDescription;
 	

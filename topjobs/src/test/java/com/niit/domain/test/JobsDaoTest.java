@@ -15,6 +15,7 @@ import com.niit.dao.JobsDao;
 import com.niit.domain.Job;
 import com.niit.domain.JobSkillLoc;
 import com.niit.domain.User;
+import com.niit.ro.JobRequest;
 
 import junit.framework.Assert;
 
@@ -80,7 +81,10 @@ class JobsDaoTest {
 	void testFindJobById()
 	{
 		JobsDao jd=new JobsDao();
-		List<Job> js=(List<Job>) jd.findJobByID(502L);
-		Assert.assertTrue(js.size()>0);
+		Job req=new Job();
+		
+		req.setJobId(502L);
+		Job js=jd.findJobByID(req);
+		System.out.println(js);
 	}
 }

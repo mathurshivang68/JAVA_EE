@@ -8,6 +8,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import com.niit.domain.Job;
+import com.niit.ro.JobRequest;
 import com.niit.topjobs.PersistenceManager;
 
 public class JobsDao {
@@ -42,15 +43,15 @@ public class JobsDao {
 		   
 		}
 	
-	public  Job findJobByID(Long Id) {
+	public  Job findJobByID(Job job) {
 		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
 	    em.getTransaction()
 	        .begin();
-	    Job entity=em.find(Job.class, Id);
+	    Job entity=em.find(Job.class, job.getJobId());
 	    em.getTransaction()
         .commit();
     em.close();
-    PersistenceManager.INSTANCE.close();
+   // PersistenceManager.INSTANCE.close();
     return entity;
 	    
 	    

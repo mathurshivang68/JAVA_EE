@@ -4,11 +4,17 @@ public class JobRequest {
 	String jobName;
 	String jobTitle;
 	String jobDescription;
+	Long jobId;
 	
 	
 	
 	
-	
+	public Long getJobId() {
+		return jobId;
+	}
+	public void setJobId(Long jobId) {
+		this.jobId = jobId;
+	}
 	public String getJobName() {
 		return jobName;
 	}

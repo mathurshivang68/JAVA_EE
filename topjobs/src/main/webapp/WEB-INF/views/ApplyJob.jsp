@@ -49,6 +49,17 @@ language="java" contentType="text/html; charset=ISO-8859-1"
 					<td>Company Name: <c:out value="${job.jobName}"></c:out></td>
 					<td>Job Description<c:out value="${job.jobDescription}"></c:out></td>
 					<td>${job.jobId}<input type="checkbox" name="jobs" value="${job.jobId}"></td>
+					
+					<td><form action="/topjobs/job/ShowThisJobServlet">
+					<input type="hidden" name="thisJob" value="${job.jobId}">			
+					<input type="submit" value="SHOW">
+					
+					
+					 </form>
+					
+					
+					<%-- <td>${job.jobId}<input type=button onClick=window.open("/topjobs/src/main/webapp/index.jsp","Ratting","width=550,
+height=170,left=150,top=200,toolbar=0,status=0,"); value="Open Window"></td> --%>
 				</tr>
 </c:forEach>
 

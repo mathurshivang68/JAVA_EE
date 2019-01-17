@@ -41,7 +41,11 @@ public class JobService {
 		
 	}
 
-	
+	public Job showJobById(Job job)
+	{		
+		JobsDao jd=new JobsDao();
+		return jd.findJobByID(job);
+	}
 		
 	}		
 
