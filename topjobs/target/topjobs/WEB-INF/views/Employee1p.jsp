@@ -19,7 +19,7 @@
 <h2> Lets Make Your Resume Now</h2>
 </body>
 
-<p>Name: <%=request.getParameter("fname") %> <%=request.getParameter("lname") %></p>
+<p>Name: <%=request.getParameter("fname") %></p>
 <p>Email: <%=request.getParameter("email") %></p>
 
 
