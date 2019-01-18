@@ -71,7 +71,7 @@ public class ResumeServlet extends HttpServlet {
 
 		
 		System.out.println("RESUME SERVLET ENTERED");
-		RequestDispatcher rd=request.getRequestDispatcher("/applyjob");  //apply jobs page forward
+		RequestDispatcher rd=request.getRequestDispatcher("/job/applyjob");  //apply jobs page forward
 		rd.forward(request,response);
 		
 	}

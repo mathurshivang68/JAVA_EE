@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.niit.dao.JobsDao;
 import com.niit.domain.Job;
+import com.niit.domain.JobSeekerEvents;
 import com.niit.domain.JobSkillLoc;
 import com.niit.domain.User;
 import com.niit.ro.JobRequest;
@@ -86,5 +87,40 @@ class JobsDaoTest {
 		req.setJobId(502L);
 		Job js=jd.findJobByID(req);
 		System.out.println(js);
+	}
+	
+	
+	@Test
+	void testFindJobByIdEager()
+	{
+		JobsDao jd=new JobsDao();
+		Job job=new Job();
+		
+		job.setJobId(202L);
+		
+		Job js=jd.findJobByIdEager(job);
+		System.out.println(js.getJskill().get(0).getSkill());
+		
+	}
+	
+	
+	@Test
+	void testFindAppliedJobs()
+	{
+		JobsDao jd=new JobsDao();
+		JobSeekerEvents job=new JobSeekerEvents();
+		User user=new User();
+		
+		JobSeekerEvents jse=new JobSeekerEvents();
+
+		user.setUserName("diwakar10");
+		
+		jse.setUser(user);
+		
+		List<JobSeekerEvents> js=jd.getAppliedJobs(user);
+		
+		Assert.assertTrue(js.size()>0);	
+				System.out.println(js.size());
+		
 	}
 }

@@ -41,7 +41,7 @@ public class ShowThisJobServlet extends HttpServlet {
 		Job req=new Job(); 				//Calling from job object using job entity
 		
 		req.setJobId(Long.valueOf(id));
-		Job js=jd.findJobByID(req);
+		Job js=jd.findJobByIdEager(req);
 		
 		
 		

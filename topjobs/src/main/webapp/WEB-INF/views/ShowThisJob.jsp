@@ -17,13 +17,35 @@
 
 <%
 Job jobDesc=(Job)request.getAttribute("thisJob"); 
+out.print(jobDesc.getJskill().size());
+
 %>
 <table>
 
 <c:set var="job" value="<%=jobDesc%>" />
+<tr><td>Job Id: <c:out value="${job.jobId}"></c:out></td></tr>
 
-<td><c:out value="${job.jobId}"></c:out></td>
-<td><c:out value="${job.jobDescription}"></c:out></td>
+<tr><td>Company Name: <c:out value="${job.jobName}"></c:out></td></tr>
+<tr><td>Job Title: <c:out value="${job.jobTitle}"></c:out></td></tr>
+<tr><td>Job Description: <c:out value="${job.jobDescription}"></c:out></td></tr>
+
+<table>
+<tr>Job Skills:</tr> 
+<c:forEach var="js" items="${job.jskill}">
+<tr><c:out value="${js.skill}"></c:out>
+</tr>
+</c:forEach>
+</table>
+
+<table>
+<tr></b>Job Locations<b></tr>
+<c:forEach var="jl" items="${job.jskill}">
+<tr><c:out value="${jl.loc}"></c:out>
+</tr>
+</c:forEach>
+</table>
+
+
 </table>
 </body>
 </html>
