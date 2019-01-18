@@ -30,6 +30,8 @@ class JobEventDaoTest {
 	
 	jed.persist(jse);
 	
+	//System.out.println(jse);
+	
 	}
 
 	
