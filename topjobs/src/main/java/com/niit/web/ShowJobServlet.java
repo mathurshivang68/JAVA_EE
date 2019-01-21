@@ -38,7 +38,7 @@ public class ShowJobServlet extends HttpServlet {
 		request.setAttribute("JobList", ls);
 		
 		System.out.println("SHOWJOB SERVLET ENTERED");
-		RequestDispatcher rd=request.getRequestDispatcher("/empjob"); 		//MAKE REGISTERSUCCESS PAGE 
+		RequestDispatcher rd=request.getRequestDispatcher("/empjob"); 		
         rd.forward(request, response);  
 		
 		

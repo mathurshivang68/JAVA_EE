@@ -1,14 +1,21 @@
 package com.niit.ro;
 
+import com.niit.domain.User;
+
 public class JobRequest {
 	String jobName;
 	String jobTitle;
 	String jobDescription;
 	Long jobId;
 	
+	User user;
 	
-	
-	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public Long getJobId() {
 		return jobId;
 	}

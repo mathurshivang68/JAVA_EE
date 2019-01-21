@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Transient;
-
+import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -28,8 +28,11 @@ public class Resume {
 	@SequenceGenerator(name = "res_Sequence", sequenceName = "RES_SEQ")
 	Long resumeId;
 	
+//	@Column
+//	String name;
+	
 	@Column
-	String name;
+	long timesViewed;
 	
 	@Column
 	String email;
@@ -61,17 +64,21 @@ public class Resume {
 		
 		this.resumeText = resumeText;
 	}
-
-
-	@Column
-	public String getName() {
-		return name;
-	}
-
 	
-	public void setName(String name) {
-		this.name = name;
-	}
+	@OneToOne(cascade = {CascadeType.MERGE})
+	@JoinColumn(name="user_name")
+	User user;
+
+//
+//	@Column
+//	public String getName() {
+//		return name;
+//	}
+//
+//	
+//	public void setName(String name) {
+//		this.name = name;
+//	}
 
 		public Long getResumeId() {
 		return resumeId;
@@ -140,6 +147,23 @@ public class Resume {
 	    String resumeString = objectMapper.writeValueAsString(this);
 		return resumeString;
 	}
+
+	public long getTimesViewed() {
+		return timesViewed;
+	}
+
+	public void setTimesViewed(long timesViewed) {
+		this.timesViewed = timesViewed;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
 	
 	
 

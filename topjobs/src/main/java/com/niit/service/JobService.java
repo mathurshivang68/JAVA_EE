@@ -12,6 +12,7 @@ import javax.persistence.criteria.Root;
 
 import com.niit.dao.JobsDao;
 import com.niit.domain.Job;
+import com.niit.domain.User;
 import com.niit.ro.JobRequest;
 import com.niit.topjobs.PersistenceManager;
 
@@ -26,7 +27,8 @@ public class JobService {
 		job.setJobName(req.getJobName());
 		job.setJobTitle(req.getJobTitle());
 		job.setJobDescription(req.getJobDescription());
-
+		job.setUser(req.getUser());
+		
 		
 		JobsDao jd = new JobsDao();
 		jd.persist(job);
@@ -44,7 +46,7 @@ public class JobService {
 	public Job showJobById(Job job)
 	{		
 		JobsDao jd=new JobsDao();
-		return jd.findJobByID(job);
+		return jd.findJobByIdEager(job);
 	}
 		
 	

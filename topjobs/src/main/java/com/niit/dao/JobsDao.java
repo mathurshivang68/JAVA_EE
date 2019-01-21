@@ -126,7 +126,6 @@ public List<JobSeekerEvents> getAppliedJobs(User username)
 	EntityType<JobSeekerEvents> Apj_=m.entity(JobSeekerEvents.class);
 	
 	Expression<?> ex=root.get(Apj_.getSingularAttribute("jobId"));
-	
 	Predicate p1=cb.equal(ex,username);
 	
 	cq.where(p1);

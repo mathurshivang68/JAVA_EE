@@ -17,15 +17,15 @@ language="java" contentType="text/html; charset=ISO-8859-1"
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Jobs by You</title>
 <link rel="stylesheet" type="text/css" href="C:\Users\Shivang\eclipse-workspace\topjobs\topjobs\src\main\webapp\WEB-INF\CSS\TopjobsStyle.css" />
-
+ 
 </head>
 <body style="background-color: lightsalmon">
 <header class="headerhome"></header>
 
 <div>
-<% List<Job> ls =(List)request.getAttribute("JobList"); %>
+<%List<Job> ls =(List)request.getAttribute("JobList"); %>
 
-<h1>Jobs for you</h1>
+<h1>Jobs List</h1>
 <h2><%=ls.size()%> Jobs</h2>
 <table>
 
@@ -42,11 +42,6 @@ language="java" contentType="text/html; charset=ISO-8859-1"
 </table>
 
 </div>
-
-
-
-
-
 
 
 </body>

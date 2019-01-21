@@ -170,7 +170,7 @@ HTML/CSS <input type="checkbox" name="skills" value="html"  /><br />
 </div>
 
 </form>
-
+<a href="showresume">SHOW RESUME</a>
 <a href="job/applyjob">APPLY JOBS</a>
 
 </html>

@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.niit.domain.JSMarks;
+import com.niit.domain.User;
 import com.niit.ro.ResumeRequest;
 import com.niit.service.ResumeService;
 
@@ -20,7 +21,9 @@ class ResumeServiceTest {
 		ResumeService rs=new ResumeService();
 		ResumeRequest req=new ResumeRequest();
 		
-		req.setName("Shivang");
+		User user=new User();
+		user.setUserName("Shivang");
+		req.setUser(user);
 		req.setEmail("mathurs@gmail.com");
 		req.setContactNo("9182828299");
 		

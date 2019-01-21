@@ -1,33 +1,25 @@
 package com.niit.web;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.niit.domain.JSMarks;
-
 import com.niit.domain.User;
-import com.niit.domain.JobSkillLoc;
 import com.niit.ro.ResumeRequest;
 import com.niit.service.ResumeService;
 
 /**
- * Servlet implementation class ResumeServlet
+ * Servlet implementation class ShowResumeEmployerServlet
  */
-public class ResumeServlet extends HttpServlet {
+public class ShowResumeEmployerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ResumeServlet() {
+    public ShowResumeEmployerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,41 +35,22 @@ public class ResumeServlet extends HttpServlet {
 		User user=new User();
 		user.setUserName(request.getRemoteUser());
 		ResumeRequest req=new ResumeRequest();
+		
 		req.setUser(user);
-		req.setEmail(request.getParameter("email"));
-		req.setContactNo(request.getParameter("contactNo"));
 		
-		JSMarks jsm=new JSMarks();
+		ResumeService res=new ResumeService();
 		
-		jsm.setMarks10(Double.valueOf(request.getParameter("marks10")));
-		jsm.setMarks12(Double.valueOf(request.getParameter("marks12")));
-		jsm.setGradMarks(Double.valueOf(request.getParameter("marksgrad")));
-		req.setMarks(jsm);
+		req=res.viewResumeEmployer(req);
 		
-		String[] skillarr=request.getParameterValues("skills");
-		
-		List<String> jsllist=new ArrayList<String>();
-				
-		
-		for(String s:skillarr)
-		{
-			jsllist.add(s);
-			
-		}
-			
-		req.setSkills(jsllist);
-				
+		request.setAttribute("resume", req);
+		System.out.println(req);
+		System.out.println("Resume of Employer Servlet Entered");
+		request.getRequestDispatcher("showresume").forward(request, response);
 		
 		
-		ResumeService rs=new ResumeService();
-		rs.createANewResume(req);
 		
 		
-
 		
-		System.out.println("RESUME SERVLET ENTERED");
-		RequestDispatcher rd=request.getRequestDispatcher("/job/applyjob");  //apply jobs page forward
-		rd.forward(request,response);
 		
 	}
 

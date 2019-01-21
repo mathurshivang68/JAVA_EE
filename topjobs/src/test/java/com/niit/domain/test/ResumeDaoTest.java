@@ -14,6 +14,7 @@ import com.niit.dao.ResumeDao;
 import com.niit.domain.Address;
 import com.niit.domain.JSMarks;
 import com.niit.domain.Resume;
+import com.niit.domain.User;
 
 class ResumeDaoTest {
 
@@ -21,8 +22,9 @@ class ResumeDaoTest {
 	void testPersist() throws IOException {
 	ResumeDao rd=new ResumeDao();
 	Resume res=new Resume();
-	
-	res.setName("Shivang");
+	User user=new User();
+	user.setUserName("Shivang");
+	res.setUser(user);
 	res.setEmail("mathur@mail.com");
 	
 	Address add=new Address();

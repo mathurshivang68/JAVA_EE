@@ -14,6 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.niit.domain.Address;
 import com.niit.domain.JSMarks;
 import com.niit.domain.Resume;
+import com.niit.domain.User;
 import com.niit.topjobs.PersistenceManager;
 
 class ResumeTest {
@@ -21,8 +22,11 @@ class ResumeTest {
 	@Test
 	void testToJSON() throws IOException {
 	Resume rs=new Resume();
+	User user=new User();
+	user.setUserName("shivang");
 	
-	rs.setName("Shivang");
+	
+	rs.setUser(user);
 	rs.setEmail("mathur@gmail.com");
 	rs.setContactNum("9818282189");
 	
