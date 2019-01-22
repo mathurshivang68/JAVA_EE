@@ -2,7 +2,9 @@ package com.niit.ro;
 
 import java.util.List;
 
+import com.niit.domain.Address;
 import com.niit.domain.JSMarks;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
 
 public class ResumeRequest {
@@ -11,23 +13,39 @@ public class ResumeRequest {
 	Long resumeId;
 //	String name;
 	String email;
-	String contactNo;
+	String contactNum;
 	List skills;
-	User user;
+	JobSeeker user;
 	long timesViewed;
 	
+	Address addr;
+	JSMarks jsMarks;
+
 	
+	
+	public JobSeeker getUser() {
+		return user;
+	}
+	public void setUser(JobSeeker user) {
+		this.user = user;
+	}
+	public JSMarks getJsMarks() {
+		return jsMarks;
+	}
+	public void setJsMarks(JSMarks jsMarks) {
+		this.jsMarks = jsMarks;
+	}
+	public Address getAddr() {
+		return addr;
+	}
+	public void setAddr(Address addr) {
+		this.addr = addr;
+	}
 	public long getTimesViewed() {
 		return timesViewed;
 	}
 	public void setTimesViewed(long timesViewed) {
 		this.timesViewed = timesViewed;
-	}
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
 	}
 	public Long getResumeId() {
 		return resumeId;
@@ -35,7 +53,7 @@ public class ResumeRequest {
 	public void setResumeId(Long resumeId) {
 		this.resumeId = resumeId;
 	}
-	JSMarks marks;
+	
 	
 	
 	
@@ -45,12 +63,7 @@ public class ResumeRequest {
 	public void setSkills(List skills) {
 		this.skills = skills;
 	}
-	public JSMarks getMarks() {
-		return marks;
-	}
-	public void setMarks(JSMarks marks) {
-		this.marks = marks;
-	}
+	
 //	public String getName() {
 //		return name;
 //	}
@@ -63,11 +76,11 @@ public class ResumeRequest {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getContactNo() {
-		return contactNo;
+	public String getContactNum() {
+		return contactNum;
 	}
-	public void setContactNo(String contactNo) {
-		this.contactNo = contactNo;
+	public void setContactNum(String contactNum) {
+		this.contactNum = contactNum;
 	}
 	
 	

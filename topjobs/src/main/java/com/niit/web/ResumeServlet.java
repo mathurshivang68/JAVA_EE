@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.niit.domain.JSMarks;
-
+import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
 import com.niit.domain.JobSkillLoc;
 import com.niit.ro.ResumeRequest;
@@ -40,19 +40,19 @@ public class ResumeServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		
-		User user=new User();
+		JobSeeker user=new JobSeeker();
 		user.setUserName(request.getRemoteUser());
 		ResumeRequest req=new ResumeRequest();
 		req.setUser(user);
 		req.setEmail(request.getParameter("email"));
-		req.setContactNo(request.getParameter("contactNo"));
+		req.setContactNum(request.getParameter("contactNum"));
 		
 		JSMarks jsm=new JSMarks();
 		
 		jsm.setMarks10(Double.valueOf(request.getParameter("marks10")));
 		jsm.setMarks12(Double.valueOf(request.getParameter("marks12")));
 		jsm.setGradMarks(Double.valueOf(request.getParameter("marksgrad")));
-		req.setMarks(jsm);
+		req.setJsMarks(jsm);
 		
 		String[] skillarr=request.getParameterValues("skills");
 		

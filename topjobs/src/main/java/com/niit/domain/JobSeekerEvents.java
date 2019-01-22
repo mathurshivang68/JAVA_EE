@@ -25,6 +25,8 @@ public class JobSeekerEvents {
 	@SequenceGenerator(name = "event_Sequence", sequenceName = "EVE_SEQ")
 	Long eventId;
 
+	
+	
 	public Job getJob() {
 		return job;
 	}

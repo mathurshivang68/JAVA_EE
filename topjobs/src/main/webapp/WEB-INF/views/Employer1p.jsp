@@ -28,7 +28,7 @@
 <h2><a href="newJob">Create a new Job?</a></h2>
 </div>
 
-<a href="showresume">SHOW RESUME</a>
+<a href="ShowResumeEmployerServlet">SHOW RESUME</a>
 </div>
 </body>
 </html>

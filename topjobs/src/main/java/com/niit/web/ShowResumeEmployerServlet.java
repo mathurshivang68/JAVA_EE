@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
 import com.niit.ro.ResumeRequest;
 import com.niit.service.ResumeService;
@@ -29,12 +30,13 @@ public class ShowResumeEmployerServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		
-		User user=new User();
+		JobSeeker user=new JobSeeker();
 		user.setUserName(request.getRemoteUser());
 		ResumeRequest req=new ResumeRequest();
+		
+		//Resume rsm= new Resume();
 		
 		req.setUser(user);
 		

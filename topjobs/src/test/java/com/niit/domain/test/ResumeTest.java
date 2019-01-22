@@ -13,6 +13,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.niit.domain.Address;
 import com.niit.domain.JSMarks;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.Resume;
 import com.niit.domain.User;
 import com.niit.topjobs.PersistenceManager;
@@ -22,8 +23,8 @@ class ResumeTest {
 	@Test
 	void testToJSON() throws IOException {
 	Resume rs=new Resume();
-	User user=new User();
-	user.setUserName("shivang");
+	JobSeeker user=new JobSeeker();
+	user.setUserName("diwakar");
 	
 	
 	rs.setUser(user);
@@ -82,7 +83,6 @@ em.close();
 	
 	
 	}
-	
 	
 
 	

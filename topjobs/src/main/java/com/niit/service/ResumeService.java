@@ -7,6 +7,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.niit.dao.ResumeDao;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.Resume;
 import com.niit.domain.User;
 import com.niit.ro.ResumeRequest;
@@ -16,13 +17,14 @@ public class ResumeService {
 	public void createANewResume(ResumeRequest req) throws JsonProcessingException
 	{
 		Resume res=new Resume();
-		User user=new User();
+		JobSeeker user=new JobSeeker();
 		user.getUserName();
 		res.setUser(user);
 		res.setEmail(req.getEmail());
-		res.setContactNum(req.getContactNo());
+		res.setContactNum(req.getContactNum());
+		
 		res.setSkills(req.getSkills());
-		res.setJsMarks(req.getMarks());
+		res.setJsMarks(req.getJsMarks());
 		ObjectMapper objectMapper = new ObjectMapper();
 		String resumeText=objectMapper.writeValueAsString(res);
 		

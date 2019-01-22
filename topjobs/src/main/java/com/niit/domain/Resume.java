@@ -67,7 +67,7 @@ public class Resume {
 	
 	@OneToOne(cascade = {CascadeType.MERGE})
 	@JoinColumn(name="user_name")
-	User user;
+	JobSeeker user;
 
 //
 //	@Column
@@ -156,14 +156,15 @@ public class Resume {
 		this.timesViewed = timesViewed;
 	}
 
-	public User getUser() {
+	public JobSeeker getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(JobSeeker user) {
 		this.user = user;
 	}
-	
+
+
 	
 	
 

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
    
- <%@ page import="com.niit.domain.Resume" %> 
+ <%@ page import="com.niit.ro.ResumeRequest" %> 
       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -14,40 +14,31 @@
 </head>
 <body>
 <%
-Resume resume=(Resume)request.getAttribute("resume");
+ResumeRequest resume=(ResumeRequest)request.getAttribute("resume");  //resume is the name of attribute i used in servlet to get
+
+
 %>
 
 <h1>Resume</h1>
 <table>
-<c:set var="resume" value="<%=resume%>" />
-<c:forEach var="res" items="${resume }">
-	<tr>
-	<td>Resume Id: <c:out value="${res.resumeId}"/></td>
-	<td>Times Viewed: <c:out value="${res.timesViewed}"/></td>
-		<td>Email: <c:out value="${res.email}"/></td>
-		<td>Contact Number: <c:out value="${res.contactNum}"/></td>
-		<td>Address: <c:out value="${res.addr}"/></td>
-		
+<c:set var="res" value="<%=resume%>" />
+	<tr> 
+	<td>Resume Id: <c:out value="${res.resumeId}"/></td></tr>
+<tr>	<td>Times Viewed: <c:out value="${res.timesViewed}"/></td></tr>
+<tr>		<td>Email: <c:out value="${res.email}"/></td></tr>
+<tr>		<td>Contact Number: <c:out value="${res.contactNum}"/></td></tr>
+<tr>		<td>Address: <c:out value="${res.addr}"/></td></tr>
+					
+<table>
+<tr>Resume Skills: </tr>
+<c:forEach var="rs" items="${res.skills}">
+<tr><c:out value="${rs}"></c:out></tr>
 </c:forEach>
 
 
-
+</table>
 </table>		
 		<table>	
-
-		<tr>Job Skills:</tr> 	
-	<c:forEach var="rs" items="${resume.rskill}">
-	<tr><c:out value="${rs.skill}"></c:out>
-	</tr>
-	</c:forEach>
-		</table>
-		
-		
-		
-	
-	
-	</tr>
-	
 
 
 

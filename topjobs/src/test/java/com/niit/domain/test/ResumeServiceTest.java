@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.niit.domain.JSMarks;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
 import com.niit.ro.ResumeRequest;
 import com.niit.service.ResumeService;
@@ -21,17 +22,17 @@ class ResumeServiceTest {
 		ResumeService rs=new ResumeService();
 		ResumeRequest req=new ResumeRequest();
 		
-		User user=new User();
+		JobSeeker user=new JobSeeker();
 		user.setUserName("Shivang");
 		req.setUser(user);
 		req.setEmail("mathurs@gmail.com");
-		req.setContactNo("9182828299");
+		req.setContactNum("9182828299");
 		
 		JSMarks marks=new JSMarks();
 		marks.setMarks10(80.0);
 		marks.setMarks12(85.0);
 		marks.setGradMarks(88.0);
-		req.setMarks(marks);
+		req.setJsMarks(marks);
 		
 		List skills=new ArrayList<>();
 		skills.add("C++");

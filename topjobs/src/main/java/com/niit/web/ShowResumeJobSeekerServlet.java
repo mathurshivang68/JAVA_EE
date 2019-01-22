@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
 import com.niit.ro.ResumeRequest;
 import com.niit.service.ResumeService;
@@ -34,7 +35,7 @@ public class ShowResumeJobSeekerServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	
 		ResumeRequest req=new ResumeRequest();
-		User user=new User();
+		JobSeeker user=new JobSeeker();
 		
 		user.setUserName(request.getRemoteUser());
 		

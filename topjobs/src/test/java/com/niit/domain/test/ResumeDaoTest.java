@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.niit.dao.ResumeDao;
 import com.niit.domain.Address;
 import com.niit.domain.JSMarks;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.Resume;
 import com.niit.domain.User;
 
@@ -22,7 +23,7 @@ class ResumeDaoTest {
 	void testPersist() throws IOException {
 	ResumeDao rd=new ResumeDao();
 	Resume res=new Resume();
-	User user=new User();
+	JobSeeker user=new JobSeeker();
 	user.setUserName("Shivang");
 	res.setUser(user);
 	res.setEmail("mathur@mail.com");

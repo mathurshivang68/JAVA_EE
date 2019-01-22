@@ -4,7 +4,7 @@ import com.niit.dao.JobEventDao;
 import com.niit.domain.JobSeekerEvents;
 import com.niit.ro.JobApplyRequest;
 
-public class JobSeekerService {
+public class JobSeekerService {   //JobSeekerEvent Service
 
 	public void applyJob(JobApplyRequest req)
 	{
