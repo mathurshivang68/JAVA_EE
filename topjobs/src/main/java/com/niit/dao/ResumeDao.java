@@ -16,11 +16,12 @@ import com.niit.topjobs.PersistenceManager;
 
 public class ResumeDao {
 	
-	public void persist(Resume entity)
+	public void merge(Resume entity)
 	{
 		EntityManager em=PersistenceManager.INSTANCE.getEntityManager();
 		em.getTransaction().begin();
-		em.persist(entity);
+		em.merge(entity);
+		
 		em.getTransaction().commit();
 		em.close();
 		

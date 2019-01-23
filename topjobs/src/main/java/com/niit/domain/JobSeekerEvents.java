@@ -13,11 +13,11 @@ import javax.persistence.SequenceGenerator;
 public class JobSeekerEvents {
 	
 	@OneToOne(cascade= {CascadeType.MERGE})
-	@JoinColumn(name="jobId",referencedColumnName = "jobId")
+//	@JoinColumn(name="jobId",referencedColumnName = "jobId")
 	Job job;
 	
 	@OneToOne(cascade= {CascadeType.MERGE})
-	@JoinColumn(name="user_name", referencedColumnName = "user_name")
+//	@JoinColumn(name="user_name", referencedColumnName = "user_name")
 	User user;
 	
 	@Id

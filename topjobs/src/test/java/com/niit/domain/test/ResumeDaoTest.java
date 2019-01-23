@@ -24,7 +24,9 @@ class ResumeDaoTest {
 	ResumeDao rd=new ResumeDao();
 	Resume res=new Resume();
 	JobSeeker user=new JobSeeker();
-	user.setUserName("Shivang");
+	user.setUserName("Shivang112");
+	user.setUserName("a1");
+	user.setUserPass("12345");
 	res.setUser(user);
 	res.setEmail("mathur@mail.com");
 	
@@ -58,7 +60,7 @@ class ResumeDaoTest {
 	res.setResumeText(resumeAsString);
 	// r1=objectMapper.readValue(resumeAsString,Resume.class);
 	
-	rd.persist(res);
+	rd.merge(res);
 	
 		
 	}

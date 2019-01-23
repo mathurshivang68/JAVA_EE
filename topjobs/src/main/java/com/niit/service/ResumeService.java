@@ -17,9 +17,9 @@ public class ResumeService {
 	public void createANewResume(ResumeRequest req) throws JsonProcessingException
 	{
 		Resume res=new Resume();
-		JobSeeker user=new JobSeeker();
-		user.getUserName();
-		res.setUser(user);
+	
+		
+		res.setUser(req.getUser());
 		res.setEmail(req.getEmail());
 		res.setContactNum(req.getContactNum());
 		
@@ -30,7 +30,7 @@ public class ResumeService {
 		
 		res.setResumeText(resumeText);
 		ResumeDao rd=new ResumeDao();
-		rd.persist(res);
+		rd.merge(res);
 	}
 	
 	public ResumeRequest viewResumeEmployer(ResumeRequest obj) throws JsonParseException, JsonMappingException, IOException {

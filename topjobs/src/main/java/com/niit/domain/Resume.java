@@ -65,8 +65,8 @@ public class Resume {
 		this.resumeText = resumeText;
 	}
 	
-	@OneToOne(cascade = {CascadeType.MERGE})
-	@JoinColumn(name="user_name")
+	@OneToOne(cascade = {CascadeType.ALL})
+//	@JoinColumn(name="user_name")
 	JobSeeker user;
 
 //

@@ -18,7 +18,7 @@ public class JobSkillLoc {
 	
 	@JsonIgnore
 	@ManyToOne
-	@JoinColumn(name = "jobId")
+//	@JoinColumn(name = "jobId")
 	Job job;
 	
 

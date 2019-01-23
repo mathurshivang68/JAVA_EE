@@ -24,7 +24,7 @@ class ResumeTest {
 	void testToJSON() throws IOException {
 	Resume rs=new Resume();
 	JobSeeker user=new JobSeeker();
-	user.setUserName("diwakar");
+	user.setUserName("diwakar10");
 	
 	
 	rs.setUser(user);

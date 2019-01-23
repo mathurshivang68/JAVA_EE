@@ -20,7 +20,7 @@ public class ResumeRequest {
 	
 	Address addr;
 	JSMarks jsMarks;
-
+	
 	
 	
 	public JobSeeker getUser() {
