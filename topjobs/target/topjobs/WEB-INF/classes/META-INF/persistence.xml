@@ -12,8 +12,12 @@
 	  <class>com.niit.domain.JobSeekerEvents</class>
 	  <class>com.niit.domain.JobSeeker</class>
 	  <class>com.niit.domain.UserRole</class>
+<<<<<<< master
 	  <class>com.niit.domain.Employer</class>
 	  <class>com.niit.domain.PurchaseEvents</class>		  
+=======
+	  		  
+>>>>>>> 5368a16 commit 23/1
       		  
       
 		<properties>

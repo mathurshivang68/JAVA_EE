@@ -103,6 +103,17 @@
    <url-pattern>/emp/purchaselogin</url-pattern>
  </servlet-mapping>
 
+<servlet>
+   <servlet-name>showresume</servlet-name>
+   <jsp-file>/WEB-INF/views/ShowResume.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+   <servlet-name>showresume</servlet-name>
+   <url-pattern>/showresume</url-pattern>
+ </servlet-mapping>
+
+
+
 
 <servlet>
 	<servlet-name>web1</servlet-name>
@@ -286,6 +297,7 @@
 	<servlet-class>com.niit.web.ShowThisJobServlet</servlet-class>
 </servlet>
 <servlet>
+<<<<<<< master
 	<servlet-name>ShowResumeEmployerServlet</servlet-name>
 	<servlet-class>com.niit.web.ShowResumeEmployerServlet</servlet-class>
 </servlet>
@@ -340,6 +352,20 @@
 	<display-name>FinalizePurchaseServlet</display-name>
 	<servlet-name>FinalizePurchaseServlet</servlet-name>
 	<servlet-class>com.niit.web.FinalizePurchaseServlet</servlet-class>
+=======
+	<description>
+	show resume for employer</description>
+	<display-name>ShowResumeEmployerServlet</display-name>
+	<servlet-name>ShowResumeEmployerServlet</servlet-name>
+	<servlet-class>com.niit.web.ShowResumeEmployerServlet</servlet-class>
+</servlet>
+<servlet>
+	<description>
+	</description>
+	<display-name>ShowResumeJobSeekerServlet</display-name>
+	<servlet-name>ShowResumeJobSeekerServlet</servlet-name>
+	<servlet-class>com.niit.web.ShowResumeJobSeekerServlet</servlet-class>
+>>>>>>> 5368a16 commit 23/1
 </servlet>
  <servlet-mapping>
    <servlet-name>newJob</servlet-name>
@@ -370,6 +396,7 @@
  </servlet-mapping>
  <servlet-mapping>
  	<servlet-name>ShowResumeEmployerServlet</servlet-name>
+<<<<<<< master
  	<url-pattern>/emp/ShowResumeEmployerServlet</url-pattern>
  </servlet-mapping>
  <servlet-mapping>
@@ -408,6 +435,14 @@
   	<servlet-name>FinalizePurchaseServlet</servlet-name>
   	<url-pattern>/admin/FinalizePurchaseServlet</url-pattern>
   </servlet-mapping>
+=======
+ 	<url-pattern>/ShowResumeEmployerServlet</url-pattern>
+ </servlet-mapping>
+ <servlet-mapping>
+ 	<servlet-name>ShowResumeJobSeekerServlet</servlet-name>
+ 	<url-pattern>/ShowResumeJobSeekerServlet</url-pattern>
+ </servlet-mapping>
+>>>>>>> 5368a16 commit 23/1
 
 
 

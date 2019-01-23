@@ -29,9 +29,12 @@
 </div>
 
 <a href="ShowResumeEmployerServlet">SHOW RESUME</a>
+<<<<<<< master
 
 <p><a href="/emp/empjob">Show Jobs I have Posted</a></p>
 
+=======
+>>>>>>> 5368a16 commit 23/1
 </div>
 </body>
 </html>

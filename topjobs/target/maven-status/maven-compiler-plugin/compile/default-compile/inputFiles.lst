@@ -1,3 +1,4 @@
+<<<<<<< master
 C:\Users\Diwakar\git\JAVA_EE\topjobs\src\main\java\com\niit\dao\JobSeekerEventsDAO.java
 C:\Users\Diwakar\git\JAVA_EE\topjobs\src\main\java\com\niit\ro\EmployerRequest.java
 C:\Users\Diwakar\git\JAVA_EE\topjobs\src\main\java\com\niit\domain\Job.java
@@ -43,3 +44,34 @@ C:\Users\Diwakar\git\JAVA_EE\topjobs\src\main\java\com\niit\domain\PurchaseEvent
 C:\Users\Diwakar\git\JAVA_EE\topjobs\src\main\java\com\niit\service\ResumeService.java
 C:\Users\Diwakar\git\JAVA_EE\topjobs\src\main\java\com\niit\dao\UserDAO.java
 C:\Users\Diwakar\git\JAVA_EE\topjobs\src\main\java\com\niit\ro\JobRequest.java
+=======
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\domain\JSMarks.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\dao\JobEventDao.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\web\ShowResumeJobSeekerServlet.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\service\JobService.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\web\ResumeServlet.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\ro\ResumeRequest.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\domain\Resume.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\web\ApplyJobServlet.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\web\RegisterServlet.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\dao\ResumeDao.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\domain\UserRole.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\topjobs\PersistenceManager.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\web\ShowJobServlet.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\web\ShowThisJobServlet.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\domain\User.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\service\JobSeekerService.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\ro\JobApplyRequest.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\web\LoginServlet.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\domain\Job.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\domain\JobSkillLoc.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\service\ResumeService.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\dao\RegisterDao.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\web\ShowResumeEmployerServlet.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\web\JobServlet.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\domain\JobSeekerEvents.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\ro\JobRequest.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\dao\JobsDao.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\domain\Address.java
+E:\C Drive\documents\CTS NIIT\GIT Repository\topjobs\src\main\java\com\niit\domain\JobSeeker.java
+>>>>>>> 5368a16 commit 23/1

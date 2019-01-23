@@ -24,9 +24,16 @@ class ResumeDaoTest {
 	ResumeDAO rd=new ResumeDAO();
 	Resume res=new Resume();
 	JobSeeker user=new JobSeeker();
+<<<<<<< master
 	user.setUser_name("Shivang112");
 	user.setUser_pass("12345");
 	res.setJobSeeker(user);
+=======
+	user.setUserName("Shivang112");
+	user.setUserName("a1");
+	user.setUserPass("12345");
+	res.setUser(user);
+>>>>>>> 5368a16 commit 23/1
 	res.setEmail("mathur@mail.com");
 	
 	Address add=new Address();

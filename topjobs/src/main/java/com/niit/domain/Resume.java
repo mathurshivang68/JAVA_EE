@@ -64,6 +64,13 @@ public class Resume {
 	public void setResumeText(String resumeText) throws JsonProcessingException {
 		this.resumeText = resumeText;
 	}
+<<<<<<< master
+=======
+	
+	@OneToOne(cascade = {CascadeType.ALL})
+//	@JoinColumn(name="user_name")
+	JobSeeker user;
+>>>>>>> 5368a16 commit 23/1
 
 	public Long getResumeId() {
 		return resumeId;

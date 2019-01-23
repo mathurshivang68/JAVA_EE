@@ -5,7 +5,7 @@ import javax.persistence.EntityManager;
 import com.niit.domain.User;
 import com.niit.topjobs.PersistenceManager;
 
-public class RegisterDAO {
+public class RegisterDao {
 	
 	public void persist(User entity) {
 		// TODO Auto-generated method stub
@@ -14,6 +14,9 @@ public class RegisterDAO {
 		em.persist(entity);
 		em.getTransaction().commit();
 		em.close();
+		
+//	PersistenceManager.INSTANCE.close();
+	
 	}
 
 }
