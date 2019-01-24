@@ -54,6 +54,7 @@ public class RegisterServlet extends HttpServlet {
 			js.setUserName(user_name);
 			js.setUserPass(user_pass);
 			js.setUserRole(ur);
+			
 				
 //			Resume rs=new Resume();
 //			Address addr=new Address();

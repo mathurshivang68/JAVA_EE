@@ -10,6 +10,7 @@ public class UserRole {
 
 	@Id
 	String user_name;
+	
 	String role_name;
 	public String getUser_name() {
 		return user_name;

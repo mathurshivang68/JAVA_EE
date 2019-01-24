@@ -23,7 +23,7 @@
 <p>Email: <%=request.getParameter("email") %></p>
 
 
-<form id="resume" action="ResumeServlet">
+<form id="resume" action="job/ResumeServlet">
   <div class=""row p-3 mb-2 bg-secondary text-primary">
     <div class="form-group col-md-6">
       <p><label for="name">Name:</label>

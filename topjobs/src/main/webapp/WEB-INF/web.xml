@@ -41,6 +41,8 @@
    <url-pattern>/applyJob</url-pattern>
  </servlet-mapping>
 
+
+
 <servlet>
    <servlet-name>showthisjob</servlet-name>
    <jsp-file>/WEB-INF/views/ShowThisJob.jsp</jsp-file>
@@ -79,7 +81,14 @@
    <url-pattern>/showresume</url-pattern>
  </servlet-mapping>
 
-
+<servlet>
+   <servlet-name>purchaselogin</servlet-name>
+   <jsp-file>/WEB-INF/views/PurchaseLogin.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+   <servlet-name>purchaselogin</servlet-name>
+   <url-pattern>/purchaselogin</url-pattern>
+ </servlet-mapping>
 
 
 <servlet>
@@ -122,7 +131,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>jobseekerview</servlet-name>
-    <url-pattern>/jsl</url-pattern>
+    <url-pattern>/job/jsl</url-pattern>
   </servlet-mapping>
   
 
@@ -168,7 +177,7 @@
 </servlet-mapping>
 <servlet-mapping>
 	<servlet-name>ResumeServlet</servlet-name>
-	<url-pattern>/ResumeServlet</url-pattern>
+	<url-pattern>/job/ResumeServlet</url-pattern>
 </servlet-mapping>
 
   <security-constraint>

@@ -40,12 +40,15 @@ public class ResumeServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		
+		
 		JobSeeker user=new JobSeeker();
 		user.setUserName(request.getRemoteUser());
+		
+		
 		ResumeRequest req=new ResumeRequest();
 		req.setUser(user);
 		req.setEmail(request.getParameter("email"));
-		req.setContactNum(request.getParameter("contactNum"));
+		req.setContactNum(request.getParameter("contactNo"));
 		
 		JSMarks jsm=new JSMarks();
 		
@@ -70,10 +73,11 @@ public class ResumeServlet extends HttpServlet {
 		
 		
 		ResumeService rs=new ResumeService();
+	
+		
 		rs.createANewResume(req);
 		
 		
-
 		
 		System.out.println("RESUME SERVLET ENTERED");
 		RequestDispatcher rd=request.getRequestDispatcher("/job/applyjob");  //apply jobs page forward

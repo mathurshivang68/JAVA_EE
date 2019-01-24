@@ -2,6 +2,7 @@ package com.niit.domain;
 import javax.persistence.Access;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -9,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.AccessType;
 import javax.persistence.CascadeType;
 
@@ -26,16 +28,15 @@ public class User {
 	String user_pass;
 	
 	//List<String> userRole;
-	
+	@Column
 	String fname;
+	
+	@Column
 	String lname;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 //	@JoinColumn(name="userRoleFK")
 	UserRole userRole;
-	
-	
-	
 	
 
 	@Override

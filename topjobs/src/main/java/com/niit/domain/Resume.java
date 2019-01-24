@@ -28,6 +28,11 @@ public class Resume {
 	@SequenceGenerator(name = "res_Sequence", sequenceName = "RES_SEQ")
 	Long resumeId;
 	
+	
+	@OneToOne(cascade = {CascadeType.MERGE})
+	//11  @JoinColumn(name="user_name", referencedColumnName = "user_name")
+	JobSeeker user;
+	
 //	@Column
 //	String name;
 	
@@ -65,9 +70,7 @@ public class Resume {
 		this.resumeText = resumeText;
 	}
 	
-	@OneToOne(cascade = {CascadeType.ALL})
-//	@JoinColumn(name="user_name")
-	JobSeeker user;
+	
 
 //
 //	@Column

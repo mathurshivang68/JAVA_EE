@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+
 import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -13,10 +15,12 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.niit.dao.JobsDao;
 import com.niit.domain.Job;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.JobSeekerEvents;
 import com.niit.domain.JobSkillLoc;
 import com.niit.domain.User;
 import com.niit.ro.JobRequest;
+import com.niit.topjobs.PersistenceManager;
 
 import junit.framework.Assert;
 
@@ -122,5 +126,23 @@ class JobsDaoTest {
 		Assert.assertTrue(js.size()>0);	
 				System.out.println(js.size());
 		
+	}
+	@Test
+	public void findJobSeekerByID(JobSeeker jobs) {
+		
+		
+		
+		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
+	    em.getTransaction()
+	        .begin();
+	    JobSeeker entity=em.find(JobSeeker.class, "pracheer");
+	    em.getTransaction()
+        .commit();
+    em.close();
+   System.out.println(entity);
+    
+    // PersistenceManager.INSTANCE.close();
+
+	    
 	}
 }

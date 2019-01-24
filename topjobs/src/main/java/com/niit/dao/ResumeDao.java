@@ -27,6 +27,10 @@ public class ResumeDao {
 		
 	}
 	
+	
+	
+	
+	
 
 	
 	public Resume ViewResumeEmployer(ResumeRequest obj)   //show all resumes

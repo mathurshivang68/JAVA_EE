@@ -16,6 +16,7 @@ import javax.persistence.metamodel.Metamodel;
 import org.hibernate.Hibernate;
 
 import com.niit.domain.Job;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.JobSeekerEvents;
 import com.niit.domain.User;
 import com.niit.ro.JobRequest;
@@ -140,4 +141,9 @@ public List<JobSeekerEvents> getAppliedJobs(User username)
 	
 	
 }
+
+
+
+
+
 }

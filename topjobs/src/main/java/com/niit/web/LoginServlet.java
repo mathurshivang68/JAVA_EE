@@ -32,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		if(request.isUserInRole("JobSeeker"))
 		{	
-			RequestDispatcher rd=request.getRequestDispatcher("/jsl");
+			RequestDispatcher rd=request.getRequestDispatcher("/job/jsl");
 			rd.forward(request, response);  
 		}
 		if(request.isUserInRole("Employer")) 
