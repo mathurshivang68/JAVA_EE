@@ -64,11 +64,13 @@ height=170,left=150,top=200,toolbar=0,status=0,"); value="Open Window"></td> --%
 
 </table>
 <button type="submit" class="btn btn-primary" value="SUBMIT">APPLY JOBS</button>
+
+
 </form>
 </div>
 
 
-
+<p><a href="logout">Logout</a></p>
 
 
 

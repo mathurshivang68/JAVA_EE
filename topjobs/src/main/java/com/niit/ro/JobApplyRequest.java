@@ -1,12 +1,13 @@
 package com.niit.ro;
 
 import com.niit.domain.Job;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
 
 public class JobApplyRequest {
 
 	Job job;
-	User user;
+	JobSeeker user;
 	Long eventId;
 	
 	
@@ -16,10 +17,10 @@ public class JobApplyRequest {
 	public void setJob(Job job) {
 		this.job = job;
 	}
-	public User getUser() {
+	public JobSeeker getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+	public void setUser(JobSeeker user) {
 		this.user = user;
 	}
 	public Long getEventId() {

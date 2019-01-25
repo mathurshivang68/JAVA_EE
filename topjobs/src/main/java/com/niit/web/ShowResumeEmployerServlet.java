@@ -47,7 +47,7 @@ public class ShowResumeEmployerServlet extends HttpServlet {
 		request.setAttribute("resume", req);
 		System.out.println(req);
 		System.out.println("Resume of Employer Servlet Entered");
-		request.getRequestDispatcher("showresume").forward(request, response);
+		request.getRequestDispatcher("/emp/showresume").forward(request, response);
 		
 		
 		

@@ -18,7 +18,7 @@ public class JobSeekerEvents {
 	
 	@OneToOne(cascade= {CascadeType.MERGE})
 //	@JoinColumn(name="user_name", referencedColumnName = "user_name")
-	User user;
+	JobSeeker user;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "event_Sequence")
@@ -39,7 +39,7 @@ public class JobSeekerEvents {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(JobSeeker user) {
 		this.user = user;
 	}
 

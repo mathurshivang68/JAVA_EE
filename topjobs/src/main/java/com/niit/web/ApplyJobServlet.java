@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.niit.domain.Job;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
 import com.niit.ro.JobApplyRequest;
 import com.niit.service.JobSeekerService;
@@ -53,7 +54,7 @@ public class ApplyJobServlet extends HttpServlet {
 			
 			
 		
-		User user=new User();
+		JobSeeker user=new JobSeeker();
 		user.setUserName(request.getRemoteUser());
 		Job job=new Job();
 	
@@ -69,7 +70,7 @@ public class ApplyJobServlet extends HttpServlet {
 		
 		System.out.println("APPLYJOB SERVLET ENTERED");
 		
-		RequestDispatcher rd=request.getRequestDispatcher("/showapplyjob");
+		RequestDispatcher rd=request.getRequestDispatcher("/job/showapplyjob");
 		
 		rd.forward(request, response);
 	

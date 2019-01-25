@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.niit.dao.RegisterDao;
 import com.niit.domain.Address;
+import com.niit.domain.Employer;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.Resume;
 import com.niit.domain.User;
@@ -69,7 +70,21 @@ public class RegisterServlet extends HttpServlet {
 		
 		}
 		
+		 if(request.getParameter("role").equals("Employer"))
+		 {	
+			 Employer emp=new Employer();
+			 emp.setFname(fname);
+			 emp.setLname(lname);
+			 emp.setUserName(user_name);
+			 emp.setUserPass(user_pass);
+			 emp.setActive(true);
+			 emp.setUserRole(ur);
+			 
+			 RegisterUser(emp);
+						 
+	 	 }
 		
+		 
 		
 		
 		

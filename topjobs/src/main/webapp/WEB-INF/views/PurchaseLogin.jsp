@@ -37,7 +37,7 @@ function perc1() {
 	<TABLE cellSpacing=1 cellPadding=1 border=1>
 	  <TBODY>
 	  <TR>
-	    <TD align=middle colSpan=3><B><FONT size=4>Percentage Calculator</FONT></B> 
+	    <TD align=middle colSpan=3><B><FONT size=4>Discount Calculator</FONT></B> 
 	      </TD>
 	  <tr>
 	  	<td>No of Logins: <input size=5 name=logins></TD>

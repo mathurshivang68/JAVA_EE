@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.niit.domain.Employer;
+import com.niit.domain.Job;
 import com.niit.service.JobService;
 
 /**
@@ -33,12 +35,15 @@ public class ShowJobServlet extends HttpServlet {
 		response.getWriter().append("Served at ShowJobSer: ").append(request.getContextPath());
 		
 		JobService js=new JobService();
+		Employer emp=new Employer();
+		emp.setUserName(request.getRemoteUser());
 		
-		List ls=js.getAllJobs();
-		request.setAttribute("JobList", ls);
+		
+		List<Job> ls=js.showEmployerJobs(emp);
+	request.setAttribute("JobList", ls);
 		
 		System.out.println("SHOWJOB SERVLET ENTERED");
-		RequestDispatcher rd=request.getRequestDispatcher("/empjob"); 		
+		RequestDispatcher rd=request.getRequestDispatcher("/emp/empjob"); 		
         rd.forward(request, response);  
 		
 		

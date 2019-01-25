@@ -11,7 +11,10 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import com.niit.dao.JobsDao;
+import com.niit.domain.Employer;
 import com.niit.domain.Job;
+import com.niit.domain.JobSeeker;
+import com.niit.domain.JobSeekerEvents;
 import com.niit.domain.User;
 import com.niit.ro.JobRequest;
 import com.niit.topjobs.PersistenceManager;
@@ -49,11 +52,21 @@ public class JobService {
 		return jd.findJobByIdEager(job);
 	}
 		
+	public List<JobSeekerEvents> showAppliedJobs(JobSeeker jobs)
+	{
+		JobsDao jd=new JobsDao();
+		return jd.getAppliedJobs(jobs);
+	}
 	
-	
-	
-	}		
+	public List<Job> showEmployerJobs(Employer emp)
+	{
+		JobsDao jd=new JobsDao();
+		return jd.ViewJobByEmployer(emp);
+	}
 
+	
 
+}
+	
 
 	

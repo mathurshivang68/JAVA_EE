@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.niit.domain.Employer;
 import com.niit.domain.User;
 import com.niit.ro.JobRequest;
 import com.niit.service.JobService;
@@ -44,7 +45,7 @@ public class JobServlet extends HttpServlet {
 		req.setJobTitle(request.getParameter("jobTitle"));
 		req.setJobDescription(request.getParameter("jobDesc"));
 		
-		User user=new User();
+		Employer user=new Employer();
 		user.setUserName(request.getRemoteUser());
 		
 		req.setUser(user);
@@ -59,7 +60,7 @@ public class JobServlet extends HttpServlet {
 		
 		
 		System.out.println("JOB SERVLET ENTERED");
-		RequestDispatcher rd=request.getRequestDispatcher("/empl"); 		 
+		RequestDispatcher rd=request.getRequestDispatcher("/emp/empl"); 		 
         rd.forward(request, response);  
 		
 		

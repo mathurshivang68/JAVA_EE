@@ -14,6 +14,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.niit.dao.JobsDao;
+import com.niit.domain.Employer;
 import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.JobSeekerEvents;
@@ -113,11 +114,11 @@ class JobsDaoTest {
 	{
 		JobsDao jd=new JobsDao();
 		JobSeekerEvents job=new JobSeekerEvents();
-		User user=new User();
+		JobSeeker user=new JobSeeker();
 		
 		JobSeekerEvents jse=new JobSeekerEvents();
 
-		user.setUserName("diwakar10");
+		user.setUserName("gyan");
 		
 		jse.setUser(user);
 		
@@ -143,6 +144,20 @@ class JobsDaoTest {
     
     // PersistenceManager.INSTANCE.close();
 
-	    
+	    	}
+		
+	@Test
+	public void testViewJobByEmployer()
+	{
+		Employer empl=new Employer();
+		empl.setUserName("trump");
+		JobsDao jd=new JobsDao();
+		
+		List<Job> jobs=jd.ViewJobByEmployer(empl);
+		
+		Assert.assertTrue(jobs.size()>0);	
+				System.out.println(jobs.size());
+		
+		
 	}
 }

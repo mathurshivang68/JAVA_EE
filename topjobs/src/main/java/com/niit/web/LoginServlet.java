@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
 		}
 		if(request.isUserInRole("Employer")) 
 		{
-			RequestDispatcher rd=request.getRequestDispatcher("/empl");
+			RequestDispatcher rd=request.getRequestDispatcher("/emp/empl");
 			rd.forward(request, response);
 		}
 		

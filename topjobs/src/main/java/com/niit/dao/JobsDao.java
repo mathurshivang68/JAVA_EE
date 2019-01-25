@@ -14,10 +14,15 @@ import javax.persistence.metamodel.EntityType;
 import javax.persistence.metamodel.Metamodel;
 
 import org.hibernate.Hibernate;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.omg.CORBA.Request;
 
+import com.niit.domain.Employer;
 import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.JobSeekerEvents;
+import com.niit.domain.Resume;
 import com.niit.domain.User;
 import com.niit.ro.JobRequest;
 import com.niit.topjobs.PersistenceManager;
@@ -53,6 +58,37 @@ public class JobsDao {
 		   
 		   
 		}
+	
+	public List<Job> ViewJobByEmployer(Employer obj)   //show jobs by employer
+	{
+		EntityManager em=PersistenceManager.INSTANCE.getEntityManager();
+		em.getTransaction().begin();
+		
+		CriteriaBuilder cb=em.getCriteriaBuilder();
+		CriteriaQuery<Job> cq = cb.createQuery(Job.class);
+		
+		Root<Job> root=cq.from(Job.class);
+		cq.select(root);
+		
+		
+		
+		
+		Metamodel m = em.getMetamodel();
+		EntityType<Job> rEntity = m.entity(Job.class);
+		Expression job_exp = root.get(rEntity.getSingularAttribute("usr"));
+		Predicate p1 = cb.equal(job_exp,obj);
+		cq.where(p1);
+		
+		
+		
+		List<Job> dataObj= em.createQuery(cq).getResultList();
+		em.getTransaction().commit();
+		em.close();
+		
+		
+		
+		return dataObj;
+	}
 	
 	public  Job findJobByID(Job job) {
 		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
@@ -112,7 +148,7 @@ return entity;
 //	
 //	}
 
-public List<JobSeekerEvents> getAppliedJobs(User username)
+public List<JobSeekerEvents> getAppliedJobs(JobSeeker js)
 {
 	EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
 	em.getTransaction().begin();
@@ -126,8 +162,8 @@ public List<JobSeekerEvents> getAppliedJobs(User username)
 	Metamodel m=em.getMetamodel();
 	EntityType<JobSeekerEvents> Apj_=m.entity(JobSeekerEvents.class);
 	
-	Expression<?> ex=root.get(Apj_.getSingularAttribute("jobId"));
-	Predicate p1=cb.equal(ex,username);
+	Expression<?> ex=root.get(Apj_.getSingularAttribute("user"));
+	Predicate p1=cb.equal(ex, js);
 	
 	cq.where(p1);
 	
@@ -141,7 +177,6 @@ public List<JobSeekerEvents> getAppliedJobs(User username)
 	
 	
 }
-
 
 
 

@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.niit.dao.JobEventDao;
 import com.niit.domain.Job;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.JobSeekerEvents;
 import com.niit.domain.User;
 import com.niit.ro.JobApplyRequest;
@@ -24,7 +25,7 @@ class JobEventDaoTest {
 
 	jse.setJob(j);
 	
-	User user=new User();
+	JobSeeker user=new JobSeeker();
 	user.setUserName("shivang");
 	jse.setUser(user);
 	

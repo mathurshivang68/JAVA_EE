@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import com.niit.domain.Job;
+import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
 import com.niit.ro.JobApplyRequest;
 import com.niit.service.JobSeekerService;
@@ -22,7 +23,7 @@ class JobSeekerServiceTest {
 		request.setJob(job);
 		
 
-		User user=new User();
+		JobSeeker user=new JobSeeker();
 		user.setUserName("diwakar10");
 		request.setUser(user);
 		
