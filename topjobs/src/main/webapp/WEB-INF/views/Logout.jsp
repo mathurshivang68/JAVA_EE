@@ -9,5 +9,6 @@ pageEncoding="ISO-8859-1"%>
 <body>
 <% session.invalidate(); %>
 <p>You have been successfully logout</p>
+<a href="LoginServlet">Homepage</a>
 </body>
 </html>

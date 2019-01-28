@@ -18,6 +18,6 @@
     <body style="background-color: lightsalmon">
         ${requestScope.supsuc}<br>
         <p>You have registered successfully with TOPJOBS as a <%=request.getParameter("role")  %></p>
-        <a href="/topjobs/login">Click here to login</a>
+        <a href="LoginServlet">Click here to login</a>
     </body>
 </html>

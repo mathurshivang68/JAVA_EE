@@ -29,6 +29,9 @@
 </div>
 
 <a href="ShowResumeEmployerServlet">SHOW RESUME</a>
+
+<p><a href="/emp/empjob">Show Jobs I have Posted</a></p>
+
 </div>
 </body>
 </html>

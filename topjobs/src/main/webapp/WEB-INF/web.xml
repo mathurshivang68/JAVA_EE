@@ -145,6 +145,15 @@
     <servlet-name>employerview</servlet-name>
     <url-pattern>/emp/empl</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>adminview</servlet-name>
+    <jsp-file>/WEB-INF/views/AdminLanding.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>adminview</servlet-name>
+    <url-pattern>/admin/al</url-pattern>
+  </servlet-mapping>
 
 
 <servlet>
@@ -181,49 +190,6 @@
 	<url-pattern>/job/ResumeServlet</url-pattern>
 </servlet-mapping>
 
-  <security-constraint>
-  <web-resource-collection>
-    <web-resource-name>Employer</web-resource-name>
-    <description>Matches Employer pages</description>
-    <url-pattern>/emp/*</url-pattern>
-    <url-pattern>/LoginServlet</url-pattern>
-     <http-method>GET</http-method>  
-     <http-method>POST</http-method>
-  </web-resource-collection>
-  <auth-constraint>
-     <role-name>Employer</role-name>
-  </auth-constraint>
-</security-constraint>
-<security-role>
-  <role-name>Employer</role-name>
-</security-role>
-
- <security-constraint>
-<web-resource-collection>
-    <web-resource-name>JobSeeker</web-resource-name>
-    <description>Matches JobSeeker pages</description>
-    <url-pattern>/job/*</url-pattern>
-   <url-pattern>/LoginServlet</url-pattern>
-     <http-method>GET</http-method>  
-     <http-method>POST</http-method>
-  </web-resource-collection>
-  <auth-constraint>
-     <role-name>JobSeeker</role-name>
-  </auth-constraint>
-</security-constraint>
-<security-role>
-  <role-name>JobSeeker</role-name>
-</security-role>
-
-<login-config>
-		<auth-method>FORM</auth-method>
-		<realm-name>jdbcRealm</realm-name>
-		<form-login-config>
-			<form-login-page>/login</form-login-page>
-			<form-error-page>/loginfailed</form-error-page>
-		</form-login-config>
-</login-config>
-  
 
 <servlet>
    <servlet-name>applyjob</servlet-name>
@@ -326,6 +292,64 @@
  	<url-pattern>/job/ShowResumeJobSeekerServlet</url-pattern>
  </servlet-mapping>
 
+
+
+  <security-constraint>
+  <web-resource-collection>
+    <web-resource-name>Employer</web-resource-name>
+    <description>Matches Employer pages</description>
+    <url-pattern>/emp/*</url-pattern>
+    <url-pattern>/LoginServlet</url-pattern>
+     <http-method>GET</http-method>  
+     <http-method>POST</http-method>
+  </web-resource-collection>
+  <auth-constraint>
+     <role-name>Employer</role-name>
+  </auth-constraint>
+</security-constraint>
+
+
+ <security-constraint>
+<web-resource-collection>
+    <web-resource-name>JobSeeker</web-resource-name>
+    <description>Matches JobSeeker pages</description>
+    <url-pattern>/job/*</url-pattern>
+   <url-pattern>/LoginServlet</url-pattern>
+     <http-method>GET</http-method>  
+     <http-method>POST</http-method>
+  </web-resource-collection>
+  <auth-constraint>
+     <role-name>JobSeeker</role-name>
+  </auth-constraint>
+</security-constraint>
+
+ <security-constraint>
+<web-resource-collection>
+    <web-resource-name>Admin</web-resource-name>
+    <description>Matches Admin pages</description>
+    <url-pattern>/admin/*</url-pattern>
+   <url-pattern>/LoginServlet</url-pattern>
+     <http-method>GET</http-method>  
+     <http-method>POST</http-method>
+  </web-resource-collection>
+  <auth-constraint>
+     <role-name>Admin</role-name>
+  </auth-constraint>
+</security-constraint>
+
+<security-role> <role-name>Employer</role-name> </security-role>
+<security-role> <role-name>JobSeeker</role-name> </security-role>
+<security-role> <role-name>Admin</role-name> </security-role>
+
+<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>jdbcRealm</realm-name>
+		<form-login-config>
+			<form-login-page>/login</form-login-page>
+			<form-error-page>/loginfailed</form-error-page>
+		</form-login-config>
+</login-config>
+  
 
 
 </web-app>

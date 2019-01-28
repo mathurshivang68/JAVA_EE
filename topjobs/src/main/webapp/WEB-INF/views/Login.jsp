@@ -139,10 +139,7 @@
 		<p>Fill details to Sign In</p>
 			<hr>	
 										  
-             <p>Login as
-                    	<input type="radio" name="role" value="JobSeeker" checked="checked" />JobSeeker
-                        <input type="radio" name="role" value="Employer" />Employer
-						<input type="radio" name="role" value="Admin" />Admin</p>
+             <p>Login as</p>
 						
 						<p><label for="userid"><b>User ID</b></label>
 						<input type="text" style="border:none" placeholder="Enter User ID " name="j_username" required/></p>
