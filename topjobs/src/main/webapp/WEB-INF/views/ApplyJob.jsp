@@ -49,7 +49,7 @@ language="java" contentType="text/html; charset=ISO-8859-1"
 					<td>  Company Name: <c:out value="${job.jobName}"></c:out></td>
 					<td>${job.jobId}<input type="checkbox" name="jobs" value="${job.jobId}"></td>
 					
-					<td><form action="/topjobs/job/ShowThisJobServlet" target="_blank">
+					<td><form action="ShowThisJobServlet" target="_blank">
 					<input type="hidden" name="thisJob" value="${job.jobId}">			
 					<input type="submit" value="SHOW">
 					

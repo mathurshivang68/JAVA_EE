@@ -10,12 +10,14 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import com.niit.dao.EmployerDao;
 import com.niit.dao.JobsDao;
 import com.niit.domain.Employer;
 import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.JobSeekerEvents;
 import com.niit.domain.User;
+import com.niit.ro.EmployerRequest;
 import com.niit.ro.JobRequest;
 import com.niit.topjobs.PersistenceManager;
 
@@ -65,6 +67,20 @@ public class JobService {
 	}
 
 	
+	public void purchaseLogin(EmployerRequest req)
+	{
+		
+		
+		Employer emp=new Employer();
+		emp.setUserName(req.getEmp().getUserName());
+		emp.setPurchaseDate(req.getPurchasedate());
+		emp.setActive(req.isActive());
+		emp.setLoginsPurchased(req.getLoginspurchased());
+		
+		EmployerDao empd=new EmployerDao();
+		empd.PurchaseLogin(emp);
+		
+	}
 
 }
 	

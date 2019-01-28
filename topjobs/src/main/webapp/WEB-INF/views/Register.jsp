@@ -140,8 +140,7 @@
 				
 				 <p>Register as 
                     	<input type="radio" name="role" value="JobSeeker" checked="checked" />JobSeeker
-                        <input type="radio" name="role" value="Employer" />Employer
-						<input type="radio" name="role" value="Admin" />Admin</p>
+                        <input type="radio" name="role" value="Employer" />Employer</p>
 			
 				
 				<p><label for="fname"><b>First Name</b></label>

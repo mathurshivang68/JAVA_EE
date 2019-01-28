@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.niit.dao.EmployerDao;
 import com.niit.dao.JobsDao;
 import com.niit.domain.Employer;
 import com.niit.domain.Job;
@@ -31,8 +32,8 @@ class JobsDaoTest {
 	void testPersist() throws JsonParseException, JsonMappingException, IOException {
 		JobsDao jd= new JobsDao();
 		Job job=new Job();
-		job.setJobDescription("Job1");
-		job.setJobName("CTS");
+		job.setJobDescription("Putin Job");
+		job.setJobName("CTS Ltd");
 		job.setJobTitle("Developer");
 		
 		
@@ -57,8 +58,8 @@ class JobsDaoTest {
 		job.setJskill(ls);
 		
 		User user=new User();
-		  user.setUserName("uname2");
-		    user.setUserPass("pwd2");
+		  user.setUserName("putin");
+		    user.setUserPass("12345");
 		    job.setUser(user);
 		    
 		    ObjectMapper objectMapper = new ObjectMapper();
@@ -147,7 +148,7 @@ class JobsDaoTest {
 	    	}
 		
 	@Test
-	public void testViewJobByEmployer()
+	public void testViewJobByEmployer()  //jobs by this employer
 	{
 		Employer empl=new Employer();
 		empl.setUserName("trump");
@@ -160,4 +161,22 @@ class JobsDaoTest {
 		
 		
 	}
+	
+	@Test
+	public void testPurchaseLogin()
+	{
+		Employer empl=new Employer();
+		empl.setUserName("trump");
+		empl.setUserPass("12345");
+		
+		EmployerDao empd=new EmployerDao();
+		empd.PurchaseLogin(empl);
+		
+		
+		
+		
+	}
+	
+	
+	
 }

@@ -43,6 +43,9 @@ List<Job> ls=js.showEmployerJobs(emp);
 				<tr>
 					<td><c:out value="${job.jobDescription}"></c:out></td>
 					<td><c:out value="${job.jobTitle}"></c:out></td>
+					<a href=""><td>Show Resume against this Job</td></a>
+
+					
 					<td><input type="checkbox" value=""></td>
 				</tr>
 </c:forEach>

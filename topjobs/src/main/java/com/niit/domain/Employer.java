@@ -13,6 +13,8 @@ public class Employer extends User{
 	int loginsPurchased;
 	Date purchaseDate;
 	Date endDate;
+	
+	
 	public boolean isActive() {
 		return isActive;
 	}
