@@ -14,7 +14,7 @@
 <h1>Lets Create a New Job</h1> 
 </div>
 
-<form id="newjob" action="JobServlet"> 																								 <!job servlet>
+<form id="newjob" action="/topjobs/emp/JobServlet"> 																								 <!job servlet>
   <div class=""row p-3 mb-2 bg-secondary text-primary">
     <div class="form-group col-md-6">
       <p><label for="jobTitle">Job Title:</label>
@@ -141,7 +141,7 @@ HTML/CSS <input type="checkbox" name="jobskills" value="html"  /><br />
 
 </form>
 
-<p><a href="/topjobs/ShowJobServlet">Show Jobs</p></a>
+<p><a href="/topjobs/emp/ShowJobServlet">Show Jobs I have Posted</a></p>
 
 
 

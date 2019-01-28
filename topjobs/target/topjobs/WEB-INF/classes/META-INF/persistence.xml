@@ -13,7 +13,7 @@
 	  <class>com.niit.domain.JobSeekerEvents</class>
 	  <class>com.niit.domain.JobSeeker</class>
 	  <class>com.niit.domain.UserRole</class>
-	  		  
+	  <class>com.niit.domain.Employer</class>		  
       		  
       
 		<properties>
