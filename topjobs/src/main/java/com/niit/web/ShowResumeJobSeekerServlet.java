@@ -35,27 +35,17 @@ public class ShowResumeJobSeekerServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	
 		ResumeRequest req=new ResumeRequest();
-		JobSeeker user=new JobSeeker();
-		
-		user.setUserName(request.getRemoteUser());
-		
-		req.setUser(user);
+		JobSeeker jobSeeker=new JobSeeker();
+		jobSeeker.setUser_name(request.getRemoteUser());
+		req.setJobSeeker(jobSeeker);
 	
 		ResumeService res=new ResumeService();
 		req=res.viewResumeJobSeeker(req);
-		
 		request.setAttribute("resume", req);
-		
 		System.out.println(req);
 		
-		RequestDispatcher rd=request.getRequestDispatcher("/job/showresume");
-		
+		RequestDispatcher rd=request.getRequestDispatcher("/showresume");
 		rd.forward(request, response);
-		
-		
-		
-		
-	
 	
 	}
 

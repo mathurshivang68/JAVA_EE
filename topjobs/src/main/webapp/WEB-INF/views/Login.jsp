@@ -149,7 +149,7 @@
 					
 						<input type="submit" class="btn" value="LOGIN"/>
 						
-						<p>New User?<a href="register">Register</a></p>																									 
+						<p>New User?<a href="/topjobs/register">Register</a></p>																									 
                         
             
 </fieldset>

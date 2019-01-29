@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.niit.dao.JobsDao;
+import com.niit.dao.JobDAO;
 import com.niit.domain.Job;
 import com.niit.ro.JobRequest;
 import com.niit.service.JobService;
@@ -37,26 +37,12 @@ public class ShowThisJobServlet extends HttpServlet {
 		String id=request.getParameter("thisJob");
 		
 		
-		JobsDao jd=new JobsDao();
-		Job req=new Job(); 				//Calling from job object using job entity
+		JobDAO jobDAO=new JobDAO();
+		Job job=new Job(); 				//Calling from job object using job entity
 		
-		req.setJobId(Long.valueOf(id));
-		Job js=jd.findJobByIdEager(req);
-		
-		
-		
-		
-		
-//		JobRequest jr=new JobRequest();
-//		jr.setJobId(Long.valueOf(id));
-//		
-//		JobService js=new JobService();
-//		
-//		
-//		Job job=js.showJobById(jr);
-//		
-//		
-		request.setAttribute("thisJob", js);
+		job.setJobId(Long.valueOf(id));
+		job=jobDAO.findJobByID(job);
+		request.setAttribute("thisJob", job);
 		
 				
 		System.out.println("SHOWTHIS JOB SERVLET ENTERED");

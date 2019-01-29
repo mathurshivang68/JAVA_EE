@@ -27,7 +27,7 @@ ResumeRequest resume=(ResumeRequest)request.getAttribute("resume");  //resume is
 <tr>	<td>Times Viewed: <c:out value="${res.timesViewed}"/></td></tr>
 <tr>		<td>Email: <c:out value="${res.email}"/></td></tr>
 <tr>		<td>Contact Number: <c:out value="${res.contactNum}"/></td></tr>
-<tr>		<td>Address: <c:out value="${res.addr}"/></td></tr>
+<tr>		<td>Address: <c:out value="${res.address}"/></td></tr>
 					
 <table>
 <tr>Resume Skills: </tr>

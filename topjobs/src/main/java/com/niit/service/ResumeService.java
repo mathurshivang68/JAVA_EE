@@ -6,8 +6,8 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.niit.dao.JobSeekerDao;
-import com.niit.dao.ResumeDao;
+import com.niit.dao.JobSeekerDAO;
+import com.niit.dao.ResumeDAO;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.Resume;
 import com.niit.domain.User;
@@ -31,20 +31,20 @@ public class ResumeService {
 		
 		res.setResumeText(resumeText);
 		
-		JobSeekerDao jsd=new JobSeekerDao();
+		JobSeekerDAO jsd=new JobSeekerDAO();
 		
-		JobSeeker js=jsd.findJobSeekerByID(req.getUser());
+		JobSeeker js=jsd.findJobSeekerByUsername(req.getJobSeeker());
 		
-		res.setUser(js);
+		res.setJobSeeker(js);
 		js.setResume(res);
 		
-		ResumeDao rd=new ResumeDao();
+		ResumeDAO rd=new ResumeDAO();
 		rd.merge(res);
 	}
 	
 	public ResumeRequest viewResumeEmployer(ResumeRequest obj) throws JsonParseException, JsonMappingException, IOException {
-		ResumeDao rDAO = new ResumeDao();
-		Resume resume = rDAO.ViewResumeEmployer(obj);
+		ResumeDAO rDAO = new ResumeDAO();
+		Resume resume = rDAO.viewResumeEmployer(obj);
 
 		ObjectMapper om = new ObjectMapper();
 		ResumeRequest resumeReq = om.readValue(resume.getResumeText(), ResumeRequest.class);
@@ -54,7 +54,7 @@ public class ResumeService {
 	}
 	
 	public ResumeRequest viewResumeJobSeeker(ResumeRequest obj) throws JsonParseException, JsonMappingException, IOException {
-		ResumeDao rDAO = new ResumeDao();
+		ResumeDAO rDAO = new ResumeDAO();
 		Resume resume = rDAO.viewResumeJobSeeker(obj);
 
 		ObjectMapper om = new ObjectMapper();

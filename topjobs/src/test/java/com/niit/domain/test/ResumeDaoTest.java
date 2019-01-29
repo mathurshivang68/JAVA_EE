@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.niit.dao.ResumeDao;
+import com.niit.dao.ResumeDAO;
 import com.niit.domain.Address;
 import com.niit.domain.JSMarks;
 import com.niit.domain.JobSeeker;
@@ -21,22 +21,21 @@ class ResumeDaoTest {
 
 	@Test
 	void testPersist() throws IOException {
-	ResumeDao rd=new ResumeDao();
+	ResumeDAO rd=new ResumeDAO();
 	Resume res=new Resume();
 	JobSeeker user=new JobSeeker();
-	user.setUserName("Shivang112");
-	user.setUserName("a1");
-	user.setUserPass("12345");
-	res.setUser(user);
+	user.setUser_name("Shivang112");
+	user.setUser_pass("12345");
+	res.setJobSeeker(user);
 	res.setEmail("mathur@mail.com");
 	
 	Address add=new Address();
 	add.setCity("Delhi");
 	add.setAddLine("Anekant Apt");
 	add.setState("New Delhi");
-	add.setPin(11009);
+	add.setPin("11009");
 
-	res.setAddr(add);	
+	res.setAddress(add);	
 	
 	
 	JSMarks jm=new JSMarks();

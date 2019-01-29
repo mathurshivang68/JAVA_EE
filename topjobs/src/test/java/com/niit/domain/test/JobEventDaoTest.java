@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.niit.dao.JobEventDao;
+import com.niit.dao.JobSeekerEventsDAO;
 import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.JobSeekerEvents;
@@ -16,23 +16,16 @@ class JobEventDaoTest {
 
 	@Test
 	void test() {
-	JobEventDao	jed=new JobEventDao();
-	JobSeekerEvents jse=new JobSeekerEvents();
+	JobSeekerEventsDAO	jed=new JobSeekerEventsDAO();
+	JobSeekerEvents jobSeekerEvents=new JobSeekerEvents();
+	Job job=new Job();
+	job.setJobId(102L);
+	jobSeekerEvents.setJob(job);
+	JobSeeker jobSeeker=new JobSeeker();
+	jobSeeker.setUser_name("shivang");
+	jobSeekerEvents.setJobSeeker(jobSeeker);
 	
-		
-	Job j=new Job();
-	j.setJobId(102L);
-
-	jse.setJob(j);
-	
-	JobSeeker user=new JobSeeker();
-	user.setUserName("shivang");
-	jse.setUser(user);
-	
-	jed.persist(jse);
-	
-	//System.out.println(jse);
-	
+	jed.persist(jobSeekerEvents);
 	}
 
 	

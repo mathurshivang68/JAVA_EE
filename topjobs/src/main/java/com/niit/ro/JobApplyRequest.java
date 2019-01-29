@@ -6,9 +6,9 @@ import com.niit.domain.User;
 
 public class JobApplyRequest {
 
-	Job job;
-	JobSeeker user;
-	Long eventId;
+	private Job job;
+	private JobSeeker jobSeeker;
+	private Long eventId;
 	
 	
 	public Job getJob() {
@@ -17,11 +17,11 @@ public class JobApplyRequest {
 	public void setJob(Job job) {
 		this.job = job;
 	}
-	public JobSeeker getUser() {
-		return user;
+	public JobSeeker getJobSeeker() {
+		return jobSeeker;
 	}
-	public void setUser(JobSeeker user) {
-		this.user = user;
+	public void setJobSeeker(JobSeeker jobSeeker) {
+		this.jobSeeker = jobSeeker;
 	}
 	public Long getEventId() {
 		return eventId;

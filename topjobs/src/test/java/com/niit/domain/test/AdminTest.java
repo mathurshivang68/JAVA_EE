@@ -19,8 +19,8 @@ class AdminTest {
 		User user = new User();
 		user.setFname("Gyanendra");
 		user.setLname("Sir");
-		user.setUserName("admin");
-		user.setUserPass("admin");
+		user.setUser_name("admin");
+		user.setUser_pass("admin");
 		
 		UserRole ur = new UserRole();
 		ur.setRole_name("Admin");

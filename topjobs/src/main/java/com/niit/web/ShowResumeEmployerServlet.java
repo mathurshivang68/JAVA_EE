@@ -32,13 +32,13 @@ public class ShowResumeEmployerServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		
-		JobSeeker user=new JobSeeker();
-		user.setUserName(request.getRemoteUser());
+		JobSeeker jobSeeker=new JobSeeker();
+		jobSeeker.setUser_name(request.getRemoteUser());
 		ResumeRequest req=new ResumeRequest();
 		
 		//Resume rsm= new Resume();
 		
-		req.setUser(user);
+		req.setJobSeeker(jobSeeker);
 		
 		ResumeService res=new ResumeService();
 		

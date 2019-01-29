@@ -17,16 +17,12 @@ class JobSeekerServiceTest {
 	{
 		JobSeekerService jss=new JobSeekerService();
 		JobApplyRequest request= new JobApplyRequest();
-		
 		Job job=new Job();
 		job.setJobId(502L);
 		request.setJob(job);
-		
-
-		JobSeeker user=new JobSeeker();
-		user.setUserName("diwakar10");
-		request.setUser(user);
-		
+		JobSeeker jobSeeker=new JobSeeker();
+		jobSeeker.setUser_name("diwakar10");
+		request.setJobSeeker(jobSeeker);
 		jss.applyJob(request);
 	}
 }

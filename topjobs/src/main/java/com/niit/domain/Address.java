@@ -5,7 +5,8 @@ public class Address {
 	private String addLine;
 	private String city;
 	private String state;
-	private int pin;
+	private String pin;
+	
 	public String getAddLine() {
 		return addLine;
 	}
@@ -24,13 +25,13 @@ public class Address {
 	public void setState(String state) {
 		this.state = state;
 	}
-	public int getPin() {
+
+	public String getPin() {
 		return pin;
 	}
-	public void setPin(int pin) {
+	public void setPin(String pin) {
 		this.pin = pin;
 	}
-	
 	public Address() {
 		super();
 	}

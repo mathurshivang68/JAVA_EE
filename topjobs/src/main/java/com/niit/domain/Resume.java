@@ -21,41 +21,37 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Entity
 public class Resume {
 	
-	
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "res_Sequence")
 	@SequenceGenerator(name = "res_Sequence", sequenceName = "RES_SEQ")
-	Long resumeId;
-	
+	private Long resumeId;
 	
 	@OneToOne(cascade = {CascadeType.MERGE})
-	//11  @JoinColumn(name="user_name", referencedColumnName = "user_name")
-	JobSeeker user;
-	
-//	@Column
-//	String name;
-	
-	@Column
-	long timesViewed;
-	
-	@Column
-	String email;
-	
-	@Column
-	String contactNum;
+	private JobSeeker jobSeeker;
 	
 	@Transient
-	Address addr;
+	private String name;
+	
+	@Column
+	private Long timesViewed;
+	
+	@Transient
+	private String email;
+	
+	@Transient
+	private String contactNum;
+	
+	@Transient
+	private Address address;
 		
 	@Transient
-	List<String> skills;
+	private List<String> skills;
 	
 	@Transient
-	JSMarks jsMarks;
+	private JSMarks jsMarks;
 	
 	@Column(columnDefinition="varchar(1000)")
-	String resumeText;
+	private String resumeText;
 	
 	@JsonIgnore
 	@Column(columnDefinition="varchar(1000)")
@@ -66,109 +62,82 @@ public class Resume {
 
 	@JsonProperty
 	public void setResumeText(String resumeText) throws JsonProcessingException {
-		
 		this.resumeText = resumeText;
 	}
-	
-	
 
-//
-//	@Column
-//	public String getName() {
-//		return name;
-//	}
-//
-//	
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-
-		public Long getResumeId() {
+	public Long getResumeId() {
 		return resumeId;
 	}
-
 
 	public void setResumeId(Long resumeId) {
 		this.resumeId = resumeId;
 	}
 
-	@Column
+	public JobSeeker getJobSeeker() {
+		return jobSeeker;
+	}
+
+	public void setJobSeeker(JobSeeker jobSeeker) {
+		this.jobSeeker = jobSeeker;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Long getTimesViewed() {
+		return timesViewed;
+	}
+
+	public void setTimesViewed(Long timesViewed) {
+		this.timesViewed = timesViewed;
+	}
+
 	public String getEmail() {
 		return email;
 	}
-
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	@Column
 	public String getContactNum() {
 		return contactNum;
 	}
 
-	
 	public void setContactNum(String contactNum) {
 		this.contactNum = contactNum;
 	}
 
-	@Transient
-	public Address getAddr() {
-		return addr;
+	public Address getAddress() {
+		return address;
 	}
 
-
-	public void setAddr(Address addr) {
-		this.addr = addr;
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
-	@Transient
 	public List<String> getSkills() {
 		return skills;
 	}
-
 
 	public void setSkills(List<String> skills) {
 		this.skills = skills;
 	}
 
-	@Transient
 	public JSMarks getJsMarks() {
 		return jsMarks;
 	}
 
-
 	public void setJsMarks(JSMarks jsMarks) {
 		this.jsMarks = jsMarks;
 	}
-
-
-	String toJSON() throws JsonProcessingException
-	{
-		ObjectMapper objectMapper = new ObjectMapper();
-	    
-	    String resumeString = objectMapper.writeValueAsString(this);
-		return resumeString;
-	}
-
-	public long getTimesViewed() {
-		return timesViewed;
-	}
-
-	public void setTimesViewed(long timesViewed) {
-		this.timesViewed = timesViewed;
-	}
-
-	public JobSeeker getUser() {
-		return user;
-	}
-
-	public void setUser(JobSeeker user) {
-		this.user = user;
-	}
-
-
 	
 	
-
+	
 }
+	

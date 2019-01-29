@@ -7,13 +7,13 @@
 
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 	  <class>com.niit.domain.Resume</class> 
-	  <class>com.niit.domain.Job</class>	
-	  <class>com.niit.domain.JobSkillLoc</class>
+	  <class>com.niit.domain.Job</class>
 	  <class>com.niit.domain.User</class>
 	  <class>com.niit.domain.JobSeekerEvents</class>
 	  <class>com.niit.domain.JobSeeker</class>
 	  <class>com.niit.domain.UserRole</class>
-	  <class>com.niit.domain.Employer</class>		  
+	  <class>com.niit.domain.Employer</class>
+	  <class>com.niit.domain.PurchaseEvents</class>		  
       		  
       
 		<properties>

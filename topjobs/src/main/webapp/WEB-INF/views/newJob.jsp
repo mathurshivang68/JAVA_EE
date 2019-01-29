@@ -33,111 +33,17 @@
       <textarea  rows="4" cols="50" name="jobDesc" id="jobDesc" form="newjob">
     </textarea>
     </div>
+   <br>
    
-     <div class="form-group col-md-4">
-      <label for="jobState1">Working City 1</label>
-      <select id="jobState1" class="form-control">
-        <option selected>Choose...</option>
-  
-        
-<option>Kolkata</option>
-<option>Chennai</option>
-<option>Bangalore</option>
-<option>Gurgaon</option>
-<option>Delhi</option>
-<option>Noida</option>
-<option>Kochi</option>
-<option>Chandigarh</option>
-<option>Jaipur</option>
-</select>
-              
- </div>
+    Job Category: <select name="jobCategory">
+    			  <option selected>Administrative</option>
+    			  <option>Finance</option>
+    			  <option>IT</option>
+    			  </select>
 
-<div class="form-group col-md-4">
-      <label for="jobState2">Working State 2</label>
-      <select id="jobState2" class="form-control">
-        <option selected>Choose...</option>
-  
-<option>Kolkata</option>
-<option>Chennai</option>
-<option>Bangalore</option>
-<option>Gurgaon</option>
-<option>Delhi</option>
-<option>Noida</option>
-<option>Kochi</option>
-<option>Chandigarh</option>
-<option>Jaipur</option>
-</select>
-              
- </div>
-
-<div class="form-group col-md-4">
-      <label for="jobState3">Working State 3</label>
-      <select id="jobState3" class="form-control">
-        <option selected>Choose...</option>
-  
-        
-  
-<option>Kolkata</option>
-<option>Chennai</option>
-<option>Bangalore</option>
-<option>Gurgaon</option>
-<option>Delhi</option>
-<option>Noida</option>
-<option>Kochi</option>
-<option>Chandigarh</option>
-<option>Jaipur</option>
-</select>
-              
- </div>
-
-
-    
-<div>
-<div class="form-group col-md-2">
- <label for="salary">CTC Offered: </label>
- <input type= "text" class="form-control" id="salary">
- </div>
-</div> 
-
-<div>
-<div class="form-group col-md-2">
- <label for="exp">Experience Required: </label>
- <input type= "text" class="form-control" id="exp">
- </div>
-</div> 
-
-
-<div>
-<div class="form-group col-md-2">
-<p><label for="jobskills">Please select the skills required for this job: </label></p>
-
-Java <input type="checkbox" name="jobskills" value="java"  /><br />
-
-C++ <input type="checkbox" name="jobskills" value="c++"  /><br /> 
-
-Database <input type="checkbox" name="jobskills" value="database"  /><br /> 
-
-Networking <input type="checkbox" name="jobskills" value="networking"  />
-
-Digital Marketing <input type="checkbox" name="jobskills" value="digitalm"  /><br /> 
-
-Electronics <input type="checkbox" name="jobskills" value="electronics"  /><br /> 
-
-Mechanical <input type="checkbox" name="jobskills" value="mechanical"  /><br /> 
-
-AutoCAD <input type="checkbox" name="jobskills" value="autocad"  /><br /> 
-
-Big Data <input type="checkbox" name="jobskills" value="bigdata"  /><br /> 
-
-HTML/CSS <input type="checkbox" name="jobskills" value="html"  /><br /> 
-</div>
-
-  
  
   <button type="submit" class="btn btn-primary" value="SUBMIT">SUBMIT</button>  														<!job servlet>
 
-</div>
 
 </form>
 

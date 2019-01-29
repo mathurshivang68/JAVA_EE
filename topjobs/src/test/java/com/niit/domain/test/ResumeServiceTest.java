@@ -22,9 +22,9 @@ class ResumeServiceTest {
 		ResumeService rs=new ResumeService();
 		ResumeRequest req=new ResumeRequest();
 		
-		JobSeeker user=new JobSeeker();
-		user.setUserName("Shivang");
-		req.setUser(user);
+		JobSeeker jobSeeker=new JobSeeker();
+		jobSeeker.setUser_name("Shivang");
+		req.setJobSeeker(jobSeeker);
 		req.setEmail("mathurs@gmail.com");
 		req.setContactNum("9182828299");
 		
@@ -37,15 +37,9 @@ class ResumeServiceTest {
 		List skills=new ArrayList<>();
 		skills.add("C++");
 		skills.add("HTML");
-		
-		
-		
 		req.setSkills(skills);
 		
-		
 		rs.createANewResume(req);
-		
-		
 	}
 
 }

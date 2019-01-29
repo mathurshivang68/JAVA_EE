@@ -13,24 +13,19 @@
 <header class="headerhome"></header>
 
 
-<p><a href="logout">Logout</a></p>
-<div class="row p-3 mb-2 bg-secondary text-primary">
-<h>WELCOME EMPLOYER</h>
+<p><a href="/topjobs/logout">Logout</a></p>
 
-<div class="col-md-6">
-<h1>My JOBS</h1>
+<h1>WELCOME EMPLOYER</h1>
 
-<!List jobs after creating jobs !>
 
-</div>
-
-<div class="col-md-6">
-<h2><a href="newJob">Create a new Job?</a></h2>
+<h2><a href="/topjobs/emp/newJob">Create a new Job?</a></h2>
 </div>
 
 <a href="ShowResumeEmployerServlet">SHOW RESUME</a>
 
-<p><a href="/emp/empjob">Show Jobs I have Posted</a></p>
+<p><a href="/topjobs/emp/ShowJobServlet">Show Jobs I have Posted</a></p>
+
+<a href="/topjobs/emp/ShowApplicantServlet">Show JobSeekers who have applied</a>
 
 </div>
 </body>

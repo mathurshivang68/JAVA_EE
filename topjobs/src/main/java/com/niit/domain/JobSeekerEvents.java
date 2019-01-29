@@ -11,22 +11,22 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 public class JobSeekerEvents {
-	
-	@OneToOne(cascade= {CascadeType.MERGE})
-//	@JoinColumn(name="jobId",referencedColumnName = "jobId")
-	Job job;
-	
-	@OneToOne(cascade= {CascadeType.MERGE})
-//	@JoinColumn(name="user_name", referencedColumnName = "user_name")
-	JobSeeker user;
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "event_Sequence")
 	@SequenceGenerator(name = "event_Sequence", sequenceName = "EVE_SEQ")
-	Long eventId;
+	private Long eventId;
+	
+	@OneToOne(cascade= {CascadeType.MERGE})
+	//	@JoinColumn(name="jobId",referencedColumnName = "jobId")
+	private Job job;
+
+	@OneToOne(cascade= {CascadeType.MERGE})
+	//	@JoinColumn(name="user_name", referencedColumnName = "user_name")
+	private JobSeeker jobSeeker;
 
 	
-	
+
 	public Job getJob() {
 		return job;
 	}
@@ -35,12 +35,12 @@ public class JobSeekerEvents {
 		this.job = job;
 	}
 
-	public User getUser() {
-		return user;
+	public JobSeeker getJobSeeker() {
+		return jobSeeker;
 	}
 
-	public void setUser(JobSeeker user) {
-		this.user = user;
+	public void setJobSeeker(JobSeeker jobSeeker) {
+		this.jobSeeker = jobSeeker;
 	}
 
 	public Long getEventId() {
@@ -51,5 +51,6 @@ public class JobSeekerEvents {
 		this.eventId = eventId;
 	}
 
-	
-	}
+
+
+}

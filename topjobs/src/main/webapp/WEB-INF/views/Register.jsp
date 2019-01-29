@@ -153,13 +153,13 @@
 					<input type="text" placeholder="Enter Email " name="email" required/></p>
 					
 				<p><label for="userid"><b>User ID</b></label>	
-				<input type="text" placeholder="Enter Username" name="userid" required/></p>
+				<input type="text" placeholder="Enter Username" name="username" required/></p>
 				
    				<p><label for="psw"><b>Password</b></label>
-   				<input type="password" placeholder="Enter Password " name="psw" required/></p>
+   				<input type="password" placeholder="Enter Password " name="pswd" required/></p>
 
-    			<p><label for="psw-repeat"><b>Repeat Password</b></label>
-    			<input type="password" placeholder="Repeat Password " name="psw-repeat" required/></p>
+<!--     			<p><label for="psw-repeat"><b>Repeat Password</b></label> -->
+<!--     			<input type="password" placeholder="Repeat Password " name="psw-repeat" required/></p> -->
   			    
 				<input type="submit" class="btn" value="Register"/>
  				<p>Already have an Account?<a href="LoginServlet"/>Sign In</a></p>

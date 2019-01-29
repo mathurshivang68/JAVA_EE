@@ -11,7 +11,14 @@
 
 <h1>Welcome Admin!</h1>
 
-<a href="logout">Logout</a>
+<a href="/topjobs/logout">Logout</a>
+<br>
+<a href="/topjobs/admin/ManageJobServlet">Manage Jobs</a>
+<br>
+<a href="/topjobs/admin/ManagePurchasesServlet">Manage Employer Purchases</a>
+<br>
+<a href="
+
 
 </body>
 </html>

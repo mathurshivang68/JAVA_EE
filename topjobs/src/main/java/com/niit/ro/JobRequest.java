@@ -1,20 +1,37 @@
 package com.niit.ro;
 
+import java.util.Date;
+
+import com.niit.domain.Employer;
 import com.niit.domain.User;
 
 public class JobRequest {
-	String jobName;
-	String jobTitle;
-	String jobDescription;
-	Long jobId;
+	private String jobName;
+	private String jobTitle;
+	private String jobDescription;
+	private Long jobId;
+	private Employer emp;
+	private Date postedDate;
+	private String jobCategory;
 	
-	User user;
 	
-	public User getUser() {
-		return user;
+	public Date getPostedDate() {
+		return postedDate;
 	}
-	public void setUser(User user) {
-		this.user = user;
+	public void setPostedDate(Date postedDate) {
+		this.postedDate = postedDate;
+	}
+	public String getJobCategory() {
+		return jobCategory;
+	}
+	public void setJobCategory(String jobCategory) {
+		this.jobCategory = jobCategory;
+	}
+	public Employer getEmp() {
+		return emp;
+	}
+	public void setEmp(Employer emp) {
+		this.emp = emp;
 	}
 	public Long getJobId() {
 		return jobId;

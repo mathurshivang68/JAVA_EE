@@ -5,6 +5,7 @@ public class JSMarks {
 	private Double marks10;
 	private Double marks12;
 	private Double gradMarks;
+	
 	public Double getMarks10() {
 		return marks10;
 	}

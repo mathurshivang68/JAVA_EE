@@ -3,6 +3,7 @@ package com.niit.web;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -34,32 +35,18 @@ public class JobServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 		JobRequest req=new JobRequest();
-		
-		
 		req.setJobName(request.getParameter("companyName"));
 		req.setJobTitle(request.getParameter("jobTitle"));
 		req.setJobDescription(request.getParameter("jobDesc"));
-		
+		req.setJobCategory(request.getParameter("jobCategory"));
 		Employer user=new Employer();
-		user.setUserName(request.getRemoteUser());
+		user.setUser_name(request.getRemoteUser());
+		req.setEmp(user);
 		
-		req.setUser(user);
-		
-		System.out.println(req.getJobName()+" "+req.getJobTitle()+" "+"IN JOB SERVLET");
 		JobService js=new JobService();
-		
-		
 		js.createANewJob(req);
 		
-		
-		
-		
-		System.out.println("JOB SERVLET ENTERED");
 		RequestDispatcher rd=request.getRequestDispatcher("/emp/empl"); 		 
         rd.forward(request, response);  
 		
@@ -70,14 +57,6 @@ public class JobServlet extends HttpServlet {
 	
 	}
 
-	private void MyCon(HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

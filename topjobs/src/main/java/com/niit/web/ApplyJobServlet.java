@@ -21,59 +21,48 @@ import com.niit.service.JobSeekerService;
  */
 public class ApplyJobServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ApplyJobServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ApplyJobServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
 		JobApplyRequest req=new JobApplyRequest();
-		
-		
-		
-		
-		
-		
-		
 		String[] jobIdList=request.getParameterValues("jobs");
 		List<String> jobslist=new ArrayList<String>();
 		for(String s:jobIdList)
 		{
+
+			JobSeeker jobSeeker=new JobSeeker();
+			jobSeeker.setUser_name(request.getRemoteUser());
 			
-			
-			
-			
-			
-		
-		JobSeeker user=new JobSeeker();
-		user.setUserName(request.getRemoteUser());
-		Job job=new Job();
-	
-		job.setJobId(Long.valueOf(s));
-		req.setJob(job);
-		req.setUser(user);
-		
-		JobSeekerService jss=new JobSeekerService();
-		jss.applyJob(req);
-				}
-		
-		
-		
+			Job job=new Job();
+
+			job.setJobId(Long.valueOf(s));
+			req.setJob(job);
+			req.setJobSeeker(jobSeeker);
+
+			JobSeekerService jss=new JobSeekerService();
+			jss.applyJob(req);
+		}
+
+
+
 		System.out.println("APPLYJOB SERVLET ENTERED");
-		
-		RequestDispatcher rd=request.getRequestDispatcher("/job/showapplyjob");
-		
+
+		RequestDispatcher rd=request.getRequestDispatcher("/LoginServlet");
+
 		rd.forward(request, response);
-	
+
 	}
 
 	/**
