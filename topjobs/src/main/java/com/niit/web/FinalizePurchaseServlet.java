@@ -33,13 +33,14 @@ public class FinalizePurchaseServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String value = request.getParameter("finalize");
-	
+		PurchaseEvents purchaseEvent = new PurchaseEvents();
+		purchaseEvent.setEventId(Long.valueOf(request.getParameter("eventId")));
+		PurchaseEventsDAO pDAO = new PurchaseEventsDAO();
+		
+		
 		if(value.equals("Approve")) {
-			PurchaseEvents purchaseEvent = new PurchaseEvents();
-			purchaseEvent.setEventId(Long.valueOf(request.getParameter("eventId")));
-			PurchaseEventsDAO pDAO = new PurchaseEventsDAO();
-			purchaseEvent = pDAO.findPurchaseEventById(purchaseEvent);
 			
+			purchaseEvent = pDAO.findPurchaseEventById(purchaseEvent);
 			Employer emp = new Employer();
 			emp.setUser_name(purchaseEvent.getEmployer().getUser_name());
 			System.out.println(emp);
@@ -64,7 +65,7 @@ public class FinalizePurchaseServlet extends HttpServlet {
 			request.getRequestDispatcher("/admin/ManagePurchasesServlet").forward(request, response);
 		}
 		if(value.equals("Delete")) {
-			
+			pDAO.deletePurchaseEventById(purchaseEvent);
 			request.getRequestDispatcher("/admin/ManagePurchasesServlet").forward(request, response);
 		}
 	}

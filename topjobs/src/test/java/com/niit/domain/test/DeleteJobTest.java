@@ -17,20 +17,32 @@ class DeleteJobTest {
 	@Test
 	void deleteJob() {
 		
+//		JobDAO jDAO = new JobDAO();
+//		List<Job> listJobs = jDAO.findAllJobs();
+//		Employer emp = new Employer();
+//		emp.setUser_name("d2");
+//		for(Job job : listJobs) {
+//			
+//			if(job.getEmp().getUser_name().equals(emp.getUser_name()))
+//			{System.out.println(job);
+//			jDAO.deleteJobById(job);
+//			
+//			}
+//		}
+
+		Job job = new Job();
+		job.setJobId(1L);
 		JobDAO jDAO = new JobDAO();
-		List<Job> listJobs = jDAO.findAllJobs();
-		Employer emp = new Employer();
-		emp.setUser_name("d2");
-		for(Job job : listJobs) {
-			
-			if(job.getEmp().getUser_name().equals(emp.getUser_name()))
-			{System.out.println(job);
-			jDAO.deleteJobById(job);
-			
-			}
-		}
-		
+		job = jDAO.findJobByID(job);
+		jDAO.deleteJobById(job);
+	
+	
+	
 	}
+	
+	
+	
+
 	
 	@Test
 	void datechexk() {

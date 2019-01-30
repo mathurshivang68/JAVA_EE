@@ -13,11 +13,11 @@
 
 <a href="/topjobs/logout">Logout</a>
 <br>
-<a href="/topjobs/admin/ManageJobServlet">Manage Jobs</a>
+<a href="/topjobs/admin/ManageJobServlet?manage=job">Manage Jobs</a>
 <br>
-<a href="/topjobs/admin/ManagePurchasesServlet">Manage Employer Purchases</a>
+<a href="/topjobs/admin/ManagePurchasesServlet?">Manage Employer Purchases</a>
 <br>
-<a href=""></a>
+<a href="/topjobs/admin/ManageJobServlet?manage=category">Manage Category of Jobs</a>
 
 
 </body>

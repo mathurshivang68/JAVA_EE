@@ -341,6 +341,26 @@
 	<servlet-name>FinalizePurchaseServlet</servlet-name>
 	<servlet-class>com.niit.web.FinalizePurchaseServlet</servlet-class>
 </servlet>
+<servlet>
+	<description>
+	</description>
+	<display-name>ManageJobCategoryServlet</display-name>
+	<servlet-name>ManageJobCategoryServlet</servlet-name>
+	<servlet-class>com.niit.domain.test.ManageJobCategoryServlet</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>ManageCategory</servlet-name>
+	<jsp-file>/WEB-INF/views/ManageCategory.jsp</jsp-file>
+</servlet>
+
+<servlet>
+	<description>
+	</description>
+	<display-name>ManageCategoryServlet</display-name>
+	<servlet-name>ManageCategoryServlet</servlet-name>
+	<servlet-class>com.niit.web.ManageCategoryServlet</servlet-class>
+</servlet>
  <servlet-mapping>
    <servlet-name>newJob</servlet-name>
    <url-pattern>/emp/newJob</url-pattern>
@@ -408,8 +428,19 @@
   	<servlet-name>FinalizePurchaseServlet</servlet-name>
   	<url-pattern>/admin/FinalizePurchaseServlet</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManageJobCategoryServlet</servlet-name>
+  	<url-pattern>/admin/ManageJobCategoryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ManageCategoryServlet</servlet-name>
+  	<url-pattern>/admin/ManageCategoryServlet</url-pattern>
+  </servlet-mapping>
 
-
+<servlet-mapping>
+  	<servlet-name>ManageCategory</servlet-name>
+  	<url-pattern>/admin/ManageCategory</url-pattern>
+  </servlet-mapping>
 
 
   <security-constraint>

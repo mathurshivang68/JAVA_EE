@@ -37,6 +37,14 @@ public class JobDAO {
 		em.close();
 	}
 	
+	public void merge(Job entity) {
+		EntityManager em= PersistenceManager.INSTANCE.getEntityManager();
+		em.getTransaction().begin();
+		em.merge(entity);
+		em.getTransaction().commit();
+		em.close();
+	}
+	
 	public  List<Job> findAllJobs() {
 		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
 		em.getTransaction().begin();

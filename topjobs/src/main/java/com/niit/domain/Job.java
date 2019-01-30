@@ -43,7 +43,7 @@ public class Job {
 	
 	@Transient
 	private Long elapsedDays;
-
+	
 	public Long getJobId() {
 		return jobId;
 	}
