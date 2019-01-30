@@ -115,9 +115,6 @@
  </servlet-mapping>
 
 <servlet>
-	<description>
-	</description>
-	<display-name>RegisterServlet</display-name>
 	<servlet-name>RegisterServlet</servlet-name>
 	<servlet-class>com.niit.web.RegisterServlet</servlet-class>
 </servlet>

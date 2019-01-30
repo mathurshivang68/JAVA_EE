@@ -88,7 +88,7 @@ public class ResumeServlet extends HttpServlet {
 			js.setResume(resume);
 			rDAO.merge(resume);
 			
-			resume = rDAO.viewResumeJobSeekerCreate(js);
+			resume = rDAO.viewResumeJobSeeker(js);
 			Resume newRs = om.readValue(resume.getResumeText(), Resume.class);
 			newRs.setResumeId(resume.getResumeId());
 			newRs.setJobSeeker(js);
@@ -99,7 +99,7 @@ public class ResumeServlet extends HttpServlet {
 			rDAO.merge(newRs);
 			
 		} else {
-			resume = rDAO.viewResumeJobSeekerCreate(js);
+			resume = rDAO.viewResumeJobSeeker(js);
 			Resume newRs = new Resume();
 			newRs.setResumeId(resume.getResumeId());
 			newRs.setJobSeeker(js);

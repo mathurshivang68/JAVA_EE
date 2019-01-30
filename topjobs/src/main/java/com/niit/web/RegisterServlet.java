@@ -15,14 +15,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< master
 import com.niit.dao.RegisterDAO;
 import com.niit.domain.Address;
 import com.niit.domain.Employer;
-=======
-import com.niit.dao.RegisterDao;
-import com.niit.domain.Address;
->>>>>>> 5368a16 commit 23/1
 import com.niit.domain.JobSeeker;
 import com.niit.domain.Resume;
 import com.niit.domain.User;

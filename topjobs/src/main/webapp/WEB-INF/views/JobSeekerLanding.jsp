@@ -19,5 +19,6 @@
 <a href="/topjobs/job/ShowResumeJobSeekerServlet">Show Resume</a>
 <br>
 <a href="/topjobs/job/ShowAppliedJobsServlet">Show Applied Jobs</a>
-
+<br>
+<a href="/topjobs/job/JobsSelectedForServlet">Job You're shortlisted for</a>
 </html>

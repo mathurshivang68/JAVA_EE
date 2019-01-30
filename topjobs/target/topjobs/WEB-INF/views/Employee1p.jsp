@@ -170,10 +170,10 @@ HTML/CSS <input type="checkbox" name="skills" value="html"  /><br />
 </div>
 
 </form>
-<a href="ShowResumeJobSeekerServlet">SHOW RESUME</a>
+<a href="/job/ShowResumeJobSeekerServlet">SHOW RESUME</a>
 
 <td><form action="/topjobs/job/ShowResumeJobSeekerServlet" target="_blank">
-					<input type="submit" value="SHOW">
+					<input type="submit" value="SHOW"></form></td>
 					
 
 <a href="job/applyjob">APPLY JOBS</a>

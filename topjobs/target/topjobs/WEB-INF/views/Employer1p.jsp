@@ -28,13 +28,12 @@
 <h2><a href="newJob">Create a new Job?</a></h2>
 </div>
 
-<a href="ShowResumeEmployerServlet">SHOW RESUME</a>
-<<<<<<< master
+<!--  <a href="emp/ShowResumeEmployerServlet">SHOW RESUME</a> -->
 
-<p><a href="/emp/empjob">Show Jobs I have Posted</a></p>
+<p><a href="/empjob">Show Jobs I have Posted</a></p>
 
-=======
->>>>>>> 5368a16 commit 23/1
+
+<p><a href="emp/purchaselogin">Purchase Login</a></p>
 </div>
 </body>
 </html>
