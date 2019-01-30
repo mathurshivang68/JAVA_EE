@@ -9,11 +9,13 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @PrimaryKeyJoinColumn(name = "user_name")
 public class Employer extends User{
 
+
 	private Boolean isActive;
 	private Long loginsPurchased;
 	private Date purchaseDate;
 	private Date endDate;
 	public Boolean getIsActive() {
+
 		return isActive;
 	}
 	public void setIsActive(Boolean isActive) {

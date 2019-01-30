@@ -30,8 +30,8 @@ class JobsDaoTest {
 	void testPersist() throws JsonParseException, JsonMappingException, IOException {
 		JobDAO jd= new JobDAO();
 		Job job=new Job();
-		job.setJobDescription("Job1");
-		job.setJobName("CTS");
+		job.setJobDescription("Putin Job");
+		job.setJobName("CTS Ltd");
 		job.setJobTitle("Developer");
 
 		Employer user=new Employer();
@@ -101,7 +101,7 @@ class JobsDaoTest {
 	}
 
 	@Test
-	public void testViewJobByEmployer()
+	public void testViewJobByEmployer()  //jobs by this employer
 	{
 		Employer emp=new Employer();
 		emp.setUser_name("d2");
@@ -116,4 +116,8 @@ class JobsDaoTest {
 
 
 	}
+	
+
+	
+	
 }

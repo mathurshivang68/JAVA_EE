@@ -11,19 +11,6 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 public class JobSeekerEvents {
-<<<<<<< master
-
-=======
-	
-	@OneToOne(cascade= {CascadeType.MERGE})
-//	@JoinColumn(name="jobId",referencedColumnName = "jobId")
-	Job job;
-	
-	@OneToOne(cascade= {CascadeType.MERGE})
-//	@JoinColumn(name="user_name", referencedColumnName = "user_name")
-	User user;
-	
->>>>>>> 5368a16 commit 23/1
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "event_Sequence")
 	@SequenceGenerator(name = "event_Sequence", sequenceName = "EVE_SEQ")

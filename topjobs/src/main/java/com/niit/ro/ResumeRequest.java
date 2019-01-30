@@ -24,51 +24,10 @@ public class ResumeRequest {
 		return resumeText;
 	}
 
-<<<<<<< master
 	public void setResumeText(String resumeText){
 		this.resumeText = resumeText;
 	}
 
-=======
-	
-	Long resumeId;
-//	String name;
-	String email;
-	String contactNum;
-	List skills;
-	JobSeeker user;
-	long timesViewed;
-	
-	Address addr;
-	JSMarks jsMarks;
-	
-	
-	
-	public JobSeeker getUser() {
-		return user;
-	}
-	public void setUser(JobSeeker user) {
-		this.user = user;
-	}
-	public JSMarks getJsMarks() {
-		return jsMarks;
-	}
-	public void setJsMarks(JSMarks jsMarks) {
-		this.jsMarks = jsMarks;
-	}
-	public Address getAddr() {
-		return addr;
-	}
-	public void setAddr(Address addr) {
-		this.addr = addr;
-	}
-	public long getTimesViewed() {
-		return timesViewed;
-	}
-	public void setTimesViewed(long timesViewed) {
-		this.timesViewed = timesViewed;
-	}
->>>>>>> 5368a16 commit 23/1
 	public Long getResumeId() {
 		return resumeId;
 	}

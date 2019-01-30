@@ -31,19 +31,9 @@ public class User {
 	@Column
 	private String fname;
 	
-<<<<<<< master
 	@Column
 	private String lname;
-=======
-	String fname;
-	String lname;
 	
-	@ManyToOne(cascade=CascadeType.ALL)
-//	@JoinColumn(name="userRoleFK")
-	UserRole userRole;
->>>>>>> 5368a16 commit 23/1
-	
-<<<<<<< master
 	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 //	@JoinColumn(name="userRoleFK")
 	private UserRole userRole;
@@ -51,11 +41,6 @@ public class User {
 	public String getUser_name() {
 		return user_name;
 	}
-=======
-	
-	
-	
->>>>>>> 5368a16 commit 23/1
 
 	public void setUser_name(String user_name) {
 		this.user_name = user_name;
@@ -141,50 +126,7 @@ public class User {
 			return false;
 		return true;
 	}
-<<<<<<< master
-	
-=======
 
-	public String getUserName() {
-		return user_name;
-	}
-	
-	public void setUserName(String userName) {
-		this.user_name = userName;
-	}
-
-	public String getUserPass() {
-		return user_pass;
-	}
-
-	public void setUserPass(String userPass) {
-		this.user_pass = userPass;
-	}
->>>>>>> 5368a16 commit 23/1
-
-	public String getFname() {
-		return fname;
-	}
-
-	public void setFname(String fname) {
-		this.fname = fname;
-	}
-
-	public String getLname() {
-		return lname;
-	}
-
-	public void setLname(String lname) {
-		this.lname = lname;
-	}
-
-	public UserRole getUserRole() {
-		return userRole;
-	}
-
-	public void setUserRole(UserRole userRole) {
-		this.userRole = userRole;
-	}
 
 	
 

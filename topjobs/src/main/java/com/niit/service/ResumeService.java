@@ -18,15 +18,6 @@ public class ResumeService {
 	public void createANewResume(ResumeRequest req) throws JsonProcessingException
 	{
 		Resume res=new Resume();
-<<<<<<< master
-		
-		
-		
-=======
-	
-		
-		res.setUser(req.getUser());
->>>>>>> 5368a16 commit 23/1
 		res.setEmail(req.getEmail());
 		res.setContactNum(req.getContactNum());
 		
@@ -36,7 +27,6 @@ public class ResumeService {
 		String resumeText=objectMapper.writeValueAsString(res);
 		
 		res.setResumeText(resumeText);
-<<<<<<< master
 		
 		JobSeekerDAO jsd=new JobSeekerDAO();
 		
@@ -46,9 +36,6 @@ public class ResumeService {
 		js.setResume(res);
 		
 		ResumeDAO rd=new ResumeDAO();
-=======
-		ResumeDao rd=new ResumeDao();
->>>>>>> 5368a16 commit 23/1
 		rd.merge(res);
 	}
 	

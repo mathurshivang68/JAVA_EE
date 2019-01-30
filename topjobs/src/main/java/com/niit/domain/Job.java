@@ -35,22 +35,13 @@ public class Job {
 	@OneToOne
 	private Employer emp;
 	
-<<<<<<< master
+
 	@Column
 	private Date postedDate;
 
 	@Column
 	private String jobCategory;
-=======
-	@OneToOne(cascade = {CascadeType.MERGE})
-//	@JoinColumn(name= "user_name", 
-//	referencedColumnName = "user_name")
-	User usr;
-		
-	@OneToMany(mappedBy = "job",cascade = {CascadeType.ALL})
-	private List<JobSkillLoc> jskill = new ArrayList<JobSkillLoc>();
- 
->>>>>>> 5368a16 commit 23/1
+
 	
 	@Transient
 	private Long elapsedDays;

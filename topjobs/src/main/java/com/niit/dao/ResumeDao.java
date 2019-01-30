@@ -42,7 +42,7 @@ public class ResumeDao {
 		Metamodel m = em.getMetamodel();
 		EntityType<Resume> rEntity = m.entity(Resume.class);
 		Expression resume_exp = root.get(rEntity.getSingularAttribute("user"));
-		Predicate p1 = cb.equal(resume_exp,obj.getUser());
+		Predicate p1 = cb.equal(resume_exp,obj.getJobSeeker());
 		cq.where(p1);
 		Resume dataObj = em.createQuery(cq).getSingleResult();
 
@@ -67,7 +67,7 @@ public class ResumeDao {
 		Metamodel m = em.getMetamodel();
 		EntityType<Resume> rEntity = m.entity(Resume.class);
 		Expression resume_exp = root.get(rEntity.getSingularAttribute("user"));
-		Predicate p1 = cb.equal(resume_exp,obj.getUser());
+		Predicate p1 = cb.equal(resume_exp,obj.getJobSeeker());
 		cq.where(p1);
 		Resume dataObj = em.createQuery(cq).getSingleResult();
 		em.getTransaction().commit();

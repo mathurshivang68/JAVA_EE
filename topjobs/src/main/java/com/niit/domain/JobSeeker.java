@@ -3,9 +3,7 @@ package com.niit.domain;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -14,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 //@PrimaryKeyJoinColumn(name="user_name")
 public class JobSeeker extends User {
 	
-<<<<<<< master
 	@OneToOne(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
 	@JsonIgnore
 	private Resume resume;
@@ -40,19 +37,6 @@ public class JobSeeker extends User {
 				+ ", toString()=" + super.toString() + "]";
 	}
 	
-=======
-	@OneToOne(cascade= {CascadeType.ALL})
-//	@JoinColumn(name="user_name",nullable=true)	
-	Resume resume;
-
-	public Resume getResume() {
-		return resume;
-	}
-
-	public void setResume(Resume resume) {
-		this.resume = resume;
-	}
->>>>>>> 5368a16 commit 23/1
 	
 	
 
