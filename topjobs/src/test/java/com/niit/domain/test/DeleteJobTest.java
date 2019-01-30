@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 
 import com.niit.dao.JobDAO;
+import com.niit.dao.JobSeekerEventsDAO;
 import com.niit.domain.Employer;
 import com.niit.domain.Job;
 
@@ -63,6 +64,20 @@ class DeleteJobTest {
 
 		System.out.println(days);
 
+	}
+	
+	
+	
+	@Test
+	void deletechildRow() {
+		Job job = new Job();
+		job.setJobId(Long.valueOf(1));
+		System.out.println(job);
+		JobDAO jDAO = new JobDAO();
+		job = jDAO.findJobByID(job);
+		System.out.println(job);
+		JobSeekerEventsDAO jseDAO = new JobSeekerEventsDAO();
+		jseDAO.delete(job);
 	}
 	
 

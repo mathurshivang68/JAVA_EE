@@ -2,6 +2,7 @@ package com.niit.domain.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -18,12 +19,14 @@ import org.junit.jupiter.api.Test;
 import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.JobSeekerEvents;
+import com.niit.ro.JobApplyRequest;
+import com.niit.service.JobSeekerService;
 import com.niit.topjobs.PersistenceManager;
 
 class JobSeekerEventTest {
 
-	
-	
+
+
 	@Test
 	public void findJobEventsByUsername() {
 		JobSeeker jobSeeker = new JobSeeker();
@@ -47,5 +50,29 @@ class JobSeekerEventTest {
 		for(JobSeekerEvents obj:dataObj) {
 			System.out.println(obj);
 		}
+	}
+
+
+	@Test
+	public void insertJobSeekerEvents() {
+		JobApplyRequest req=new JobApplyRequest();
+		JobSeeker jobSeeker=new JobSeeker();
+		jobSeeker.setUser_name("d2");
+
+		Job job=new Job();
+		job.setJobId(52L);
+		req.setJob(job);
+		req.setJobSeeker(jobSeeker);
+		List<JobSeekerEvents> list = new ArrayList<>();
+		
+		JobSeekerEvents jse = new JobSeekerEvents();
+		jse.setEventId(req.getEventId());
+		jse.setJob(req.getJob());
+		jse.setJobSeeker(req.getJobSeeker());
+		
+		list.add(jse);
+		job.setJobSeekerEvents(list);
+		JobSeekerService jss=new JobSeekerService();
+		jss.applyJob(req);
 	}
 }

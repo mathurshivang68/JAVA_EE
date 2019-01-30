@@ -18,5 +18,10 @@ class JobSeekerTest {
 	JobSeeker js1=jsd.findJobSeekerByUsername(js);
 	System.out.println(js1.getUser_pass());
 	}
+	
+	@Test
+	void createJobSeeker() {
+		
+	}
 
 }

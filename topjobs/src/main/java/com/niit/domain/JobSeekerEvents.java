@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -16,11 +17,11 @@ public class JobSeekerEvents {
 	@SequenceGenerator(name = "event_Sequence", sequenceName = "EVE_SEQ")
 	private Long eventId;
 	
-	@OneToOne(cascade= {CascadeType.MERGE})
-	//	@JoinColumn(name="jobId",referencedColumnName = "jobId")
+	@ManyToOne(cascade= {CascadeType.MERGE})
+//	@JoinColumn(name="JOBID")
 	private Job job;
 
-	@OneToOne(cascade= {CascadeType.MERGE})
+	@ManyToOne(cascade= {CascadeType.MERGE})
 	//	@JoinColumn(name="user_name", referencedColumnName = "user_name")
 	private JobSeeker jobSeeker;
 
@@ -50,6 +51,11 @@ public class JobSeekerEvents {
 		this.eventId = eventId;
 	}
 
+	@Override
+	public String toString() {
+		return "JobSeekerEvents [eventId=" + eventId + ", job=" + job + ", jobSeeker=" + jobSeeker + "]";
+	}
 
+	
 
 }

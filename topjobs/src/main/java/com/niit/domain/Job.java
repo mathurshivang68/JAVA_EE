@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
@@ -46,6 +47,21 @@ public class Job {
 	@Transient
 	private Long elapsedDays;
 	
+	
+	@OneToMany
+//	@JoinColumn(name="JOB_JOBID")
+	private List<JobSeekerEvents> jobSeekerEvents;
+	
+	
+	
+	public List<JobSeekerEvents> getJobSeekerEvents() {
+		return jobSeekerEvents;
+	}
+
+	public void setJobSeekerEvents(List<JobSeekerEvents> jobSeekerEvents) {
+		this.jobSeekerEvents = jobSeekerEvents;
+	}
+
 	public Long getJobId() {
 		return jobId;
 	}
@@ -106,11 +122,20 @@ public class Job {
 		Date date = getPostedDate();
 		Long milliseconds = System.currentTimeMillis() - date.getTime();
 		Long days = TimeUnit.MILLISECONDS.toDays(milliseconds);
-		return days;
+		return 30-days;
 	}
 
 	public void setElapsedDays(Long elapsedDays) {
 		this.elapsedDays = elapsedDays;
 	}
+
+	@Override
+	public String toString() {
+		return "Job [jobId=" + jobId + ", jobName=" + jobName + ", jobTitle=" + jobTitle + ", jobDescription="
+				+ jobDescription + ", emp=" + emp + ", postedDate=" + postedDate + ", jobCategory=" + jobCategory
+				+ ", elapsedDays=" + elapsedDays + "]";
+	}
+	
+	
 
 }

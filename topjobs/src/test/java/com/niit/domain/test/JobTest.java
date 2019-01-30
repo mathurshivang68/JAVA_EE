@@ -33,7 +33,7 @@ class JobTest {
 		job.setJobTitle("JavaDev4");
 
 		Employer user = new Employer();
-		user.setUser_name("d2");
+		user.setUser_name("d9");
 		job.setEmp(user);
 		job.setPostedDate(new Date(119,0,01));
 		em.persist(job);
