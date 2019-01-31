@@ -18,13 +18,10 @@ public class JobSeekerEvents {
 	private Long eventId;
 	
 	@ManyToOne(cascade= {CascadeType.MERGE})
-//	@JoinColumn(name="JOBID")
 	private Job job;
 
 	@ManyToOne(cascade= {CascadeType.MERGE})
-	//	@JoinColumn(name="user_name", referencedColumnName = "user_name")
 	private JobSeeker jobSeeker;
-
 	
 
 	public Job getJob() {

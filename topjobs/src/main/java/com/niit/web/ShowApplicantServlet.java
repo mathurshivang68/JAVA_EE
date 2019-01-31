@@ -45,7 +45,13 @@ public class ShowApplicantServlet extends HttpServlet {
 		}
 
 		if(emp.getIsActive()) {
-			request.getRequestDispatcher("/emp/SelectApplicantServlet").forward(request, response);
+			String jobId = request.getParameter("thisJob");
+//			JobSeeekerEventsDAO jseDAO = new JOB
+//			List<JobSeekerEvents> list = 
+			
+			
+			
+			request.getRequestDispatcher("/emp/ShowApplicants").forward(request, response);
 		}
 		else {
 			request.getRequestDispatcher("/emp/purchaselogin").forward(request, response);

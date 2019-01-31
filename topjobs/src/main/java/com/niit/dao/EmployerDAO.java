@@ -21,7 +21,6 @@ public class EmployerDAO {
 
 
 	public void merge(Employer entity) {
-		// TODO Auto-generated method stub
 		EntityManager em= PersistenceManager.INSTANCE.getEntityManager();
 		em.getTransaction().begin();
 		em.merge(entity);

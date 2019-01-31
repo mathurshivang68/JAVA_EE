@@ -47,20 +47,6 @@ public class Job {
 	@Transient
 	private Long elapsedDays;
 	
-	
-	@OneToMany
-//	@JoinColumn(name="JOB_JOBID")
-	private List<JobSeekerEvents> jobSeekerEvents;
-	
-	
-	
-	public List<JobSeekerEvents> getJobSeekerEvents() {
-		return jobSeekerEvents;
-	}
-
-	public void setJobSeekerEvents(List<JobSeekerEvents> jobSeekerEvents) {
-		this.jobSeekerEvents = jobSeekerEvents;
-	}
 
 	public Long getJobId() {
 		return jobId;
@@ -132,7 +118,7 @@ public class Job {
 	@Override
 	public String toString() {
 		return "Job [jobId=" + jobId + ", jobName=" + jobName + ", jobTitle=" + jobTitle + ", jobDescription="
-				+ jobDescription + ", emp=" + emp + ", postedDate=" + postedDate + ", jobCategory=" + jobCategory
+				+ jobDescription + ", emp=" + emp.getUser_name() + ", postedDate=" + postedDate + ", jobCategory=" + jobCategory
 				+ ", elapsedDays=" + elapsedDays + "]";
 	}
 	
