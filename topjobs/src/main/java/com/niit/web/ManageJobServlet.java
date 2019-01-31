@@ -34,13 +34,11 @@ public class ManageJobServlet extends HttpServlet {
 		JobDAO jDAO = new JobDAO();
 		List<Job> listJobs = jDAO.findAllJobs();
 		request.setAttribute("listJobs", listJobs);
-		if(request.getAttribute("manage")==null)
-			request.setAttribute("manage", request.getParameter("manage"));
 		
-		if(request.getAttribute("manage").equals("job"))
+		if(request.getParameter("manage").equals("job"))
 		request.getRequestDispatcher("/admin/ManageJobs").forward(request, response);
 		
-		if(request.getAttribute("manage").equals("category"))
+		if(request.getParameter("manage").equals("category"))
 		request.getRequestDispatcher("/admin/ManageCategory").forward(request, response);
 
 	}

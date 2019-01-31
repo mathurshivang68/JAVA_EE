@@ -17,14 +17,14 @@ import com.niit.domain.Employer;
  */
 public class ShowApplicantServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ShowApplicantServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public ShowApplicantServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -34,22 +34,29 @@ public class ShowApplicantServlet extends HttpServlet {
 		emp.setUser_name(request.getRemoteUser());
 		EmployerDAO employerDAO = new EmployerDAO();
 		emp = employerDAO.findEmployerByUsername(emp);
-		if(emp.getEndDate()!=null)
-		if(emp.getEndDate().equals(new Date())) {
-			emp.setIsActive(false);
-			emp.setLoginsPurchased(0L);
-			emp.setPurchaseDate(null);
-			emp.setEndDate(null);
-			employerDAO.merge(emp);
+		if(emp.getEndDate()!=null) {
+			if(emp.getEndDate().equals(new Date())) {
+				emp.setIsActive(false);
+				emp.setLoginsPurchased(0L);
+				emp.setPurchaseDate(null);
+				emp.setEndDate(null);
+				employerDAO.merge(emp);
+			}
 		}
-		
+
 		if(emp.getIsActive()) {
+			String jobId = request.getParameter("thisJob");
+//			JobSeeekerEventsDAO jseDAO = new JOB
+//			List<JobSeekerEvents> list = 
 			
+			
+			
+			request.getRequestDispatcher("/emp/ShowApplicants").forward(request, response);
 		}
 		else {
 			request.getRequestDispatcher("/emp/purchaselogin").forward(request, response);
 		}
-	
+
 	}
 
 	/**

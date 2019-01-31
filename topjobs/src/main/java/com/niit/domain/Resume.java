@@ -136,6 +136,13 @@ public class Resume {
 	public void setJsMarks(JSMarks jsMarks) {
 		this.jsMarks = jsMarks;
 	}
+
+	@Override
+	public String toString() {
+		return "Resume [resumeId=" + resumeId + ", jobSeeker=" + jobSeeker.getUser_name() + ", name=" + name + ", timesViewed="
+				+ timesViewed + ", email=" + email + ", contactNum=" + contactNum + ", address=" + address + ", skills="
+				+ skills + ", jsMarks=" + jsMarks + ", resumeText=" + resumeText + "]";
+	}
 	
 	
 	

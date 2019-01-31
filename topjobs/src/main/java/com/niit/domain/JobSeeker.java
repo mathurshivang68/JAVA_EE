@@ -31,10 +31,9 @@ public class JobSeeker extends User {
 	}
 	@Override
 	public String toString() {
-		return "JobSeeker [resume=" + resume + ", resumeCreated=" + resumeCreated + ", getUser_name()=" + getUser_name()
+		return "JobSeeker [resume=" + resume.getResumeId() + ", resumeCreated=" + resumeCreated + ", getUser_name()=" + getUser_name()
 				+ ", getUser_pass()=" + getUser_pass() + ", getFname()=" + getFname() + ", getLname()=" + getLname()
-				+ ", getUserRole()=" + getUserRole() + ", hashCode()=" + hashCode() + ", getClass()=" + getClass()
-				+ ", toString()=" + super.toString() + "]";
+				+ ", getUserRole()=" + getUserRole().getRole_name() + "]";
 	}
 	
 	

@@ -28,7 +28,8 @@
 				
 				<tr>
 				<td><c:out value="${job.jobName}"></c:out></td>
-				<td><a href="/topjobs/emp/ShowThisJobServlet?thisJob=${job.jobId}">Show this Job</a>	</td>
+				<td><a href="/topjobs/emp/ShowThisJobServlet?thisJob=${job.jobId}">Show Job</a></td>
+				<td><a href="/topjobs/emp/ShowApplicantServlet?thisJob=${job.jobId}">Show Applicants</a></td>
 				</tr>
 </c:forEach>
 

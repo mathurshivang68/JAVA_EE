@@ -26,6 +26,7 @@ import com.niit.domain.JSMarks;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.Resume;
 import com.niit.domain.User;
+import com.niit.domain.UserRole;
 import com.niit.topjobs.PersistenceManager;
 import com.niit.dao.JobSeekerDAO;
 import com.niit.dao.ResumeDAO;
@@ -136,7 +137,7 @@ class ResumeTest {
 			Expression resume_exp = root.get(rEntity.getSingularAttribute("jobSeeker"));
 			
 			JobSeeker user = new JobSeeker();
-			user.setUser_name("d9");
+			user.setUser_name("d2");
 			
 			Predicate p1 = cb.equal(resume_exp,user);
 			
@@ -207,28 +208,8 @@ class ResumeTest {
 			em.close();
 			// PersistenceManager.INSTANCE.close();
 		}
-		@Test
-		public  void findJobSeekerByUsername() {
-			EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
-			em.getTransaction().begin();
-			JobSeeker js =em.find(JobSeeker.class, "d1");
-			em.getTransaction().commit();
-			em.close();
-			System.out.println(js);
-
-		}
 		
-		@Test
-		public void jobSeekerFindResume1() {
-			ResumeDAO rDAO = new ResumeDAO();
-			JobSeekerDAO jDAO = new JobSeekerDAO();
-			JobSeeker js = new JobSeeker();
-			js.setUser_name("r99");
-			jDAO.findJobSeekerByUsername(js);
-			System.out.println(js);
-			
-			
-		}
+		
 		
 		@Test
 		public void viewresumeEmp() {
@@ -253,5 +234,114 @@ class ResumeTest {
 		
 		}
 
+		
+		
+		
+		@Test
+		void createResumeFull() throws IOException {
+			JobSeeker js = new JobSeeker();
+//			js.setFname("Diwakar");
+//			js.setLname("Saini");
+			js.setUser_name("d1");
+//			js.setUser_pass("p1");
+//			js.setResumeCreated(false);
+//			UserRole ur = new UserRole();
+//			ur.setRole_name("JobSeeker");
+//			ur.setUser_name("d1");
+//			js.setUserRole(ur);
+			
+			JobSeekerDAO jDAO = new JobSeekerDAO();
+			js = jDAO.findJobSeekerByUsername(js);
+			Resume resume = new Resume();
+			ResumeDAO rDAO = new ResumeDAO();
+			ObjectMapper om = new ObjectMapper();
+			
+			String rStr;
+			
+			if(!js.isResumeCreated()) {
+				js.setResumeCreated(true);
+//				resume.setResumeId(902L);
+				resume.setJobSeeker(js);
+				resume.setName("Diwakar");
+				resume.setEmail("diwakar@gmail.com");
+				resume.setContactNum("8447849901");
+				
+				Address address = new Address();
+				address.setAddLine(("address"));
+				address.setCity(("inputCity"));
+				address.setState(("inputState"));
+				address.setPin(("inputZip"));
+				
+				resume.setAddress(address);
+				
+				List<String> ls = new ArrayList<>();
+				ls.add("java");
+				ls.add("c++");
+				ls.add("c#");
+				resume.setSkills(ls);
+				
+				JSMarks jsmarks = new JSMarks();
+				jsmarks.setMarks10(Double.valueOf(("99")));
+				jsmarks.setMarks12(Double.valueOf(("92")));
+				jsmarks.setGradMarks(Double.valueOf(("87")));
+				
+				resume.setJsMarks(jsmarks);
+
+				rStr = om.writeValueAsString(resume);
+				System.out.println(rStr);
+				resume.setResumeText(rStr);
+				resume.setTimesViewed(0L);
+				js.setResume(resume);
+				rDAO.merge(resume);
+				
+				resume = rDAO.viewResumeJobSeeker(js);
+				Resume newRs = om.readValue(resume.getResumeText(), Resume.class);
+				newRs.setResumeId(resume.getResumeId());
+				newRs.setJobSeeker(js);
+				rStr = om.writeValueAsString(newRs);
+				newRs.setResumeText(rStr);
+				newRs.setTimesViewed(0L);
+				js.setResume(newRs);
+				rDAO.merge(newRs);
+				
+			} else {
+				resume = rDAO.viewResumeJobSeeker(js);
+				Resume newRs = new Resume();
+				newRs.setResumeId(resume.getResumeId());
+				newRs.setJobSeeker(js);
+				newRs.setName("Diwakar");
+				newRs.setEmail("email@gmail.com");
+				newRs.setContactNum("8447849901");
+				
+				Address addr = new Address();
+				addr.setAddLine("address");
+				addr.setCity("inputCity");
+				addr.setState("inputState");
+				addr.setPin("110006");
+				
+				newRs.setAddress(addr);
+				
+				List<String> ls = new ArrayList<>();
+				ls.add("java");
+				ls.add("c++");
+				ls.add("c#");
+				newRs.setSkills(ls);
+				
+				JSMarks jsmarks = new JSMarks();
+				jsmarks.setMarks10(Double.valueOf(("90")));
+				jsmarks.setMarks12(Double.valueOf(("99")));
+				jsmarks.setGradMarks(Double.valueOf(("99")));
+				newRs.setJsMarks(jsmarks);
+				
+				om = new ObjectMapper();
+				rStr = om.writeValueAsString(newRs);
+				newRs.setResumeText(rStr);
+				js.setResume(newRs);
+
+				rDAO.merge(newRs);
+			}
+			
+			
+		}
 
 }

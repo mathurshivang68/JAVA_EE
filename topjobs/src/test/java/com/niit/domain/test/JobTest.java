@@ -28,12 +28,12 @@ class JobTest {
 		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
 		em.getTransaction()
 		.begin();
-		job.setJobDescription("New JOB5"+Math.random());
+		job.setJobDescription("New JOB3"+Math.random());
 		job.setJobName("CTS4");
 		job.setJobTitle("JavaDev4");
 
 		Employer user = new Employer();
-		user.setUser_name("d2");
+		user.setUser_name("d7");
 		job.setEmp(user);
 		job.setPostedDate(new Date(119,0,01));
 		em.persist(job);

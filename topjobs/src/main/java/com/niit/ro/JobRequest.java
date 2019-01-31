@@ -1,8 +1,10 @@
 package com.niit.ro;
 
 import java.util.Date;
+import java.util.List;
 
 import com.niit.domain.Employer;
+import com.niit.domain.JobSeekerEvents;
 import com.niit.domain.User;
 
 public class JobRequest {
@@ -13,8 +15,15 @@ public class JobRequest {
 	private Employer emp;
 	private Date postedDate;
 	private String jobCategory;
+	private List<JobSeekerEvents> jobSeekerEvents;
 	
 	
+	public List<JobSeekerEvents> getJobSeekerEvents() {
+		return jobSeekerEvents;
+	}
+	public void setJobSeekerEvents(List<JobSeekerEvents> jobSeekerEvents) {
+		this.jobSeekerEvents = jobSeekerEvents;
+	}
 	public Date getPostedDate() {
 		return postedDate;
 	}
