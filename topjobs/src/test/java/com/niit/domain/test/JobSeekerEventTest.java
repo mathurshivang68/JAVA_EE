@@ -33,7 +33,7 @@ class JobSeekerEventTest {
 	@Test
 	public void findJobEventsByUsername() {
 		JobSeeker jobSeeker = new JobSeeker();
-		jobSeeker.setUser_name("d1");
+		jobSeeker.setUser_name("d2");
 		JobSeekerDAO jDAO = new JobSeekerDAO();
 		jobSeeker = jDAO.findJobSeekerByUsername(jobSeeker);
 		
@@ -96,7 +96,7 @@ class JobSeekerEventTest {
 		jobSeeker.setUser_name("d3");
 
 		Job job=new Job();
-		job.setJobId(1L);
+		job.setJobId(102L);
 		req.setJob(job);
 		req.setJobSeeker(jobSeeker);
 		

@@ -1,7 +1,9 @@
 package com.niit.web;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.servlet.ServletException;
@@ -10,7 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.niit.dao.EmployerDAO;
+import com.niit.dao.JobSeekerEventsDAO;
 import com.niit.domain.Employer;
+import com.niit.domain.Job;
+import com.niit.domain.JobSeeker;
+import com.niit.domain.JobSeekerEvents;
 
 /**
  * Servlet implementation class ShowAppicantServlet
@@ -46,12 +52,19 @@ public class ShowApplicantServlet extends HttpServlet {
 
 		if(emp.getIsActive()) {
 			String jobId = request.getParameter("thisJob");
-//			JobSeeekerEventsDAO jseDAO = new JOB
-//			List<JobSeekerEvents> list = 
+			Job job = new Job();
+			job.setJobId(Long.valueOf(jobId));
+			JobSeekerEventsDAO jseDAO = new JobSeekerEventsDAO();
+			List<JobSeekerEvents> jseList = jseDAO.findJobEventsByJob(job);
 			
+			List<JobSeeker> jobSeekerList = new ArrayList<>();
 			
+			for(JobSeekerEvents jse: jseList) {
+				jobSeekerList.add(jse.getJobSeeker());
+			}
 			
-			request.getRequestDispatcher("/emp/ShowApplicants").forward(request, response);
+			request.setAttribute("jobSeekerList", jobSeekerList);						//sending a list of jobSeekers against thisJobId
+			request.getRequestDispatcher("/emp/ShowApplicants").forward(request, response); 
 		}
 		else {
 			request.getRequestDispatcher("/emp/purchaselogin").forward(request, response);

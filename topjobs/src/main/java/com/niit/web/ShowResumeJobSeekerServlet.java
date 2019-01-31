@@ -44,7 +44,7 @@ public class ShowResumeJobSeekerServlet extends HttpServlet {
 		request.setAttribute("resume", req);
 		System.out.println(req);
 		
-		RequestDispatcher rd=request.getRequestDispatcher("/showresume");
+		RequestDispatcher rd=request.getRequestDispatcher("/job/showresume");
 		rd.forward(request, response);
 	
 	}

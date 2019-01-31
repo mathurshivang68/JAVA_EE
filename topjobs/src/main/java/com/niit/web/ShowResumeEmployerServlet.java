@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.niit.dao.JobSeekerDAO;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
 import com.niit.ro.ResumeRequest;
@@ -29,23 +30,23 @@ public class ShowResumeEmployerServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
+		String username = request.getParameter("thisJobSeeker");
+		JobSeeker jobSeeker = new JobSeeker();
+		jobSeeker.setUser_name(username);
+		JobSeekerDAO jobSeekerDAO = new JobSeekerDAO();
+		jobSeeker = jobSeekerDAO.findJobSeekerByUsername(jobSeeker);
 		
-		JobSeeker jobSeeker=new JobSeeker();
-		jobSeeker.setUser_name(request.getRemoteUser());
-		ResumeRequest req=new ResumeRequest();
+		ResumeRequest resumeRequest=new ResumeRequest();
+				
+		resumeRequest.setJobSeeker(jobSeeker);
 		
-		//Resume rsm= new Resume();
+		ResumeService resumeService=new ResumeService();
 		
-		req.setJobSeeker(jobSeeker);
+		resumeRequest = resumeService.viewResumeEmployer(resumeRequest);
 		
-		ResumeService res=new ResumeService();
-		
-		req=res.viewResumeEmployer(req);
-		
-		request.setAttribute("resume", req);
-		System.out.println(req);
+		request.setAttribute("resume", resumeRequest);
+		System.out.println(resumeRequest);
 		System.out.println("Resume of Employer Servlet Entered");
 		request.getRequestDispatcher("/emp/showresume").forward(request, response);
 		
