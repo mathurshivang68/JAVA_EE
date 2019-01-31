@@ -58,6 +58,15 @@
    <url-pattern>/job/showthisjob</url-pattern>
    <url-pattern>/emp/showthisjob</url-pattern>
  </servlet-mapping>
+ 
+ <servlet>
+   <servlet-name>ShowApplicants</servlet-name>
+   <jsp-file>/WEB-INF/views/ShowApplicants.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+   <servlet-name>ShowApplicants</servlet-name>
+   <url-pattern>/emp/ShowApplicants</url-pattern>
+ </servlet-mapping>
 
 
 <servlet>
@@ -85,8 +94,8 @@
  </servlet>
  <servlet-mapping>
    <servlet-name>showresume</servlet-name>
-   <url-pattern>/showresume</url-pattern>
-   
+   <url-pattern>/emp/showresume</url-pattern>
+   <url-pattern>/job/showresume</url-pattern>
  </servlet-mapping>
 
 <servlet>

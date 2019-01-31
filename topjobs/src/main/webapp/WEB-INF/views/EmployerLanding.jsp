@@ -21,11 +21,8 @@
 <h2><a href="/topjobs/emp/newJob">Create a new Job?</a></h2>
 </div>
 
-<a href="ShowResumeEmployerServlet">SHOW RESUME</a>
 
 <p><a href="/topjobs/emp/ShowJobServlet">Show Jobs I have Posted</a></p>
-
-<a href="/topjobs/emp/ShowApplicantServlet">Show JobSeekers who have applied</a>
 
 </div>
 </body>

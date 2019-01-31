@@ -242,7 +242,7 @@ class ResumeTest {
 			JobSeeker js = new JobSeeker();
 //			js.setFname("Diwakar");
 //			js.setLname("Saini");
-			js.setUser_name("d1");
+			js.setUser_name("d3");
 //			js.setUser_pass("p1");
 //			js.setResumeCreated(false);
 //			UserRole ur = new UserRole();
@@ -308,6 +308,7 @@ class ResumeTest {
 				resume = rDAO.viewResumeJobSeeker(js);
 				Resume newRs = new Resume();
 				newRs.setResumeId(resume.getResumeId());
+				newRs.setTimesViewed(resume.getTimesViewed());
 				newRs.setJobSeeker(js);
 				newRs.setName("Diwakar");
 				newRs.setEmail("email@gmail.com");

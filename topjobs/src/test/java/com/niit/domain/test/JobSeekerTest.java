@@ -48,7 +48,7 @@ class JobSeekerTest {
 	@Test
 	void updateJobSeeker() {
 		JobSeeker js = new JobSeeker();
-		js.setUser_name("d1");
+		js.setUser_name("d3");
 		JobSeekerDAO jDAO = new JobSeekerDAO();
 		js = jDAO.findJobSeekerByUsername(js);
 		js.setResumeCreated(false);
