@@ -8,7 +8,6 @@ com\niit\web\ManageCategoryServlet.class
 com\niit\web\ManagePurchasesServlet.class
 com\niit\ro\JobRequest.class
 com\niit\dao\RegisterDAO.class
-com\niit\dao\SessionDao.class
 com\niit\web\ResumeServlet.class
 com\niit\domain\Resume.class
 com\niit\web\ShowResumeJobSeekerServlet.class

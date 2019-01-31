@@ -358,6 +358,13 @@
 	<servlet-name>ManageCategoryServlet</servlet-name>
 	<servlet-class>com.niit.web.ManageCategoryServlet</servlet-class>
 </servlet>
+<servlet>
+	<description>
+	</description>
+	<display-name>SelectApplicantServlet</display-name>
+	<servlet-name>SelectApplicantServlet</servlet-name>
+	<servlet-class>com.niit.web.SelectApplicantServlet</servlet-class>
+</servlet>
  <servlet-mapping>
    <servlet-name>newJob</servlet-name>
    <url-pattern>/emp/newJob</url-pattern>
@@ -438,6 +445,10 @@
   	<servlet-name>ManageCategory</servlet-name>
   	<url-pattern>/admin/ManageCategory</url-pattern>
   </servlet-mapping>
+<servlet-mapping>
+	<servlet-name>SelectApplicantServlet</servlet-name>
+	<url-pattern>/emp/SelectApplicantServlet</url-pattern>
+</servlet-mapping>
 
 
   <security-constraint>
