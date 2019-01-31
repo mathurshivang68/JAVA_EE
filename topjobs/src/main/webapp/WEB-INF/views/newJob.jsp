@@ -1,55 +1,96 @@
+<%@page import="com.fasterxml.jackson.annotation.JsonInclude.Include"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="C:\Users\Shivang\eclipse-workspace\topjobs\topjobs\src\main\webapp\WEB-INF\CSS\TopjobsStyle.css" />
+<title>Post Job</title>
+<link rel="stylesheet" type="text/css" href="C:\Users\Shivang\eclipse-workspace\topjobs\topjobs\src\main\webapp\WEB-INF\CSS\landingpage.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  
+ <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
 </head>
-<body style="background-color: lightsalmon">
-<header class="headerhome"></header>
+<body>
+<%@include file="Header.jsp" %>
 
 <div class="row p-3 mb-2 bg-secondary text-primary">
 <h1>Lets Create a New Job</h1> 
 </div>
-
-<form id="newjob" action="/topjobs/emp/JobServlet"> 																								 <!job servlet>
-  <div class=""row p-3 mb-2 bg-secondary text-primary">
-    <div class="form-group col-md-6">
-      <p><label for="jobTitle">Job Title:</label>
-      <input type="text" class="form-control" name="jobTitle" placeholder="jobTitle"></p>
-    </div>
-    
-  </div>
+ 
+<form id="newjob" action="/topjobs/emp/JobServlet" class="well form-horizontal"> 																								 
+<!job servlet>
+  <fieldset>
+  
+  
+  
   <div class="form-group">
-    <label for="companyName">Company Name:</label>
-    <input type="text" class="form-control" name="companyName" form="newjob">
-     
-  </div>
-
-<div class="form-group col-md-6">
-      <label for="jobDesc">Job Description</label>
-      <textarea  rows="4" cols="50" name="jobDesc" id="jobDesc" form="newjob">
-    </textarea>
-    </div>
-   <br>
+  <label class="col-md-4 control-label">Job Title:</label>
+    	<div class="col-md-8 inputGroupContainer">
+       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input type="text" class="form-control" name="jobTitle" placeholder="Job Title"></div>
+      </div>
+     	</div>
+  
+  <div class="form-group">
+  <label class="col-md-4 control-label">Company Name:</label>
+  	<div class="col-md-8 inputGroupContainer">
+  	<div class="input-group"><span class="input-group-addon"><</span></div> <i class="glyphicon briefcase"></i></span>
+      <input type="text" class="form-control" name="companyName" placeholder="Job Title" form="newjob"></div>
+      </div>
+     	</div>
+  
+  
+  
+   <div class="form-group">
+    <label class="col-md-4 control-label">Job Description</label>
+    	<div class="col-md-8 inputGroupContainer">
+       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+      <textarea rows="4" cols="50" name="jobDesc" form="newjob"></textarea></div>
+</div>
+     </div>
    
-    Job Category: <select name="jobCategory">
+    <br>
+   
+   <div class="form-group">
+   <label class="col-md-4 control-label">Job Category</label>
+   
+   </div><div class="col-md-8 inputGroupContainer">
+       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+   	  <select name="jobCategory" >
+    
+    
     			  <option selected>Administrative</option>
     			  <option>Finance</option>
     			  <option>IT</option>
     			  </select>
-
+</div></div></fieldset>
+<a></a>
  
   <button type="submit" class="btn btn-primary" value="SUBMIT">SUBMIT</button>  														<!job servlet>
 
 
 </form>
+</fieldset>
 
-<p><a href="/topjobs/emp/ShowJobServlet">Show Jobs I have Posted</a></p>
-
-
+<div class="col-lg-6 mbr-col-md-10">
+                    <div class="wrap">
+                        <div class="ico-wrap">
+                            <span class="glyphicon glyphicon-briefcase"></span>
+                        </div>
+                        <div class="text-wrap vcenter">
+                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"><a href="/topjobs/emp/ShowJobServlet">Show
+                                <span>Jobs I have Posted</span>
+                            </a></h2>
+                            <p class="mbr-fonts-style text1 mbr-text display-6">Show all Jobs posted by you</p>
+                        </div>
+                    </div>
+                </div>
+                
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -27,7 +27,7 @@
 <td><c:out value="${job.jobTitle}"></c:out></td>
 <td><c:out value="${job.jobName}"></c:out></td>
 <td><c:out value="${job.jobCategory}"></c:out></td>
-<td><c:out value="${job.jobId}"></c:out></td>
+
 <td><input type="radio" name="jobId" value="${job.jobId}"></td>
 
 </tr>

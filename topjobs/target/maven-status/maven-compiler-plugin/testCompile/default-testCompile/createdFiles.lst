@@ -1,0 +1,13 @@
+com\niit\domain\test\ResumeServiceTest.class
+com\niit\domain\test\JobSeekerEventTest.class
+com\niit\domain\test\ResumeTest.class
+com\niit\domain\test\ResumeDaoTest.class
+com\niit\domain\test\JobEventDaoTest.class
+com\niit\domain\test\JobSeekerServiceTest.class
+com\niit\domain\test\JobsDaoTest.class
+com\niit\domain\test\ResumeTestt.class
+com\niit\domain\test\JobTest.class
+com\niit\domain\test\purchaseTest.class
+com\niit\domain\test\DeleteJobTest.class
+com\niit\domain\test\JobSeekerTest.class
+com\niit\domain\test\AdminTest.class

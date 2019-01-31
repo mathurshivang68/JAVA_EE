@@ -35,31 +35,48 @@ function perc1() {
 	 }
 	
 	</script>
+	
+	<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../CSS/landingpage.css" />
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<%@include file="Header.jsp"%>
+	</head>
 	<body>
-	<h1>Purchase additional Logins</h1>
+
+<div class="container">	
+	<section class="form-gradient mb-5">
+
+  
+  <div class="card">
+
+    <!--Header-->
+    <div class="header peach-gradient">
+
+      <div class="row d-flex justify-content-center">
+        <h3 class="white-text mb-0 py-5 font-weight-bold">Purchase Login</h3>
+      </div>
+<div class="card-body mx-4">
+<div class="md-form"></div>
 <h2>One Login is valid for 30 Days </h2>
-
 <h6>Note: Get Discount of 30% on fees if you purchase 6 or more Logins</h6>
-<!--   getServletContext().getInitParameter("discount")  -->
 
-	
-	
-	
-<%--    <%=getServletContext().getInitParameter("discountValue") %> --%>
-
-<%-- 	<%= config.getInitParameter("discount1") %>  --%>  
-	
-	
-	<FORM name="discountcalc" method="post" action="/topjobs/emp/PurchaseLoginServlet">
+<FORM name="discountcalc" method="post" action="/topjobs/emp/PurchaseLoginServlet">
 	<TABLE cellSpacing=1 cellPadding=1 border=1>
-	  <TBODY>
+	  <TBODY align="center">
 	  <TR>
 	    <TD align=middle colSpan=3><B><FONT size=4>Discount Calculator</FONT></B> 
 	      </TD>
 	  <tr>
 	
 	   <label for="logins">No of Logins:</label>
-      <select name="logins" class="form-control">
+      <select name="logins" width: 150px
+        margin: 10px class="form-control" >
         <option selected>Choose...</option>
   
         
@@ -89,7 +106,28 @@ function perc1() {
 
 
 </form>
+    </div>
+</div>
+<!--   getServletContext().getInitParameter("discount")  -->
 
-</body>
-</head>
+	
+	
+	
+<%--    <%=getServletContext().getInitParameter("discountValue") %> --%>
+
+<%-- 	<%= config.getInitParameter("discount1") %>  --%>  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+			crossorigin="anonymous"></script>	
+	
+	</body>
+
 </html>
