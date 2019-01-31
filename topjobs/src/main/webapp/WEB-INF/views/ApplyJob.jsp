@@ -45,8 +45,8 @@ language="java" contentType="text/html; charset=ISO-8859-1"
 
 <c:set var="jobList" value="<%=ls%>" /> 
 <c:forEach var="job" items="${jobList}">
-		<div class="container-fluid"> 		
-				<div class="card" style="width: 18rem;">
+				
+				<div class="card" style="width: 12rem;">
   <img class="glyphicon glyphicon-user" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title"><c:out value="${job.jobTitle }"></c:out></h5>
@@ -54,8 +54,7 @@ language="java" contentType="text/html; charset=ISO-8859-1"
     <a href="/topjobs/emp/ShowThisJobServlet?thisJob=${job.jobId}" class="btn btn-primary"></a>
   </div>
 </div>
-			</div>
-		
+				
 				
 				
 				<%-- 
@@ -91,6 +90,14 @@ height=170,left=150,top=200,toolbar=0,status=0,"); value="Open Window"></td> --%
 
 
 </div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
 
 </body>
 </html>
