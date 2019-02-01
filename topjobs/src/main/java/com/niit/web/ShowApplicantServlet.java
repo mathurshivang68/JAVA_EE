@@ -63,7 +63,8 @@ public class ShowApplicantServlet extends HttpServlet {
 				jobSeekerList.add(jse.getJobSeeker());
 			}
 			
-			request.setAttribute("jobSeekerList", jobSeekerList);						//sending a list of jobSeekers against thisJobId
+			request.setAttribute("jobSeekerEventsList", jseList);
+//			request.setAttribute("jobSeekerList", jobSeekerList);						//sending a list of jobSeekers against thisJobId
 			request.getRequestDispatcher("/emp/ShowApplicants").forward(request, response); 
 		}
 		else {

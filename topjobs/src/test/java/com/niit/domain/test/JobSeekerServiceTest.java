@@ -7,16 +7,16 @@ import org.junit.jupiter.api.Test;
 import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
-import com.niit.ro.JobApplyRequest;
-import com.niit.service.JobSeekerService;
+import com.niit.ro.JobSeekerEventsRequest;
+import com.niit.service.JobSeekerEventsService;
 
 class JobSeekerServiceTest {
 
 	@Test
 	void applyJobServiceTest()
 	{
-		JobSeekerService jss=new JobSeekerService();
-		JobApplyRequest request= new JobApplyRequest();
+		JobSeekerEventsService jss=new JobSeekerEventsService();
+		JobSeekerEventsRequest request= new JobSeekerEventsRequest();
 		Job job=new Job();
 		job.setJobId(502L);
 		request.setJob(job);

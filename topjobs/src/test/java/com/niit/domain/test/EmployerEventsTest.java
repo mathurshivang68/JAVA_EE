@@ -2,7 +2,6 @@ package com.niit.domain.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -18,20 +17,21 @@ import org.junit.jupiter.api.Test;
 
 import com.niit.dao.JobDAO;
 import com.niit.dao.JobSeekerDAO;
+import com.niit.domain.Employer;
+import com.niit.domain.EmployerEvents;
 import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
-import com.niit.domain.Job;
 import com.niit.domain.JobSeekerEvents;
+import com.niit.ro.EmployerEventsRequest;
 import com.niit.ro.JobSeekerEventsRequest;
+import com.niit.service.EmployerEventsService;
 import com.niit.service.JobSeekerEventsService;
 import com.niit.topjobs.PersistenceManager;
 
-class JobSeekerEventTest {
-
-
+class EmployerEventsTest {
 
 	@Test
-	public void findJobEventsByUsername() {
+	public void findEmployerEventsByUsername() {
 		JobSeeker jobSeeker = new JobSeeker();
 		jobSeeker.setUser_name("d2");
 		JobSeekerDAO jDAO = new JobSeekerDAO();
@@ -40,26 +40,26 @@ class JobSeekerEventTest {
 		EntityManager em=PersistenceManager.INSTANCE.getEntityManager();
 		em.getTransaction().begin();
 		CriteriaBuilder cb=em.getCriteriaBuilder();
-		CriteriaQuery<JobSeekerEvents> cq = cb.createQuery(JobSeekerEvents.class);
-		Root<JobSeekerEvents> root=cq.from(JobSeekerEvents.class);
+		CriteriaQuery<EmployerEvents> cq = cb.createQuery(EmployerEvents.class);
+		Root<EmployerEvents> root=cq.from(EmployerEvents.class);
 		cq.select(root);
 
 		Metamodel m = em.getMetamodel();
-		EntityType<JobSeekerEvents> rEntity = m.entity(JobSeekerEvents.class);
+		EntityType<EmployerEvents> rEntity = m.entity(EmployerEvents.class);
 		Expression jobSeeker_exp = root.get(rEntity.getSingularAttribute("jobSeeker"));
 		Predicate p1 = cb.equal(jobSeeker_exp,jobSeeker);
 		cq.where(p1);
 
-		List<JobSeekerEvents> dataObj= em.createQuery(cq).getResultList();
+		List<EmployerEvents> dataObj= em.createQuery(cq).getResultList();
 		em.getTransaction().commit();
 		em.close();
-		for(JobSeekerEvents obj:dataObj) {
+		for(EmployerEvents obj:dataObj) {
 			System.out.println(obj.getEventId());
 		}
 	}
 	
 	@Test
-	public void findJobEventsByJob() {
+	public void findEmployerEventsByJob() {
 		Job job = new Job();
 		job.setJobId(1L);
 		JobDAO jDAO = new JobDAO();
@@ -68,20 +68,20 @@ class JobSeekerEventTest {
 		EntityManager em=PersistenceManager.INSTANCE.getEntityManager();
 		em.getTransaction().begin();
 		CriteriaBuilder cb=em.getCriteriaBuilder();
-		CriteriaQuery<JobSeekerEvents> cq = cb.createQuery(JobSeekerEvents.class);
-		Root<JobSeekerEvents> root=cq.from(JobSeekerEvents.class);
+		CriteriaQuery<EmployerEvents> cq = cb.createQuery(EmployerEvents.class);
+		Root<EmployerEvents> root=cq.from(EmployerEvents.class);
 		cq.select(root);
 
 		Metamodel m = em.getMetamodel();
-		EntityType<JobSeekerEvents> rEntity = m.entity(JobSeekerEvents.class);
+		EntityType<EmployerEvents> rEntity = m.entity(EmployerEvents.class);
 		Expression job_exp = root.get(rEntity.getSingularAttribute("job"));
 		Predicate p1 = cb.equal(job_exp,job);
 		cq.where(p1);
 
-		List<JobSeekerEvents> dataObj= em.createQuery(cq).getResultList();
+		List<EmployerEvents> dataObj= em.createQuery(cq).getResultList();
 		em.getTransaction().commit();
 		em.close();
-		for(JobSeekerEvents obj:dataObj) {
+		for(EmployerEvents obj:dataObj) {
 			System.out.println(obj.getJobSeeker().getResume());
 		}
 	}
@@ -90,20 +90,20 @@ class JobSeekerEventTest {
 
 
 	@Test
-	public void insertJobSeekerEvents() {
-		JobSeekerEventsRequest req=new JobSeekerEventsRequest();
+	public void insertEmployerEvents() {
+		EmployerEventsRequest req=new EmployerEventsRequest();
 		JobSeeker jobSeeker=new JobSeeker();
-		jobSeeker.setUser_name("d1");
+		jobSeeker.setUser_name("d3");
 
 		Job job=new Job();
 		job.setJobId(102L);
-//		job.setJobId(52L);
-//		job.setJobId(1L);
 		req.setJob(job);
 		req.setJobSeeker(jobSeeker);
 		
-		
-		JobSeekerEventsService jss=new JobSeekerEventsService();
-		jss.applyJob(req);
+		EmployerEventsService ess=new EmployerEventsService();
+		ess.applyJob(req);
 	}
+	
+	
+	
 }

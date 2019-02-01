@@ -374,6 +374,13 @@
 	<servlet-name>SelectApplicantServlet</servlet-name>
 	<servlet-class>com.niit.web.SelectApplicantServlet</servlet-class>
 </servlet>
+<servlet>
+	<description>
+	</description>
+	<display-name>ShowSelectedForJobsServlet</display-name>
+	<servlet-name>ShowSelectedForJobsServlet</servlet-name>
+	<servlet-class>com.niit.web.ShowSelectedForJobsServlet</servlet-class>
+</servlet>
  <servlet-mapping>
    <servlet-name>newJob</servlet-name>
    <url-pattern>/emp/newJob</url-pattern>
@@ -457,6 +464,10 @@
 <servlet-mapping>
 	<servlet-name>SelectApplicantServlet</servlet-name>
 	<url-pattern>/emp/SelectApplicantServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>ShowSelectedForJobsServlet</servlet-name>
+	<url-pattern>/job/ShowSelectedForJobsServlet</url-pattern>
 </servlet-mapping>
 
 

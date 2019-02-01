@@ -77,7 +77,7 @@ class DeleteJobTest {
 		job = jDAO.findJobByID(job);
 		System.out.println(job);
 		JobSeekerEventsDAO jseDAO = new JobSeekerEventsDAO();
-		jseDAO.delete(job);
+		jseDAO.deleteByJob(job);
 	}
 	
 

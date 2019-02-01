@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
-import com.niit.ro.JobApplyRequest;
-import com.niit.service.JobSeekerService;
+import com.niit.ro.JobSeekerEventsRequest;
+import com.niit.service.JobSeekerEventsService;
 
 /**
  * Servlet implementation class ApplyJobServlet
@@ -36,7 +36,7 @@ public class ApplyJobServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		JobApplyRequest req=new JobApplyRequest();
+		JobSeekerEventsRequest req=new JobSeekerEventsRequest();
 		String[] jobIdList=request.getParameterValues("jobs");
 		List<String> jobslist=new ArrayList<String>();
 		for(String s:jobIdList)
@@ -51,7 +51,7 @@ public class ApplyJobServlet extends HttpServlet {
 			req.setJob(job);
 			req.setJobSeeker(jobSeeker);
 
-			JobSeekerService jss=new JobSeekerService();
+			JobSeekerEventsService jss=new JobSeekerEventsService();
 			jss.applyJob(req);
 		}
 
