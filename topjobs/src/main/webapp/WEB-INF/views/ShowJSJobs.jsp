@@ -45,7 +45,7 @@ tr:nth-child(even) {
 	<h2><%= ls.size()%> Jobs</h2>
 
 <form action="ApplyJobServlet" id="outer">
-	<table style="border: 1px solid black;">
+	<table>
 		<c:set var="jobList" value="<%=ls%>" />
 		<c:forEach var="job" items="<%=ls%>">
 			<tr>

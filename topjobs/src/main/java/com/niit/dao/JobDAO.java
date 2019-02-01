@@ -159,6 +159,16 @@ public class JobDAO {
 		return ls;
 	}
 
+	public List<Job> getJobsForJobSeeker(JobSeeker jobSeeker) {
+		EntityManager em = PersistenceManager.INSTANCE.getEntityManager();
+		em.getTransaction().begin();
+		return em.createQuery("SELECT j FROM Job j WHERE j.jobId NOT IN "
+				+ "(SELECT j.jobId FROM Job j LEFT OUTER JOIN "
+				+ "JobSeekerEvents jse ON j.jobId=jse.job "
+				+ "WHERE jse.jobSeeker= :name)").setParameter("name", jobSeeker)
+	    		.getResultList();
+	}
+
 
 
 

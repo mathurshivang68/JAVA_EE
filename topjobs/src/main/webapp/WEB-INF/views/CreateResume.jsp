@@ -22,6 +22,11 @@
 
 <p>Hello <%=request.getRemoteUser() %>
 
+<% if(request.getAttribute("message")!=null){
+	out.println(request.getAttribute("message"));
+	}
+%>
+
 <form action="ResumeServlet" method="post" class="well form-horizontal">
     <fieldset>
     <div class="form-group">
