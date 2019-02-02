@@ -1,0 +1,55 @@
+.bg {
+	background: url('../images/wholeback.jpg') repeat; width:100%; height: 100vh;
+	 -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+	
+}
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+
+}
+
+input {
+  display: inline-block;
+  
+}
+.container{
+	background-color: silver;
+	position:relative;
+	padding 50px 60px;
+	left 40%;
+	
+	
+}
+
+.form-container{
+	border:4px solid #fff;
+	padding:50px 60px;
+	margin-top:20vh;
+	
+  /* Full height */
+  height: 60%; 
+
+  		
+/* 
+
+-webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+ */}
+ 
+ .form-blurr{
+ backg
+ filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%; 
+	
+
+ }
