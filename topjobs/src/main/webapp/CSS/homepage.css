@@ -124,7 +124,7 @@ section {
 /*Swiper*/
 .swiper-container {
 	width: 80%;
-	height: 100vh;
+	height: 200vh;
 }
 .swiper-slide {
 	text-align: center;

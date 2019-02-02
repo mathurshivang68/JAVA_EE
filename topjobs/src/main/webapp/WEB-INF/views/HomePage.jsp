@@ -56,7 +56,7 @@
 </div>
 
   
-  
+<!--   //changer to be made -->
   <section class="service-sec" id="login">
   <div class="container">
     <div class="row">
@@ -73,7 +73,7 @@
         <div class="row">
             <div class="col-md-6 text-sm-center service-block"> <i class="fa fa-plus" aria-hidden="true"></i>
           <h3>Get Discovered by Employers</h3>
-          <p></p>
+          <p>Find your dream job NOW!</p>
         </div>
         <div class="col-md-6 text-sm-center service-block"> <i class="fa fa-leaf" aria-hidden="true"></i>
           <h3>Access Quick Apply Options</h3>
