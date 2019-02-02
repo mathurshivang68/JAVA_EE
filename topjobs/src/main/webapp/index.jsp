@@ -17,11 +17,6 @@ function calculate() {
 </script>
 </head>
 <body>
-<form name="discountCalculator" >
-    <input type="text" name="price" >
-    <input type="text" name="discount" >
-    <input type="text" name="afterDiscount" >
-</form>
-<input type="button" value="submit" onclick="calculate()">
+<% response.sendRedirect("/topjobs/register"); %>
 </body>
 </html>

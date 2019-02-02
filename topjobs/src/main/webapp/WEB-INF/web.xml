@@ -11,6 +11,15 @@
 </context-param>
 
 <servlet>
+   <servlet-name>test</servlet-name>
+   <jsp-file>/WEB-INF/views/test.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+   <servlet-name>test</servlet-name>
+   <url-pattern>/test</url-pattern>
+ </servlet-mapping>
+
+<servlet>
    <servlet-name>login</servlet-name>
    <jsp-file>/WEB-INF/views/Login.jsp</jsp-file>
  </servlet>

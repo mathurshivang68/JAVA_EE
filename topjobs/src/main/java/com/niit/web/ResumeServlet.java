@@ -97,6 +97,7 @@ public class ResumeServlet extends HttpServlet {
 			newRs.setTimesViewed(0L);
 			js.setResume(newRs);
 			rDAO.merge(newRs);
+			request.setAttribute("resumeMessage", "Resume Created Successfully!");
 			
 		} else {
 			resume = rDAO.viewResumeJobSeeker(js);
@@ -134,8 +135,9 @@ public class ResumeServlet extends HttpServlet {
 			js.setResume(newRs);
 
 			rDAO.merge(newRs);
+			request.setAttribute("resumeMessage", "Resume Updated Successfully!");
 		}
-	 
+		
 		request.getRequestDispatcher("/job/jsl").forward(request, response);
 	}
 

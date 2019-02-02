@@ -34,7 +34,13 @@ public class ShowAppliedJobsServlet extends HttpServlet {
 		jobSeeker.setUser_name(request.getRemoteUser());
 		JobSeekerEventsDAO jobSeekerEventsDAO = new JobSeekerEventsDAO();
 		List<JobSeekerEvents> eventList = jobSeekerEventsDAO.findJobEventsByUsername(jobSeeker);
-		request.setAttribute("eventList", eventList);
+		if(eventList.isEmpty()) {
+			request.setAttribute("message", "You have not applied for any Job.");
+		}
+		else {
+			request.setAttribute("eventList", eventList);
+		}
+		
 		request.getRequestDispatcher("/job/ShowAppliedJobs").forward(request, response);
 	}
 

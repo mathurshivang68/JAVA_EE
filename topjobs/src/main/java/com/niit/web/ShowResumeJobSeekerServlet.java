@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.niit.dao.JobSeekerDAO;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
 import com.niit.ro.ResumeRequest;
@@ -33,19 +34,27 @@ public class ShowResumeJobSeekerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-	
-		ResumeRequest req=new ResumeRequest();
-		JobSeeker jobSeeker=new JobSeeker();
+		JobSeeker jobSeeker = new JobSeeker();
 		jobSeeker.setUser_name(request.getRemoteUser());
-		req.setJobSeeker(jobSeeker);
-	
-		ResumeService res=new ResumeService();
-		req=res.viewResumeJobSeeker(req);
-		request.setAttribute("resume", req);
-		System.out.println(req);
+		JobSeekerDAO jobSeekerDAO = new JobSeekerDAO();
+		jobSeeker = jobSeekerDAO.findJobSeekerByUsername(jobSeeker);
 		
-		RequestDispatcher rd=request.getRequestDispatcher("/job/showresume");
-		rd.forward(request, response);
+		if(jobSeeker.isResumeCreated()) {
+			ResumeRequest req=new ResumeRequest();
+			req.setJobSeeker(jobSeeker);
+		
+			ResumeService res=new ResumeService();
+			req=res.viewResumeJobSeeker(req);
+			request.setAttribute("resume", req);
+			System.out.println(req);
+			RequestDispatcher rd=request.getRequestDispatcher("/job/showresume");
+			rd.forward(request, response);
+		}
+		else {
+			request.setAttribute("message", "Please create Resume first.");
+			request.getRequestDispatcher("/job/CreateResume").forward(request, response);
+		}
+		
 	
 	}
 
