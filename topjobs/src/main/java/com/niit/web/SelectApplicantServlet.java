@@ -35,25 +35,34 @@ public class SelectApplicantServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String[] jobSeekerEventIds = request.getParameterValues("jobSeekerEventId");
-		JobSeekerEvents jobSeekerEvents = new JobSeekerEvents();
-		JobSeekerEventsDAO jobSeekerEventsDAO = new JobSeekerEventsDAO();
 		
-		EmployerEventsRequest employerEventsRequest = new EmployerEventsRequest();
-		EmployerEventsService employerEventsService = new EmployerEventsService();
-		EmployerEventsDAO employerEventsDAO = new EmployerEventsDAO();
-		
-		for(String jobSeekerEventId : jobSeekerEventIds ) {
-			jobSeekerEvents.setEventId(Long.valueOf(jobSeekerEventId));
-			jobSeekerEvents = jobSeekerEventsDAO.findJobEventsById(jobSeekerEvents);
-			employerEventsRequest.setJob(jobSeekerEvents.getJob());
-			employerEventsRequest.setJobSeeker(jobSeekerEvents.getJobSeeker());
-			employerEventsService.applyJob(employerEventsRequest);
-			jobSeekerEventsDAO.deleteById(jobSeekerEvents);
+		if(request.getParameterValues("jobSeekerEventId")==null) {
+			request.setAttribute("noApplicant", "No Applicant Selected!");
+			request.getRequestDispatcher("/emp/ShowJobServlet").forward(request, response);
+		}
+		else {
+			String[] jobSeekerEventIds = request.getParameterValues("jobSeekerEventId");
+			JobSeekerEvents jobSeekerEvents = new JobSeekerEvents();
+			JobSeekerEventsDAO jobSeekerEventsDAO = new JobSeekerEventsDAO();
+			
+			EmployerEventsRequest employerEventsRequest = new EmployerEventsRequest();
+			EmployerEventsService employerEventsService = new EmployerEventsService();
+			EmployerEventsDAO employerEventsDAO = new EmployerEventsDAO();
+			
+			for(String jobSeekerEventId : jobSeekerEventIds ) {
+				jobSeekerEvents.setEventId(Long.valueOf(jobSeekerEventId));
+				jobSeekerEvents = jobSeekerEventsDAO.findJobEventsById(jobSeekerEvents);
+				employerEventsRequest.setJob(jobSeekerEvents.getJob());
+				employerEventsRequest.setJobSeeker(jobSeekerEvents.getJobSeeker());
+				employerEventsService.applyJob(employerEventsRequest);
+				jobSeekerEventsDAO.deleteById(jobSeekerEvents);
+			}
+			
+			
+			request.getRequestDispatcher("/emp/ShowApplicantServlet").forward(request, response);
 		}
 		
 		
-		request.getRequestDispatcher("/emp/ShowApplicantServlet").forward(request, response);
 	}
 
 	/**

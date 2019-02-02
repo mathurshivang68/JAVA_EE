@@ -179,5 +179,18 @@
 			crossorigin="anonymous"></script>
 
 		<link rel="stylesheet" type="text/css" href="../CSS/landingpage.css" />
+		
+		
+		<script>
+		var jobCreated = '<%=request.getAttribute("jobCreated")%>'
+		var jobCreated = '<%=request.getAttribute("purchaseMessage")%>'
+		if(jobCreated!='null'){
+			alert(jobCreated);
+		}
+		if(purchaseMessage!='null'){
+			alert(jobCreated);
+		}
+		</script>
+		
 </body>
 </html>

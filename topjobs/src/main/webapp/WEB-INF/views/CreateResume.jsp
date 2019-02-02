@@ -208,7 +208,7 @@
    <label class="col-md-4 control-label">Marks in 10th:</label>
     	<div class="col-md-8 inputGroupContainer">
        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-   		 <input type="number" name="marks10" id="marks10"></div></div>
+   		 <input type="number" step="0.01" name="marks10" id="marks10"></div></div>
    		 </div>
    
    
@@ -216,7 +216,7 @@
    <label class="col-md-4 control-label">Marks in 12th:</label>
     	<div class="col-md-8 inputGroupContainer">
        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-   		 <input type="number" name="marks12" id="marks12"></div></div>
+   		 <input type="number" step="0.01" name="marks12" id="marks12"></div></div>
    		 </div>
    
    
@@ -224,7 +224,7 @@
    <label class="col-md-4 control-label">Marks in Graduation:</label>
     	<div class="col-md-8 inputGroupContainer">
        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-   		 <input type="number" name="marksgrad" id="marksgrad"></div></div>
+   		 <input type="number" step="0.01" name="marksgrad" id="marksgrad"></div></div>
    		 </div>
    
    

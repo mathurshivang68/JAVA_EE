@@ -35,8 +35,7 @@ public class ManageCategoryServlet extends HttpServlet {
 		job = jDAO.findJobByID(job);
 		job.setJobCategory(category);
 		jDAO.merge(job);
-		request.setAttribute("manage", "category");
-		request.getRequestDispatcher("/admin/ManageJobServlet").forward(request, response);
+		request.getRequestDispatcher("/admin/ManageJobServlet?manage=category").forward(request, response);
 	}
 
 	/**

@@ -35,20 +35,29 @@ public class PurchaseLoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		Employer emp=new Employer();
-		emp.setUser_name(request.getRemoteUser());
-		EmployerDAO eDAO = new EmployerDAO();
-		emp = eDAO.findEmployerByUsername(emp);
 		
-		PurchaseEvents purchaseEvents = new	PurchaseEvents();
-		purchaseEvents.setEmployer(emp);
-		purchaseEvents.setLogins(Long.valueOf(request.getParameter("logins")));
-		PurchaseEventsDAO purchaseEventsDAO = new PurchaseEventsDAO();
-		purchaseEventsDAO.persist(purchaseEvents);
+		if(request.getParameter("logins").equals("Choose...")) {
+			request.setAttribute("selectLogins", "Select Number of Logins first!");
+			request.getRequestDispatcher("/emp/purchaselogin").forward(request, response);
+		}
+		else {
+			Employer emp=new Employer();
+			emp.setUser_name(request.getRemoteUser());
+			EmployerDAO eDAO = new EmployerDAO();
+			emp = eDAO.findEmployerByUsername(emp);
+			
+			PurchaseEvents purchaseEvents = new	PurchaseEvents();
+			purchaseEvents.setEmployer(emp);
+			purchaseEvents.setLogins(Long.valueOf(request.getParameter("logins")));
+			PurchaseEventsDAO purchaseEventsDAO = new PurchaseEventsDAO();
+			purchaseEventsDAO.persist(purchaseEvents);
+			
+			System.out.println("PURCHASE LOGIN SERVLET ENTERED");
+			request.setAttribute("purchaseMessage", "Your purchases will reflect in 4 hours.");
+			RequestDispatcher rd=request.getRequestDispatcher("/emp/empl");  //Employer landing page
+			rd.forward(request,response);
+		}
 		
-		System.out.println("PURCHASE LOGIN SERVLET ENTERED");
-		RequestDispatcher rd=request.getRequestDispatcher("/emp/empl");  //Employer landing page
-		rd.forward(request,response);
 		
 	
 	

@@ -39,20 +39,24 @@ public class ApplyJobServlet extends HttpServlet {
 		jobSeeker.setUser_name(request.getRemoteUser());
 		JobSeekerDAO jobSeekerDAO = new JobSeekerDAO();
 		jobSeeker = jobSeekerDAO.findJobSeekerByUsername(jobSeeker);
+		if(request.getParameterValues("jobs")==null) {
+			request.setAttribute("noSelection", "You have not Selected anything! Please Select a Job");
+			request.getRequestDispatcher("/job/ShowJobServlet").forward(request, response);
+		}
 		
-		if(jobSeeker.isResumeCreated()) {
-			JobSeekerEventsRequest req=new JobSeekerEventsRequest();
-			String[] jobIdList=request.getParameterValues("jobs");
-			List<String> jobslist=new ArrayList<String>();
-			for(String s:jobIdList)
-			{
-				Job job=new Job();
-				job.setJobId(Long.valueOf(s));
-				req.setJob(job);
-				req.setJobSeeker(jobSeeker);
-				JobSeekerEventsService jss=new JobSeekerEventsService();
-				jss.applyJob(req);
-			}
+		if(request.getParameterValues("jobs").length!=0 && jobSeeker.isResumeCreated()) {
+				JobSeekerEventsRequest req=new JobSeekerEventsRequest();
+				String[] jobIdList=request.getParameterValues("jobs");
+				List<String> jobslist=new ArrayList<String>();
+				for(String s:jobIdList)
+				{
+					Job job=new Job();
+					job.setJobId(Long.valueOf(s));
+					req.setJob(job);
+					req.setJobSeeker(jobSeeker);
+					JobSeekerEventsService jss=new JobSeekerEventsService();
+					jss.applyJob(req);
+				}
 			RequestDispatcher rd=request.getRequestDispatcher("/job/ShowJobServlet");
 			rd.forward(request, response);
 		}

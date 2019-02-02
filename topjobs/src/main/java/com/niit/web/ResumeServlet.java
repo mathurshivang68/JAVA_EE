@@ -98,8 +98,8 @@ public class ResumeServlet extends HttpServlet {
 			js.setResume(newRs);
 			rDAO.merge(newRs);
 			request.setAttribute("resumeMessage", "Resume Created Successfully!");
-			
-		} else {
+		} 
+		else {
 			resume = rDAO.viewResumeJobSeeker(js);
 			Resume newRs = new Resume();
 			newRs.setResumeId(resume.getResumeId());

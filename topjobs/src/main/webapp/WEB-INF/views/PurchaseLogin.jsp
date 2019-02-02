@@ -126,7 +126,16 @@ function perc1() {
 		<script
 			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-			crossorigin="anonymous"></script>	
+			crossorigin="anonymous">
+</script>
+
+
+<script type="text/javascript">
+var selectLogins = '<%=request.getAttribute("selectLogins")%>';
+if(selectLogins!='null'){
+	alert(selectLogins);
+}
+</script>	
 	
 	</body>
 

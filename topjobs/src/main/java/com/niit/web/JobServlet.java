@@ -47,6 +47,7 @@ public class JobServlet extends HttpServlet {
 		JobService js=new JobService();
 		js.createANewJob(req);
 		
+		request.setAttribute("jobCreated", "New Job has been created.");
 		RequestDispatcher rd=request.getRequestDispatcher("/emp/empl"); 		 
         rd.forward(request, response);  
 		

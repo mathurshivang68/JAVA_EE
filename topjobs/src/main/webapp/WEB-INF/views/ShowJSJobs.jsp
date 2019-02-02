@@ -62,7 +62,15 @@ tr:nth-child(even) {
 <input type="submit" value="Apply" id="outer">
 </form>
 
-	<a href="/topjobs/LoginServlet">Home</a>
+<a href="/topjobs/LoginServlet">Home</a>
 
+
+<script>
+var noSelection = '<%=request.getAttribute("noSelection")%>';
+if(noSelection!='null'){
+	alert(noSelection);
+}
+
+</script>
 </body>
 </html>
