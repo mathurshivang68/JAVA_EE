@@ -23,59 +23,70 @@
 </div>
  
 <form id="newjob" action="/topjobs/emp/JobServlet" class="well form-horizontal"> 																								 
-<!job servlet>
-  <fieldset>
-  
-  
-  
-  <div class="form-group">
-  <label class="col-md-4 control-label">Job Title:</label>
-    	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input type="text" class="form-control" name="jobTitle" placeholder="Job Title"></div>
-      </div>
-     	</div>
-  
-  <div class="form-group">
-  <label class="col-md-4 control-label">Company Name:</label>
-  	<div class="col-md-8 inputGroupContainer">
-  	<div class="input-group"><span class="input-group-addon"><</span></div> <i class="glyphicon briefcase"></i></span>
-      <input type="text" class="form-control" name="companyName" placeholder="Job Title" form="newjob"></div>
-      </div>
-     	</div>
-  
-  
-  
-   <div class="form-group">
-    <label class="col-md-4 control-label">Job Description</label>
-    	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-      <textarea rows="4" cols="50" name="jobDesc" form="newjob"></textarea></div>
-</div>
-     </div>
-   
-    <br>
-   
-   <div class="form-group">
-   <label class="col-md-4 control-label">Job Category</label>
-   
-   </div><div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-   	  <select name="jobCategory" >
-    
-    
-    			  <option selected>Administrative</option>
-    			  <option>Finance</option>
-    			  <option>IT</option>
-    			  </select>
-</div></div></fieldset>
-<a></a>
- 
-  <button type="submit" class="btn btn-primary" value="SUBMIT">SUBMIT</button>  														<!job servlet>
+		<fieldset>
+
+
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Job Title:</label>
+				<div class="col-md-8 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i
+							class="glyphicon glyphicon-user"></i></span> <input type="text"
+							class="form-control" name="jobTitle" placeholder="Job Title">
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Company Name:</label>
+				<div class="col-md-8 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i
+							class="glyphicon glyphicon-briefcase"></i></span> <input type="text"
+							class="form-control" name="companyName" placeholder="Job Title"
+							form="newjob">
+					</div>
+				</div>
+			</div>
+
+
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Job Description:</label>
+				<div class="col-md-8 inputGroupContainer">
+					<div class="input-group">
+						<span class="input-group-addon"><i
+							class="glyphicon glyphicon-list-alt"></i></span>
+						<textarea rows="4" cols="50" name="jobDesc" form="newjob"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<br>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Job Category:</label>
+				<div class="col-md-8 inputGroupContainer">
+				<div class="input-group">
+					<span class="input-group-addon"><i
+						class="glyphicon glyphicon-briefcase"></i></span> 
+						<select class="form-control" name="jobCategory" >
+						<option selected>Administrative</option>
+						<option>Finance</option>
+						<option>IT</option>
+					</select>
+				</div>
+			</div>
+			</div>
+			
+		</fieldset>
+		<a></a>
+
+		<button type="submit" class="btn btn-primary" value="SUBMIT">SUBMIT</button>  														<!job servlet>
 
 
 </form>
-</fieldset>
 
 <div class="col-lg-6 mbr-col-md-10">
                     <div class="wrap">
@@ -97,6 +108,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+<script>
+var allFields = '<%=request.getAttribute("allFields")%>';
+if(allFields!='null'){
+	alert(allFields);
+}
+</script>
 
 </body>
 </html>
