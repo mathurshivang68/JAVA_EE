@@ -9,8 +9,8 @@ import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.JobSeekerEvents;
 import com.niit.domain.User;
-import com.niit.ro.JobApplyRequest;
-import com.niit.service.JobSeekerService;
+import com.niit.ro.JobSeekerEventsRequest;
+import com.niit.service.JobSeekerEventsService;
 
 class JobEventDaoTest {
 

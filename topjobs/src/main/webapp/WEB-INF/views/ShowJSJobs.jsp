@@ -45,7 +45,7 @@ tr:nth-child(even) {
 	<h2><%= ls.size()%> Jobs</h2>
 
 <form action="ApplyJobServlet" id="outer">
-	<table style="border: 1px solid black;">
+	<table>
 		<c:set var="jobList" value="<%=ls%>" />
 		<c:forEach var="job" items="<%=ls%>">
 			<tr>
@@ -62,7 +62,15 @@ tr:nth-child(even) {
 <input type="submit" value="Apply" id="outer">
 </form>
 
-	<a href="/topjobs/LoginServlet">Home</a>
+<a href="/topjobs/LoginServlet">Home</a>
 
+
+<script>
+var noSelection = '<%=request.getAttribute("noSelection")%>';
+if(noSelection!='null'){
+	alert(noSelection);
+}
+
+</script>
 </body>
 </html>

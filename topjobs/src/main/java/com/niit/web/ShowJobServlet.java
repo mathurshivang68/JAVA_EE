@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.niit.domain.Employer;
 import com.niit.domain.Job;
+import com.niit.ro.JobRequest;
+import com.niit.ro.JobSeekerRequest;
 import com.niit.service.JobService;
 
 /**
@@ -33,27 +35,22 @@ public class ShowJobServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		JobService jobService = new JobService();
-		List<Job> jobList = jobService.getAllJobs();
+		
 		if(request.isUserInRole("Employer")) {
+			List<Job> jobList = jobService.getAllJobs();
 			List<Job> empJobs = new ArrayList<Job>();
 			for(Job obj:jobList) {
-//				if(obj.getEmployer()!= null) {
 					if(request.getRemoteUser().equals(obj.getEmp().getUser_name()))
-//					{	System.out.println(obj.getEmployer().getUserName());
 						empJobs.add(obj);
-//					}
-//				}
 			}
-//			if(empJobs.size()==0)
-//				request.setAttribute("JobList", jobList);
-//			else
-				request.setAttribute("JobList", empJobs);
-				
-			
+			request.setAttribute("JobList", empJobs);
 			request.getRequestDispatcher("/emp/ShowEmpJobs").forward(request, response);
 		}
 		
 		if(request.isUserInRole("JobSeeker")) {
+			JobSeekerRequest jobSeekerRequest = new JobSeekerRequest();
+			jobSeekerRequest.setUser_name(request.getRemoteUser());
+			List<Job> jobList = jobService.getJobsForJobSeeker(jobSeekerRequest);
 			request.setAttribute("JobList", jobList);
 			request.getRequestDispatcher("/job/ShowJSJobs").forward(request, response);
 		}

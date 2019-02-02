@@ -1,15 +1,15 @@
 package com.niit.ro;
 
+import javax.persistence.ManyToOne;
+
+import com.niit.domain.Employer;
 import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
-import com.niit.domain.User;
 
-public class JobApplyRequest {
-
+public class EmployerEventsRequest {
 	private Job job;
 	private JobSeeker jobSeeker;
 	private Long eventId;
-	
 	
 	public Job getJob() {
 		return job;
@@ -29,7 +29,4 @@ public class JobApplyRequest {
 	public void setEventId(Long eventId) {
 		this.eventId = eventId;
 	}
-	
-	
-	
 }

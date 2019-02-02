@@ -43,12 +43,10 @@ public class FinalizePurchaseServlet extends HttpServlet {
 			purchaseEvent = pDAO.findPurchaseEventById(purchaseEvent);
 			Employer emp = new Employer();
 			emp.setUser_name(purchaseEvent.getEmployer().getUser_name());
-			System.out.println(emp);
 			EmployerDAO eDAO = new EmployerDAO();
 			emp = eDAO.findEmployerByUsername(emp);
-			System.out.println(emp);
 			emp.setIsActive(true);
-			emp.setLoginsPurchased(purchaseEvent.getLogins());
+			emp.setLoginsPurchased(emp.getLoginsPurchased()+purchaseEvent.getLogins());
 			emp.setPurchaseDate(new Date());
 			if(emp.getEndDate()==null) {
 				Date endDate = new Date(emp.getPurchaseDate().getTime()+TimeUnit.DAYS.toMillis(purchaseEvent.getLogins()*30));

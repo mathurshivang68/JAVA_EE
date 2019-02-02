@@ -25,13 +25,23 @@ import com.niit.domain.UserRole;
 /**
  * Servlet implementation class Register
  */
+import com.niit.exception.RegistrationFailedException;
 
 public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	private void RegisterUser(User user) throws RegistrationFailedException
+	{
+		RegisterDAO rDao=new RegisterDAO();
+		try{
+			rDao.persist(user);
+		}
+		catch(Exception e) {
+			throw new RegistrationFailedException("Registration Failed!\nTry different Username.");
+		}
+	}
+	
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String user_name=request.getParameter("username");
 		String user_pass=request.getParameter("pswd");
@@ -42,34 +52,43 @@ public class RegisterServlet extends HttpServlet {
 
 		ur.setUser_name(user_name);
 		ur.setRole_name(request.getParameter("role"));
+		System.out.println("Register servlet");
+		try {
+			if(request.getParameter("role").equals("JobSeeker"))
+			{
+				JobSeeker js=new JobSeeker();
+				js.setFname(fname);
+				js.setLname(lname);
+				js.setUser_name(user_name);
+				js.setUser_pass(user_pass);
+				js.setUserRole(ur);
+				js.setResumeCreated(false);
+				RegisterUser(js);	
+			}
 
+			if(request.getParameter("role").equals("Employer"))
+			{	
+				Employer emp=new Employer();
+				emp.setFname(fname);
+				emp.setLname(lname);
+				emp.setUser_name(user_name);
+				emp.setUser_pass(user_pass);
+				emp.setIsActive(false);
+				emp.setUserRole(ur);
+				RegisterUser(emp);
+			}
 
-		if(request.getParameter("role").equals("JobSeeker"))
-		{
-			JobSeeker js=new JobSeeker();
-			js.setFname(fname);
-			js.setLname(lname);
-			js.setUser_name(user_name);
-			js.setUser_pass(user_pass);
-			js.setUserRole(ur);
-			js.setResumeCreated(false);
-			RegisterUser(js);	
+			System.out.println("in try");
+			RequestDispatcher rd=request.getRequestDispatcher("/regs"); 		//MAKE REGISTERSUCCESS PAGE 
+			rd.forward(request, response); 
+		}
+		catch(RegistrationFailedException e){
+			System.out.println("in catch");
+			request.setAttribute("registrationFail", e.getMessage());
+			request.getRequestDispatcher("/register").forward(request, response);
 		}
 
-		if(request.getParameter("role").equals("Employer"))
-		{	
-			Employer emp=new Employer();
-			emp.setFname(fname);
-			emp.setLname(lname);
-			emp.setUser_name(user_name);
-			emp.setUser_pass(user_pass);
-			emp.setIsActive(false);
-			emp.setUserRole(ur);
-			RegisterUser(emp);
-		}
-
-		RequestDispatcher rd=request.getRequestDispatcher("/regs"); 		//MAKE REGISTERSUCCESS PAGE 
-		rd.forward(request, response);  
+		 
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -81,11 +100,7 @@ public class RegisterServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private void RegisterUser(User user)
-	{
-		RegisterDAO rDao=new RegisterDAO();
-		rDao.persist(user);
-	}
+	
 
 
 	//JDBC statements	

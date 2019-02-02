@@ -30,8 +30,16 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-<% List<JobSeekerEvents> eventList = (List<JobSeekerEvents>) request.getAttribute("eventList"); %>
+<% List<JobSeekerEvents> eventList = (List<JobSeekerEvents>) request.getAttribute("eventList");
+	String message = (String)request.getAttribute("message");
+%>
 
+<c:set var="message" value="<%=message %>"/>
+<c:if test="${not empty message}">    
+	<c:out value="${message}"/>
+	<a href="/topjobs/job/ShowJobServlet">Apply for Jobs</a>
+</c:if>
+<table>
 <c:set var="eventList" value="<%=eventList%>"/>
 <c:forEach var="event" items="${eventList}">
 			<tr>
@@ -39,6 +47,6 @@ tr:nth-child(even) {
 				<td><a href="/topjobs/job/ShowThisJobServlet?thisJob=${event.job.jobId}">Show this Job</a>	</td>
 			</tr>
 </c:forEach>
-
+</table>
 </body>
 </html>

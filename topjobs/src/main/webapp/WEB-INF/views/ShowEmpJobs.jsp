@@ -37,5 +37,11 @@
 
 <a href="/topjobs/LoginServlet">Home</a>
 
+<script type="text/javascript">
+var noApplicant = '<%=request.getAttribute("noApplicant")%>';
+if(noApplicant!='null'){
+	alert(noApplicant);
+}
+</script>
 </body>
 </html>

@@ -2,14 +2,13 @@ package com.niit.service;
 
 import com.niit.dao.JobSeekerEventsDAO;
 import com.niit.domain.JobSeekerEvents;
-import com.niit.ro.JobApplyRequest;
+import com.niit.ro.JobSeekerEventsRequest;
 
-public class JobSeekerService {   //JobSeekerEvent Service
+public class JobSeekerEventsService {   //JobSeekerEvent Service
 
-	public void applyJob(JobApplyRequest req)
+	public void applyJob(JobSeekerEventsRequest req)
 	{
 		JobSeekerEvents jobSeekerEvent=new JobSeekerEvents();
-		jobSeekerEvent.setEventId(req.getEventId());
 		jobSeekerEvent.setJob(req.getJob());
 		jobSeekerEvent.setJobSeeker(req.getJobSeeker());
 		JobSeekerEventsDAO jobSeekerEventsDAO=new JobSeekerEventsDAO();

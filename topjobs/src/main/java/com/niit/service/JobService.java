@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -20,6 +21,7 @@ import com.niit.domain.JobSeekerEvents;
 import com.niit.domain.User;
 import com.niit.ro.EmployerRequest;
 import com.niit.ro.JobRequest;
+import com.niit.ro.JobSeekerRequest;
 import com.niit.topjobs.PersistenceManager;
 
 /**
@@ -82,6 +84,14 @@ public class JobService {
 		
 	}
 
+	public List<Job> getJobsForJobSeeker(JobSeekerRequest jobSeekerRequest){
+		JobSeeker jobSeeker = new JobSeeker();
+		jobSeeker.setUser_name(jobSeekerRequest.getUser_name());
+
+		JobDAO jd=new JobDAO();
+		return jd.getJobsForJobSeeker(jobSeeker);
+	}
+	
 }
 	
 

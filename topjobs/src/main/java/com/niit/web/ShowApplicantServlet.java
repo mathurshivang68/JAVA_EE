@@ -41,7 +41,8 @@ public class ShowApplicantServlet extends HttpServlet {
 		EmployerDAO employerDAO = new EmployerDAO();
 		emp = employerDAO.findEmployerByUsername(emp);
 		if(emp.getEndDate()!=null) {
-			if(emp.getEndDate().equals(new Date())) {
+			int val = emp.getEndDate().compareTo(new Date());
+			if(val<0) {
 				emp.setIsActive(false);
 				emp.setLoginsPurchased(0L);
 				emp.setPurchaseDate(null);
@@ -63,7 +64,8 @@ public class ShowApplicantServlet extends HttpServlet {
 				jobSeekerList.add(jse.getJobSeeker());
 			}
 			
-			request.setAttribute("jobSeekerList", jobSeekerList);						//sending a list of jobSeekers against thisJobId
+			request.setAttribute("jobSeekerEventsList", jseList);
+//			request.setAttribute("jobSeekerList", jobSeekerList);						//sending a list of jobSeekers against thisJobId
 			request.getRequestDispatcher("/emp/ShowApplicants").forward(request, response); 
 		}
 		else {

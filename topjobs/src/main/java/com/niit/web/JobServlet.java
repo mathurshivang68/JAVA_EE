@@ -35,20 +35,36 @@ public class JobServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		JobRequest req=new JobRequest();
-		req.setJobName(request.getParameter("companyName"));
-		req.setJobTitle(request.getParameter("jobTitle"));
-		req.setJobDescription(request.getParameter("jobDesc"));
-		req.setJobCategory(request.getParameter("jobCategory"));
-		Employer user=new Employer();
-		user.setUser_name(request.getRemoteUser());
-		req.setEmp(user);
 		
-		JobService js=new JobService();
-		js.createANewJob(req);
+		String companyName = request.getParameter("companyName");
+		String jobTitle = request.getParameter("jobTitle");
+		String jobDesc = request.getParameter("jobDesc");
+		String jobCategory = request.getParameter("jobCategory");
 		
-		RequestDispatcher rd=request.getRequestDispatcher("/emp/empl"); 		 
-        rd.forward(request, response);  
+		if(!companyName.isEmpty() && !jobTitle.isEmpty() && !jobDesc.isEmpty()) {
+			JobRequest req=new JobRequest();
+			req.setJobName(companyName);
+			req.setJobTitle(jobTitle);
+			req.setJobDescription(jobDesc);
+			req.setJobCategory(jobCategory);
+			Employer user=new Employer();
+			user.setUser_name(request.getRemoteUser());
+			req.setEmp(user);
+			
+			JobService js=new JobService();
+			js.createANewJob(req);
+			
+			request.setAttribute("jobCreated", "New Job has been created.");
+			RequestDispatcher rd=request.getRequestDispatcher("/emp/empl"); 		 
+	        rd.forward(request, response);  
+		}
+		else {
+			request.setAttribute("allFields", "Please fill all the fields!");
+			request.getRequestDispatcher("/emp/newJob").forward(request, response);
+		}
+		
+		
+		
 		
 		
 		

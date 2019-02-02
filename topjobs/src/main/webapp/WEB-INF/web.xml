@@ -37,6 +37,15 @@
 
 
 <servlet>
+   <servlet-name>test</servlet-name>
+   <jsp-file>/WEB-INF/views/test.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+   <servlet-name>test</servlet-name>
+   <url-pattern>/test</url-pattern>
+ </servlet-mapping>
+
+<servlet>
    <servlet-name>login</servlet-name>
    <jsp-file>/WEB-INF/views/Login.jsp</jsp-file>
  </servlet>
@@ -264,6 +273,8 @@
 <servlet-mapping>
 	<servlet-name>LoginServlet</servlet-name>
 	<url-pattern>/LoginServlet</url-pattern>
+	<url-pattern>/job/LoginServlet</url-pattern>
+	<url-pattern>/emp/LoginServlet</url-pattern>
 </servlet-mapping>
 <servlet-mapping>
 	<servlet-name>ResumeServlet</servlet-name>
@@ -411,6 +422,13 @@
 	<servlet-name>SelectApplicantServlet</servlet-name>
 	<servlet-class>com.niit.web.SelectApplicantServlet</servlet-class>
 </servlet>
+<servlet>
+	<description>
+	</description>
+	<display-name>ShowSelectedForJobsServlet</display-name>
+	<servlet-name>ShowSelectedForJobsServlet</servlet-name>
+	<servlet-class>com.niit.web.ShowSelectedForJobsServlet</servlet-class>
+</servlet>
  <servlet-mapping>
    <servlet-name>newJob</servlet-name>
    <url-pattern>/emp/newJob</url-pattern>
@@ -494,6 +512,10 @@
 <servlet-mapping>
 	<servlet-name>SelectApplicantServlet</servlet-name>
 	<url-pattern>/emp/SelectApplicantServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>ShowSelectedForJobsServlet</servlet-name>
+	<url-pattern>/job/ShowSelectedForJobsServlet</url-pattern>
 </servlet-mapping>
 
 

@@ -10,11 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.niit.dao.JobSeekerDAO;
 import com.niit.domain.Job;
 import com.niit.domain.JobSeeker;
 import com.niit.domain.User;
-import com.niit.ro.JobApplyRequest;
-import com.niit.service.JobSeekerService;
+import com.niit.ro.JobSeekerEventsRequest;
+import com.niit.service.JobSeekerEventsService;
 
 /**
  * Servlet implementation class ApplyJobServlet
@@ -34,34 +35,37 @@ public class ApplyJobServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		JobApplyRequest req=new JobApplyRequest();
-		String[] jobIdList=request.getParameterValues("jobs");
-		List<String> jobslist=new ArrayList<String>();
-		for(String s:jobIdList)
-		{
-
-			JobSeeker jobSeeker=new JobSeeker();
-			jobSeeker.setUser_name(request.getRemoteUser());
-			
-			Job job=new Job();
-
-			job.setJobId(Long.valueOf(s));
-			req.setJob(job);
-			req.setJobSeeker(jobSeeker);
-
-			JobSeekerService jss=new JobSeekerService();
-			jss.applyJob(req);
+		JobSeeker jobSeeker = new JobSeeker();
+		jobSeeker.setUser_name(request.getRemoteUser());
+		JobSeekerDAO jobSeekerDAO = new JobSeekerDAO();
+		jobSeeker = jobSeekerDAO.findJobSeekerByUsername(jobSeeker);
+		if(request.getParameterValues("jobs")==null) {
+			request.setAttribute("noSelection", "You have not Selected anything! Please Select a Job");
+			request.getRequestDispatcher("/job/ShowJobServlet").forward(request, response);
 		}
-
-
-
-		System.out.println("APPLYJOB SERVLET ENTERED");
-
-		RequestDispatcher rd=request.getRequestDispatcher("/LoginServlet");
-
-		rd.forward(request, response);
+		
+		if(request.getParameterValues("jobs").length!=0 && jobSeeker.isResumeCreated()) {
+				JobSeekerEventsRequest req=new JobSeekerEventsRequest();
+				String[] jobIdList=request.getParameterValues("jobs");
+				List<String> jobslist=new ArrayList<String>();
+				for(String s:jobIdList)
+				{
+					Job job=new Job();
+					job.setJobId(Long.valueOf(s));
+					req.setJob(job);
+					req.setJobSeeker(jobSeeker);
+					JobSeekerEventsService jss=new JobSeekerEventsService();
+					jss.applyJob(req);
+				}
+			RequestDispatcher rd=request.getRequestDispatcher("/job/ShowJobServlet");
+			rd.forward(request, response);
+		}
+		else {
+			request.setAttribute("message", "Please create Resume first to apply for Jobs.");
+			request.getRequestDispatcher("/job/CreateResume").forward(request, response);
+		}
+		
+		
 
 	}
 
