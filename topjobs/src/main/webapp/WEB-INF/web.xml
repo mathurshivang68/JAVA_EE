@@ -31,7 +31,14 @@
    <servlet-name>header</servlet-name>
    <url-pattern>/header</url-pattern>
  </servlet-mapping>
-
+<servlet>
+   <servlet-name>Footer</servlet-name>
+   <jsp-file>/WEB-INF/views/Footer.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+   <servlet-name>Footer</servlet-name>
+   <url-pattern>/footer</url-pattern>
+ </servlet-mapping>
 
 
 
@@ -256,19 +263,19 @@
    <url-pattern>/job/ShowJSJobs</url-pattern>
  </servlet-mapping>
 
-<servlet>
-	<description>
-	</description>
-	<display-name>LoginServlet</display-name>
-	<servlet-name>LoginServlet</servlet-name>
-	<servlet-class>com.niit.web.LoginServlet</servlet-class>
-</servlet>
+
 <servlet>
 	<description>
 	</description>
 	<display-name>ResumeServlet</display-name>
 	<servlet-name>ResumeServlet</servlet-name>
 	<servlet-class>com.niit.web.ResumeServlet</servlet-class>
+</servlet>
+
+<servlet>
+	<display-name>LoginServlet</display-name>
+	<servlet-name>LoginServlet</servlet-name>
+	<servlet-class>com.niit.web.LoginServlet</servlet-class>
 </servlet>
 <servlet-mapping>
 	<servlet-name>LoginServlet</servlet-name>

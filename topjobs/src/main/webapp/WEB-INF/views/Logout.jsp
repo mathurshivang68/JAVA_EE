@@ -7,8 +7,21 @@ pageEncoding="ISO-8859-1"%>
 <title>Logout</title>
 </head>
 <body>
+<%@include file="Header.jsp" %>
 <% session.invalidate(); %>
-<p>You have been successfully logout</p>
-<a href="LoginServlet">Homepage</a>
+
+<div class="container-fluid">
+<div class="row jumbotron" style="background-color: #FFF">
+	<div class="col-xs-12 col-sm-12 col-md-6">
+		<p class="lead" style="font-weight: 900; padding-left:500px; padding-top: 11px;">You have been logged out successfully! </p>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-6" style="padding-left:100px;">
+		<a href="/topjobs/LoginServlet"><button type="button" class="btn btn-outline-secondary btn-lg">Login Again</button></a>
+	</div>
+</div>
+</div>
+
+
+
 </body>
 </html>
