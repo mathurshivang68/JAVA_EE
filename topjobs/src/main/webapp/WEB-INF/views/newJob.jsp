@@ -4,6 +4,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style>
+p
+{ font-size:20px;
+}
+
+.glyphicon
+{
+font-size: 20px;
+}
+button{
+  margin:auto;
+  display:block;
+}
+span:hover {
+background-color: aqua;	
+}
+
+
+
+</style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Post Job</title>
 <link rel="stylesheet" type="text/css" href="C:\Users\Shivang\eclipse-workspace\topjobs\topjobs\src\main\webapp\WEB-INF\CSS\landingpage.css" />
@@ -19,8 +39,10 @@
 <%@include file="Header.jsp" %>
 
 <div class="row p-3 mb-2 bg-secondary text-primary">
-<h1>Lets Create a New Job</h1> 
+<p class="font-weight-bolder"> Lets Create a New Job</p>
 </div>
+
+<div class="col-md-10">
  
 <form id="newjob" action="/topjobs/emp/JobServlet" class="well form-horizontal"> 																								 
 		<fieldset>
@@ -28,22 +50,22 @@
 
 
 			<div class="form-group">
-				<label class="col-md-4 control-label">Job Title:</label>
+				<p align="center"><label class="col-md-4 control-label">Job Title:</label></p>
 				<div class="col-md-8 inputGroupContainer">
 					<div class="input-group">
-						<span class="input-group-addon"><i
-							class="glyphicon glyphicon-user"></i></span> <input type="text"
+						<span class="input-group-prepend"><i
+							class="glyphicon glyphicon-user fa-fw"></i></span> <input type="text"
 							class="form-control" name="jobTitle" placeholder="Job Title">
 					</div>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label class="col-md-4 control-label">Company Name:</label>
+				<p align="center"><label class="col-md-4 control-label">Company Name:</label></p>
 				<div class="col-md-8 inputGroupContainer">
 					<div class="input-group">
-						<span class="input-group-addon"><i
-							class="glyphicon glyphicon-briefcase"></i></span> <input type="text"
+						<span class="input-group-prepend"><i
+							class="glyphicon glyphicon-briefcase fa-fw"></i></span> <input type="text"
 							class="form-control" name="companyName" placeholder="Job Title"
 							form="newjob">
 					</div>
@@ -53,12 +75,12 @@
 
 
 			<div class="form-group">
-				<label class="col-md-4 control-label">Job Description:</label>
+				<p align="center"><label class="col-md-4 control-label">Job Description:</label></p>
 				<div class="col-md-8 inputGroupContainer">
 					<div class="input-group">
-						<span class="input-group-addon"><i
-							class="glyphicon glyphicon-list-alt"></i></span>
-						<textarea rows="4" cols="50" name="jobDesc" form="newjob"></textarea>
+						<span class="input-group-prepend"><i
+							class="glyphicon glyphicon-list-alt fa-fw"></i></span>
+						<textarea rows="10" cols="100" name="jobDesc" form="newjob"></textarea>
 					</div>
 				</div>
 			</div>
@@ -66,16 +88,16 @@
 			<br>
 
 			<div class="form-group">
-				<label class="col-md-4 control-label">Job Category:</label>
+				<p align="center"><label class="col-md-4 control-label">Job Category:</label></p>
 				<div class="col-md-8 inputGroupContainer">
 				<div class="input-group">
-					<span class="input-group-addon"><i
-						class="glyphicon glyphicon-briefcase"></i></span> 
+					<p><span class="input-group-prepend"><i
+						class="glyphicon glyphicon-briefcase fa-fw"></i></span> 
 						<select class="form-control" name="jobCategory" >
 						<option selected>Administrative</option>
 						<option>Finance</option>
 						<option>IT</option>
-					</select>
+					</select></p>
 				</div>
 			</div>
 			</div>
@@ -83,10 +105,12 @@
 		</fieldset>
 		<a></a>
 
-		<button type="submit" class="btn btn-primary" value="SUBMIT">SUBMIT</button>  														<!job servlet>
+		<p align="center"><button type="submit" class="btn btn-primary" value="SUBMIT">SUBMIT</button> </p>
 
 
 </form>
+</div>
+
 
 <div class="col-lg-6 mbr-col-md-10">
                     <div class="wrap">
@@ -94,8 +118,8 @@
                             <span class="glyphicon glyphicon-briefcase"></span>
                         </div>
                         <div class="text-wrap vcenter">
-                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"><a href="/topjobs/emp/ShowJobServlet">Show
-                                <span>Jobs I have Posted</span>
+                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"><a href="/topjobs/emp/ShowJobServlet">
+                                <p><span>Jobs I have Posted</span></p>
                             </a></h2>
                             <p class="mbr-fonts-style text1 mbr-text display-6">Show all Jobs posted by you</p>
                         </div>

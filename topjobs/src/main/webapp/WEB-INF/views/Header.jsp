@@ -20,7 +20,7 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-light">
 <div class="container-fluid">
-	<a class="navbar-brand" href="/topjobs/home" style="font-weight: bold;">TopJobs</a>
+	<a class="navbar-brand" href="/topjobs/LoginServlet" style="font-weight: bold;">TopJobs</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarResponsive">
 		<span class="navbar-toggler-icon"></span>

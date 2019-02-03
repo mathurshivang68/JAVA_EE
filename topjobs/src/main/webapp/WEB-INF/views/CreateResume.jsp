@@ -5,6 +5,56 @@
 <head>
 
 <meta charset="ISO-8859-1">
+
+<style>
+label {
+  display: block;
+  padding-left: 15px;
+  text-indent: -15px;
+}
+input {
+  
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
+}
+
+.content-box { 
+  box-sizing: content-box; 
+   align-items: center;
+}
+
+div[class*="box"] {
+background-color:white;
+  width: 300px;
+  padding: 10px;
+  background: #FFF;
+  color: black;
+  border: 1px solid red;
+  background-clip: content-box;
+  text-indent: 20px;
+  vertical-align: middle;
+}
+
+.glyphicon
+{
+font-size: 20px;
+}
+
+p
+{ font-size:20px;
+}
+
+}
+
+button{
+  margin:auto;
+  display:block;
+}
+
+</style>
 <title>Create Resume</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   
@@ -90,7 +140,7 @@
 <body>
 <%@include file="Header.jsp" %>
 
-<h2> Lets Make Your Resume Now</h2>
+<p class="font-weight-bolder"> Lets Make Your Resume Now</p>
 
 
 <p>Hello <%=request.getRemoteUser() %>
@@ -99,49 +149,49 @@
 	out.println(request.getAttribute("message"));
 	}
 %>
-
+<div class="col-md-10">
 <form action="/topjobs/job/ResumeServlet" id="myForm" onsubmit="return validate()" method="post" class="well form-horizontal">
     <fieldset>
     <div class="form-group">
-    <label class="col-md-4 control-label">Name:</label>
-    	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input type="text" name="name" id="fname" placeholder="Full Name"></div>
+    <p align="inline"><label class="col-md-4 control-label">Name:</label></p>
+    	<div class="col-md-6 inputGroupContainer">
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-user fa-fw"></i></span>&nbsp; 
+        <input type="text" name="name" id="fname" placeholder="Full Name"></div>
       </div>
      </div>
       
       
       <div class="form-group">
-    <label class="col-md-4 control-label">Email:</label>
+    <p align="inline"><label class="col-md-4 control-label">Email:</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-envelope fa-fw"></i></span>&nbsp;
       <input type="text" name="email" id="email" placeholder="Email"></div>
       </div>
      </div>
       
       
       <div class="form-group">
-    <label class="col-md-4 control-label">Contact No:</label>
+    <p align="inline"><label class="col-md-4 control-label">Contact No:</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-earphone fa-fw"></i></span>&nbsp;
       <input type="text" name="contactNo" id="contactNo" placeholder="Contact Number"></div>
      </div>
      </div>
       
    
    <div class="form-group">
-    <label class="col-md-4 control-label">Address</label>
+    <p align="inline"><label class="col-md-4 control-label">Address</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-home fa-fw"></i></span>&nbsp;
       <textarea rows="4" cols="50" name="address" id="address"></textarea></div>
 </div>
      </div>
     
     
     <div class="form-group">  
-   <label class="col-md-4 control-label">City</label>
+   <p align="inline"><label class="col-md-4 control-label">City</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-home fa-fw"></i></span>&nbsp;
    		 <input type="text" name="inputCity" id="inputCity"></div></div>
    		 </div>
    
@@ -150,9 +200,9 @@
    
    
    <div class="form-group">
-   <label class="col-md-4 control-label">State</label>
+   <p align="inline"><label class="col-md-4 control-label">State</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-home fa-fw"></i></span>&nbsp;
    	  <select name="inputState" id="inputState" >
         <option selected>Choose</option>
 		<option>Andaman and Nicobar Islands</option>
@@ -198,63 +248,64 @@
    
    
    <div class="form-group">  
-   <label class="col-md-4 control-label">Zip</label>
+   <p align="inline"><label class="col-md-4 control-label">Zip</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-home fa-fw"></i></span>&nbsp;
    		 <input type="text" name="inputzip" id="inputZip"></div></div>
    		 </div>
    
    <div class="form-group">  
-   <label class="col-md-4 control-label">Marks in 10th:</label>
+   <p align="inline"><label class="col-md-4 control-label">Marks in 10th:</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-list-alt fa-fw"></i></span>&nbsp;
    		 <input type="number" step="0.01" name="marks10" id="marks10"></div></div>
    		 </div>
    
    
      <div class="form-group">  
-   <label class="col-md-4 control-label">Marks in 12th:</label>
+   <p align="inline"><label class="col-md-4 control-label">Marks in 12th:</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-list-alt fa-fw"></i></span>&nbsp;
    		 <input type="number" step="0.01" name="marks12" id="marks12"></div></div>
    		 </div>
    
    
      <div class="form-group">  
-   <label class="col-md-4 control-label">Marks in Graduation:</label>
+   <p align="inline"><label class="col-md-4 control-label">Marks in Graduation:</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-list-alt fa-fw"></i></span>&nbsp;
    		 <input type="number" step="0.01" name="marksgrad" id="marksgrad"></div></div>
    		 </div>
    
    
 <div class="form-group">  
-   <label class="col-md-4 control-label">Please select the skills you are proficient in: </label>
-    	<div class="col-md-12 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-       
-          
+   <p align="inline"><label class="col-md-4 control-label">Please select the skills you are proficient in: </label></p>
+    	
+    	<div class="col-md-8">
+    	<div class="content-box"> 
 		
-		Java <input type="checkbox" name="skills" id="skills" value="java"/><br />
-		C++ <input type="checkbox" name="skills" id="skills" value="c++"  /><br /> 
-		Database <input type="checkbox" name="skills" id="skills" value="database"  /><br /> 
-		Networking <input type="checkbox" name="skills" id="skills" value="networking"  />
-		Digital Marketing <input type="checkbox" name="skills" id="skills" value="digitalm"  /><br /> 
-		Electronics <input type="checkbox" name="skills" id="skills" value="electronics"  /><br /> 
-		Mechanical <input type="checkbox" name="skills" id="skills" value="mechanical"  /><br /> 
-		AutoCAD <input type="checkbox" name="skills" id="skills" value="autocad"  /><br /> 
-		Big Data <input type="checkbox" name="skills" id="skills" value="bigdata"  /><br /> 
-		HTML/CSS <input type="checkbox" name="skills" id="skills" value="html"  /><br /> 
+		<input type="checkbox" name="skills" id="skills" value="java"  />Java <br>
+		<input type="checkbox" name="skills" id="skills" value="c++"  />C++<br>
+		<input type="checkbox" name="skills" id="skills" value="database"  />Database<br> 
+		<input type="checkbox" name="skills" id="skills" value="networking"  />Networking<br>
+		<input type="checkbox" name="skills" id="skills" value="digitalm"  />Digital Marketting<br> 
+		<input type="checkbox" name="skills" id="skills" value="electronics"  />Electronics <br> 
+		<input type="checkbox" name="skills" id="skills" value="mechanical"  />Mechanical <br> 
+	    <input type="checkbox" name="skills" id="skills" value="autocad"  />AutoCAD<br> 
+		<input type="checkbox" name="skills" id="skills" value="bigdata"  />Big Data<br> 
+		<input type="checkbox" name="skills" id="skills" value="html"  />HTML/CSS<br> 
 		</div>
 		</div>
-		</div>
+	
 		
 		  
- 
-  <button type="submit" id="myForm">SUBMIT</button>
+  <!-- <button type="submit" class="btn btn-success" id="myForm">SUBMIT</button>-->
+	 <p align="center"><button type="submit" class="btn btn-success";margin-left:auto;margin-right:auto;display:block;margin-top:22%;margin-bottom:0%">SUBMIT</button></p>
+
 </div>
 </fieldset>  
 </form>
+</div>
 
 
 
