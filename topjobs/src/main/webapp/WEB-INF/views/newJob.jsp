@@ -53,8 +53,8 @@ background-color: aqua;
 				<p align="center"><label class="col-md-4 control-label">Job Title:</label></p>
 				<div class="col-md-8 inputGroupContainer">
 					<div class="input-group">
-						<span class="input-group-addon"><i
-							class="glyphicon glyphicon-user"></i></span> <input type="text"
+						<span class="input-group-prepend"><i
+							class="glyphicon glyphicon-user fa-fw"></i></span> <input type="text"
 							class="form-control" name="jobTitle" placeholder="Job Title">
 					</div>
 				</div>

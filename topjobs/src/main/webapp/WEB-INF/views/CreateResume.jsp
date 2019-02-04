@@ -265,15 +265,15 @@ button{
      <div class="form-group">  
    <p align="inline"><label class="col-md-4 control-label">Marks in 12th:</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-list-alt fa-fw"></i></span>&nbsp;
    		 <input type="number" step="0.01" name="marks12" id="marks12"></div></div>
    		 </div>
    
    
      <div class="form-group">  
-   <label class="col-md-4 control-label">Marks in Graduation:</label>
+   <p align="inline"><label class="col-md-4 control-label">Marks in Graduation:</label></p>
     	<div class="col-md-8 inputGroupContainer">
-       <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+       <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-list-alt fa-fw"></i></span>&nbsp;
    		 <input type="number" step="0.01" name="marksgrad" id="marksgrad"></div></div>
    		 </div>
    
