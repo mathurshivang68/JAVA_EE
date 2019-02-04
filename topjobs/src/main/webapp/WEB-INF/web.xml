@@ -61,14 +61,7 @@
    <url-pattern>/login</url-pattern>
  </servlet-mapping>
 
-<servlet>
-   <servlet-name>logins</servlet-name>
-   <jsp-file>/WEB-INF/views/Logins.jsp</jsp-file>
- </servlet>
- <servlet-mapping>
-   <servlet-name>logins</servlet-name>
-   <url-pattern>/logins</url-pattern>
- </servlet-mapping>
+
 
 
 
@@ -307,6 +300,14 @@
 <url-pattern>/admin/ManageJobs</url-pattern>
 </servlet-mapping>
 
+<servlet>
+ <servlet-name>ShowSelectedForJobs</servlet-name>
+ <jsp-file>/WEB-INF/views/ShowSelectedForJobs.jsp</jsp-file>
+ </servlet>
+<servlet-mapping>
+<servlet-name>ShowSelectedForJobs</servlet-name>
+<url-pattern>/job/ShowSelectedForJobs</url-pattern>
+</servlet-mapping>
 
 <servlet>
    <servlet-name>newJob</servlet-name>

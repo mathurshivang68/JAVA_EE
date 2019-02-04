@@ -9,31 +9,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
 <style>
 table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
 }
-
 td, th {
 	border: 1px solid #dddddd;
 	text-align: left;
 	padding: 8px;
 }
-
 tr:nth-child(even) {
 	background-color: #dddddd;
 }
 </style>
+
+
 </head>
 <body>
+
+<%@include file="Header.jsp" %>
+
 <% List<JobSeekerEvents> eventList = (List<JobSeekerEvents>) request.getAttribute("eventList");
 	String message = (String)request.getAttribute("message");
 %>
-
+<h2>Jobs you have applied for:  <%=eventList.size() %></h2>
 <c:set var="message" value="<%=message %>"/>
 <c:if test="${not empty message}">    
 	<c:out value="${message}"/>
@@ -41,7 +42,13 @@ tr:nth-child(even) {
 </c:if>
 <table>
 <c:set var="eventList" value="<%=eventList%>"/>
+			<tr>
+				<th>Job Id</th>
+				<th>Details</th>
+			</tr>
 <c:forEach var="event" items="${eventList}">
+			
+			
 			<tr>
 				<td><c:out value="${event.job.jobId}"></c:out></td>
 				<td><a href="/topjobs/job/ShowThisJobServlet?thisJob=${event.job.jobId}">Show this Job</a>	</td>

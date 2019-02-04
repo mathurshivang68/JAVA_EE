@@ -2,6 +2,7 @@ package com.niit.domain;
 
 public class Address {
 	
+	
 	private String addLine;
 	private String city;
 	private String state;
@@ -32,10 +33,11 @@ public class Address {
 	public void setPin(String pin) {
 		this.pin = pin;
 	}
-	public Address() {
-		super();
+	
+	@Override
+	public String toString() {
+		return addLine + " " + city + " " + state + " " + pin;
 	}
-
 	
 	
 }

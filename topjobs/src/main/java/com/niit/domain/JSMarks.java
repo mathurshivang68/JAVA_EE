@@ -24,10 +24,12 @@ public class JSMarks {
 	public void setGradMarks(Double gradMarks) {
 		this.gradMarks = gradMarks;
 	}
-	
-	public JSMarks() {
-		super();
+	@Override
+	public String toString() {
+		return "10th=" + marks10 + "   12th=" + marks12 + "   Graduation=" + gradMarks;
 	}
+	
+	
 
 
 }

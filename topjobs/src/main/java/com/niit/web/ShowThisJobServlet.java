@@ -43,7 +43,6 @@ public class ShowThisJobServlet extends HttpServlet {
 		job.setJobId(Long.valueOf(id));
 		job=jobDAO.findJobByID(job);
 		request.setAttribute("thisJob", job);
-		
 				
 		System.out.println("SHOWTHIS JOB SERVLET ENTERED");
 				

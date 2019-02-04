@@ -1,74 +1,53 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
- <%@ page import="com.niit.domain.Job" %> 
-      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="com.niit.domain.Job" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="/topjobs/CSS/showelements.css" />
-   <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>This Job</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/topjobs/CSS/header.css" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TopJobs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	
+	<link href="/topjobs/CSS/style.css" rel="stylesheet">
+
 </head>
 <body>
-<%
-Job jobDesc=(Job)request.getAttribute("thisJob"); 
-
-%>
+<%@include file="Header.jsp" %>
+<%Job jobDesc=(Job)request.getAttribute("thisJob"); %>
 <c:set var="job" value="<%=jobDesc%>" />
-
-
-<div class="columns-block">
-<div class="left-col-block blocks">
-    <header class="header">
-        <div class="content text-center">
-            <h1><c:out value="${job.jobName}"></c:out></h1>
-
-            <p class="lead">JOIN US AT <c:out value="${job.jobName}"></c:out></p>
-            <ul class="social-icon">
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-slack" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-            </ul>
-        </div>
-        <div class="profile-img"></div>
-    </header>
-    <!-- .header-->
+<div class="container-fluid padding">
+<div class="row padding">
+	<div class="col-lg-6">
+		<h1 style="font-weight: 900">Job Details</h1>
+		<h4 style="padding-left: 4px; background-color: #dddddd;">Title:</h4>
+		<p><c:out value="${job.jobTitle}"/></p>
+		<h4 style="padding-left: 4px; background-color: #dddddd;">Company:</h4>
+		<p><c:out value="${job.jobName}"/></p>
+		<h4 style="padding-left: 4px; background-color: #dddddd;">Category:</h4>
+		<p><c:out value="${job.jobCategory}"/></p>
+		<h4 style="padding-left: 4px; background-color: #dddddd;">Description:</h4>
+		<p><c:out value="${job.jobDescription}"/></p>
+		<h4 style="padding-left: 4px; background-color: #dddddd;">Date Posted:</h4>
+		<p><c:out value="${job.postedDate}"/></p>				
+	</div>
+	<div class="col-lg-6">
+		<img src="/topjobs/images/job1.jpg" class="img-fluid">
+	</div>
+</div>
+<hr class="my-4">
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-<table>
-
-<tr><td>Job Id: <c:out value="${job.jobId}"></c:out></td></tr>
-
-<tr><td>Company Name: <c:out value="${job.jobName}"></c:out></td></tr>
-<tr><td>Job Title: <c:out value="${job.jobTitle}"></c:out></td></tr>
-<tr><td>Job Description: <c:out value="${job.jobDescription}"></c:out></td></tr>
-
-</table>
-<!-- jquery -->
-<script src="js/jquery-2.1.4.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/scripts.js"></script>
-</body>
 </body>
 </html>

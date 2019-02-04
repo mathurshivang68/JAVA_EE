@@ -12,30 +12,49 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<style>
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+</style>
+<link href="/topjobs/CSS/style.css" rel="stylesheet">
 </head>
+
 <body>
-
+<%@include file="Header.jsp" %>
 <% List<Job> ls =(List)request.getAttribute("JobList"); %>
-<h1>Welcome </h1>
-<%= request.getRemoteUser() %>
-<h1>Jobs you have posted</h1>
-<h2><%= ls.size()%> Jobs</h2>
+<h1 style="font-weight: 900;">Welcome <%= request.getRemoteUser() %> </h1>
+
+<h3>Jobs you have posted:  <%= ls.size()%></h3>
+<div>
 <table>
-
-<c:set var="jobList" value="<%=ls%>" />
-<c:forEach var="job" items="<%=ls %>">
-				
-				<tr>
-				<td><c:out value="${job.jobName}"></c:out></td>
-				<td><a href="/topjobs/emp/ShowThisJobServlet?thisJob=${job.jobId}">Show Job</a></td>
-				<td><a href="/topjobs/emp/ShowApplicantServlet?thisJob=${job.jobId}">Show Applicants</a></td>
+		<tr>
+			<th>Job Name</th>
+			<th>Details</th>
+			<th>Applicants</th>
+		</tr>
+		<c:forEach var="job" items="<%=ls%>">
+			<tr>
+				<td><c:out value="${job.jobTitle}"></c:out></td>
+				<td><a href="/topjobs/emp/ShowThisJobServlet?thisJob=${job.jobId}">Show this Job</a></td>
+				<td><a href="/topjobs/emp/ShowApplicantServlet?thisJob=${job.jobId}">Show Applicants who have applied</a></td>
 				</tr>
-</c:forEach>
+		</c:forEach>
+	</table>
+</div>	
 
-</table>
-
-<a href="/topjobs/LoginServlet">Home</a>
 
 <script type="text/javascript">
 var noApplicant = '<%=request.getAttribute("noApplicant")%>';

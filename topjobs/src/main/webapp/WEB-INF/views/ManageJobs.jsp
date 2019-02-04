@@ -29,31 +29,36 @@ tr:nth-child(even) {
 	background-color: #dddddd;
 }
 </style>
+<link href="/topjobs/CSS/style.css" rel="stylesheet">
 </head>
 <body>
+<%@include file="Header.jsp" %>
 <% List<Job> jobList = (List<Job>) request.getAttribute("listJobs"); %>
 
 <c:set var="jobs" value="<%=jobList %>"/>
-<table style="border:1px solid;">
+
 <form action="/topjobs/admin/DeleteJobServlet">
+<table style="border:1px solid;">
+<tr>
+<th>Job Id</th>
+<th>Job Title</th>
+<th>Posted Date</th>
+<th>Elapsed Days</th>
+<th>Choose</th>
+</tr>
 <c:forEach var="job" items="${jobs}">
 <tr>
 <td><c:out value="${job.jobId}"></c:out></td>
 <td><c:out value="${job.jobTitle}"></c:out></td>
 <td><c:out value="${job.postedDate}"></c:out></td>
 <td><c:out value="${job.elapsedDays}"></c:out></td>
-<td><c:out value="${job.jobCategory}"></c:out></td>
 <td><input type="checkbox" name="jobIds" value="${job.jobId}"></td>
 </tr>
-
 </c:forEach>
-<input type="submit" value="Delete these jobs">
-
-
-</form>
 </table>
 
-<a href="/topjobs/LoginServlet">Homepage</a>
+<input type="submit" class="btn" style="margin: 7px" value="Delete these jobs">
+</form>
 
 </body>
 </html>
