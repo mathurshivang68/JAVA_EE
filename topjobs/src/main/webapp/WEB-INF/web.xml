@@ -273,8 +273,8 @@
 <servlet-mapping>
 	<servlet-name>LoginServlet</servlet-name>
 	<url-pattern>/LoginServlet</url-pattern>
-	<url-pattern>/job/LoginServlet</url-pattern>
-	<url-pattern>/emp/LoginServlet</url-pattern>
+<!-- 	<url-pattern>/job/LoginServlet</url-pattern>
+	<url-pattern>/emp/LoginServlet</url-pattern> -->
 </servlet-mapping>
 <servlet-mapping>
 	<servlet-name>ResumeServlet</servlet-name>
