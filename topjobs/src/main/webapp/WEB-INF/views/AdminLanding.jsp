@@ -25,7 +25,7 @@
 <ul class="nav navbar-nav navbar-right">
 		<li class="dropdown"><a href="#" class="dropdown-toggle"
 			data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> 
-				<strong><%=request.getRemoteUser()%></strong> <span
+				<strong><%=request.getRemoteUser()%></strong> <span>
 				class="glyphicon glyphicon-chevron-down"></span>
 		</a>
 			<ul class="dropdown-menu">
