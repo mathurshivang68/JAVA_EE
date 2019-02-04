@@ -11,16 +11,44 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+</style>
+<link href="/topjobs/CSS/style.css" rel="stylesheet">
 </head>
 <body>
+<%@include file="Header.jsp" %>
 
 <% List<JobSeekerEvents> ls =(List<JobSeekerEvents>)request.getAttribute("jobSeekerEventsList");%>
 <h1>Welcome <%= request.getRemoteUser() %></h1>
 
 <h1>No of applicants: <%= ls.size()%> </h1>
-<table>
+
 <form action="/topjobs/emp/SelectApplicantServlet">
+<table>
 <c:set var="jobSeekerEventsList" value="<%=ls%>" />
+
+				<tr>
+				<th>JobSeeker</th>
+				<th>Resume Details</th>
+				<th>Choose</th>
+				</tr>
+				
+
 <c:forEach var="jobSeekerEvent" items="${jobSeekerEventsList}">
 				
 				<tr>
@@ -30,13 +58,9 @@
 				</tr>
 					<input type="hidden" name="thisJob" value="<%=request.getParameter("thisJob")%>">
 </c:forEach>
-<input type="submit" value="Select Applicants">
-</form>
-
-
 </table>
-
-<a href="/topjobs/LoginServlet">Home</a>
+<input type="submit" class="btn" value="Select Applicants">
+</form>
 
 </body>
 

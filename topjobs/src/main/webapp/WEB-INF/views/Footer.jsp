@@ -23,7 +23,7 @@
 <div class="row text-center">
 	<div class="col-md-4">
 		<hr class="light">
-		<img src="" alt="TopJobs">
+		<img src="/topjobs/images/topjobs.png" alt="TopJobs" style="width:120px;">
 		<hr class="light">
 		<p>555-555-5555</p>
 		<p>customercare@topjobs.com</p>

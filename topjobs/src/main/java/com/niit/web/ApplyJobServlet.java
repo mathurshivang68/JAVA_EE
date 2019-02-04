@@ -65,8 +65,6 @@ public class ApplyJobServlet extends HttpServlet {
 			request.getRequestDispatcher("/job/CreateResume").forward(request, response);
 		}
 		
-		
-
 	}
 
 	/**

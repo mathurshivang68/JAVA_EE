@@ -30,8 +30,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		System.out.println("LOGIN SERVLET ENTERED");
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	
 		if(request.isUserInRole("JobSeeker"))
 		{	
 			RequestDispatcher rd=request.getRequestDispatcher("/job/jsl");

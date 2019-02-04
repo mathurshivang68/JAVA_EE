@@ -6,7 +6,6 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="/topjobs/CSS/header.css" />
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>TopJobs</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -19,20 +18,18 @@
 </head>
 
 <nav class="navbar navbar-expand-md navbar-light bg-light">
-<div class="container-fluid">
-	<a class="navbar-brand" href="/topjobs/LoginServlet" style="font-weight: bold;">TopJobs</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarResponsive">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/topjobs/home" style="font-weight: bold;"><img src="/topjobs/images/topjobs.png" alt="TopJobs" style="width:120px;"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 		<span class="navbar-toggler-icon"></span>
-	</button>
-	<div class="collapse navbar-collapse" id="navbarResponsive">
-		<ul class="navbar-nav ml-auto">
-			<li class="nav-item" active><a class="nav-link"
-				href="/topjobs/home">Home</a></li>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+			<li class="nav-item" active><a class="nav-link"	href="/topjobs/LoginServlet">Home</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">About</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
 		</ul>
 	</div>
-</div>
+	</div>
 </nav>

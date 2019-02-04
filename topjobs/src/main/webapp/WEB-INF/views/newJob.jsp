@@ -44,7 +44,7 @@ background-color: aqua;
 
 <div class="col-md-10">
  
-<form id="newjob" action="/topjobs/emp/JobServlet" class="well form-horizontal"> 																								 
+<form id="newjob" action="/topjobs/emp/JobServlet" class="well form-horizontal" method="post"> 																								 
 		<fieldset>
 
 

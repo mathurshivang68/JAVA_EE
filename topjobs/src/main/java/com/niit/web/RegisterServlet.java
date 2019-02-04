@@ -74,6 +74,7 @@ public class RegisterServlet extends HttpServlet {
 				emp.setUser_name(user_name);
 				emp.setUser_pass(user_pass);
 				emp.setIsActive(false);
+				emp.setLoginsPurchased(0L);
 				emp.setUserRole(ur);
 				RegisterUser(emp);
 			}

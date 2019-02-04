@@ -33,7 +33,6 @@ public class ShowThisJobServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		
 		String id=request.getParameter("thisJob");
 		
 		
@@ -43,7 +42,6 @@ public class ShowThisJobServlet extends HttpServlet {
 		job.setJobId(Long.valueOf(id));
 		job=jobDAO.findJobByID(job);
 		request.setAttribute("thisJob", job);
-		
 				
 		System.out.println("SHOWTHIS JOB SERVLET ENTERED");
 				

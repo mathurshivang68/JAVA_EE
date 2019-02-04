@@ -12,57 +12,51 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
 <style>
 table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
 	width: 100%;
 }
-
 td, th {
 	border: 1px solid #dddddd;
 	text-align: left;
 	padding: 8px;
 }
-
 tr:nth-child(even) {
 	background-color: #dddddd;
 }
 </style>
-
-
+<link href="/topjobs/CSS/style.css" rel="stylesheet">
 </head>
 
-
-
 <body>
+<%@include file="Header.jsp" %>
 
 	<% List<Job> ls =(List)request.getAttribute("JobList"); %>
-	<h1>Welcome</h1>
-	<%= request.getRemoteUser() %>
-	<h1>Jobs for you</h1>
-	<h2><%= ls.size()%> Jobs</h2>
+	<h1 style="font-weight: 900;">Welcome <%= request.getRemoteUser() %></h1>
+	<h3>Jobs for you: <%= ls.size()%></h3>
 
 <form action="ApplyJobServlet" id="outer">
+	
 	<table>
+		<tr>
+			<th>Job Name</th>
+			<th>Choose</th>
+			<th>Details</th>
+		</tr>
 		<c:set var="jobList" value="<%=ls%>" />
 		<c:forEach var="job" items="<%=ls%>">
 			<tr>
-				<td><c:out value="${job.jobName}"></c:out></td>
-				<%-- 					<td><c:out value="${job.jobTitle}"></c:out></td> --%>
-				<%-- 					<td><c:out value="${job.jobDescription}"></c:out></td>	 --%>
+				<td><c:out value="${job.jobTitle}"></c:out></td>
 				<td><input type="checkbox" name="jobs" value="${job.jobId}"></td>
-								<td><c:out value="${job.jobId}"></c:out></td>
-				
 				<td><a href="/topjobs/job/ShowThisJobServlet?thisJob=${job.jobId}">Show this Job</a>	</td>
 			</tr>
 		</c:forEach>
 	</table>
-<input type="submit" value="Apply" id="outer">
+<input type="submit" class="btn" style="margin: 7px" value="Apply" id="outer">
 </form>
 
-<a href="/topjobs/LoginServlet">Home</a>
 
 
 <script>
