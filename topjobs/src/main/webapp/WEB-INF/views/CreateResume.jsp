@@ -279,12 +279,12 @@ button{
    
    
 <div class="form-group">  
-   <p align="inline"><label class="col-md-4 control-label">Please select the skills you are proficient in: </label></p>
+   <p><label class="col-md-6 control-label">Please select the skills you are proficient in: </label></p>
     	
     	<div class="col-md-8">
     	<div class="content-box"> 
 		
-		<input type="checkbox" name="skills" id="skills" value="java"  />Java <br>
+		<input type="checkbox" name="skills" id="skills" value="java"  />Java<br>
 		<input type="checkbox" name="skills" id="skills" value="c++"  />C++<br>
 		<input type="checkbox" name="skills" id="skills" value="database"  />Database<br> 
 		<input type="checkbox" name="skills" id="skills" value="networking"  />Networking<br>

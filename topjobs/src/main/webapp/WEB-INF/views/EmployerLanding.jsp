@@ -4,6 +4,18 @@
 <html>
 
 <head>
+<style>
+h2
+{
+	font-size: 20px;
+
+}
+
+p
+{ font-size:8px;
+}
+
+</style>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="../CSS/landingpage.css" />
 
@@ -22,7 +34,7 @@
 
 
 <body>
-
+<div class="row">
 	<ul class="nav navbar-nav navbar-right">
 		<li class="dropdown"><a href="#" class="dropdown-toggle"
 			data-toggle="dropdown"> <span class="glyphicon glyphicon-user"></span> 
@@ -54,7 +66,7 @@
 				</li>
 				<li class="divider"></li>
 				<li>
-					<div class="navbar-login navbar-login-session">
+					<div class="navbar-login">
 						<div class="row">
 							<div class="col-lg-12">
 								<p>
@@ -68,14 +80,12 @@
 		<li>
 	</ul>
 
-	</div>
 
-	</nav>
-	<nav aria-label="breadcrumb">
-	<ol class="breadcrumb">
-		<li class="breadcrumb-item active" aria-current="page">Home</li>
-	</ol>
-	</nav>
+	
+
+	
+	
+	
 	</div>
 
 	<!-- Jumbotron -->
