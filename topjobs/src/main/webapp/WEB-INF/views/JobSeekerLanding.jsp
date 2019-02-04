@@ -149,6 +149,18 @@
                 </div>
     
                 
+    <div class="col-lg-6 mbr-col-md-10">
+                    <div class="wrap">
+                        <div class="ico-wrap">
+                            <span class="glyphicon glyphicon-briefcase"></span>
+                        </div>
+                        <div class="text-wrap vcenter">
+                            <h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"><a href="/topjobs/job/ShowSelectedForJobsServlet">See My Applied Status</a></h2>
+                            <p class="mbr-fonts-style text1 mbr-text display-6">See Job Status of Jobs you have applied</p>
+                        </div>
+                    </div>
+                </div>
+    
     
                 
             </div>

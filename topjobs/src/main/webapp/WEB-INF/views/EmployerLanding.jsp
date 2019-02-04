@@ -166,7 +166,7 @@ p
 					</div>
 					<div class="text-wrap vcenter">
 						<h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">
-							<a href="/topjobs/emp/purchaselogin">Purchase <span>Login</span></a>
+							<a href="/topjobs/emp/purchaselogin">Purchase <span>Subscription</span></a>
 						</h2>
 						<p class="mbr-fonts-style text1 mbr-text display-6">Purchase
 							Logins to view resumes submitted against a Job</p>

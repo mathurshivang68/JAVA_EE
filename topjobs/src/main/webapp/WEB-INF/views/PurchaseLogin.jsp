@@ -63,8 +63,11 @@ function perc1() {
       </div>
 <div class="card-body mx-4">
 <div class="md-form"></div>
-<h2>One Login is valid for 30 Days </h2>
+<h2>One Login is valid for 30 Days at a cost of $300</h2>
+
+
 <h6>Note: Get Discount of 30% on fees if you purchase 6 or more Logins</h6>
+
 
 <FORM name="discountcalc" method="post" action="/topjobs/emp/PurchaseLoginServlet">
 	<TABLE cellSpacing=1 cellPadding=1 border=1>

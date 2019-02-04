@@ -425,7 +425,7 @@
 <servlet>
 	<description>
 	</description>
-	<display-name>ShowSelectedForJobsServlet</display-name>
+	<display-name>ShowForJobsServlet</display-name>
 	<servlet-name>ShowSelectedForJobsServlet</servlet-name>
 	<servlet-class>com.niit.web.ShowSelectedForJobsServlet</servlet-class>
 </servlet>
