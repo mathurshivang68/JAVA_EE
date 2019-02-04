@@ -8,16 +8,20 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="/topjobs/CSS/header.css" />
-<link href="CSS/form.css" type=text/css rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+<link href="/topjobs/CSS/form.css" type=text/css rel="stylesheet">
+		<meta charset="utf-8">
+		<title>TopJobs</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/solid.css">
+		<link href="/topjobs/CSS/style.css" rel="stylesheet">
 </head>   
 <body>
-
-<div class="container-fluid bg">
 <%@include file="Header.jsp" %>
-  				
+ 
   <div class="container">
    <form class="form-container" action="RegisterServlet">
 				
@@ -53,13 +57,9 @@
    				<input type="password" placeholder="Enter Password " name="pswd" required/></p>
 </div>
 
-<!--     			<p><label for="psw-repeat"><b>Repeat Password</b></label> -->
-<!--     			<input type="password" placeholder="Repeat Password " name="psw-repeat" required/></p> -->
-  			    
-				
 			<input type="submit" class="btn" value="Register"/>
  		<!-- 		<button type="submit" class=btn btn-success btn-block">Submit</button> -->
- 				<!--  --><p>Already have an Account?<a href="LoginServlet"/>Sign In</a></p>
+ 				<p>Already have an Account?<a href="LoginServlet"/>Sign In</a></p>
 				
 				</fieldset>
 			</form>
@@ -69,11 +69,7 @@
 		
 		
         
-</div>
 	
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script>
 var reg='<%=request.getAttribute("registrationFail")%>';
 if(reg!='null'){

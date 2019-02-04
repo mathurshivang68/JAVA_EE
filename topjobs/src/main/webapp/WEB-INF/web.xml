@@ -300,6 +300,14 @@
 <url-pattern>/admin/ManageJobs</url-pattern>
 </servlet-mapping>
 
+<servlet>
+ <servlet-name>ShowSelectedForJobs</servlet-name>
+ <jsp-file>/WEB-INF/views/ShowSelectedForJobs.jsp</jsp-file>
+ </servlet>
+<servlet-mapping>
+<servlet-name>ShowSelectedForJobs</servlet-name>
+<url-pattern>/job/ShowSelectedForJobs</url-pattern>
+</servlet-mapping>
 
 <servlet>
    <servlet-name>newJob</servlet-name>
@@ -425,7 +433,7 @@
 <servlet>
 	<description>
 	</description>
-	<display-name>ShowForJobsServlet</display-name>
+	<display-name>ShowSelectedForJobsServlet</display-name>
 	<servlet-name>ShowSelectedForJobsServlet</servlet-name>
 	<servlet-class>com.niit.web.ShowSelectedForJobsServlet</servlet-class>
 </servlet>

@@ -251,7 +251,7 @@ button{
    <p align="inline"><label class="col-md-4 control-label">Zip</label></p>
     	<div class="col-md-8 inputGroupContainer">
        <div class="input-group"><span class="input-group-prepend"><i class="glyphicon glyphicon-home fa-fw"></i></span>&nbsp;
-   		 <input type="text" name="inputzip" id="inputZip"></div></div>
+   		 <input type="text" name="inputZip" id="inputZip"></div></div>
    		 </div>
    
    <div class="form-group">  
@@ -279,21 +279,21 @@ button{
    
    
 <div class="form-group">  
-   <p><label class="col-md-6 control-label">Please select the skills you are proficient in: </label></p>
+   <p align="inline"><label class="col-md-4 control-label">Please select the skills you are proficient in: </label></p>
     	
     	<div class="col-md-8">
     	<div class="content-box"> 
 		
-		<input type="checkbox" name="skills" id="skills" value="java"  />Java<br>
-		<input type="checkbox" name="skills" id="skills" value="c++"  />C++<br>
-		<input type="checkbox" name="skills" id="skills" value="database"  />Database<br> 
-		<input type="checkbox" name="skills" id="skills" value="networking"  />Networking<br>
-		<input type="checkbox" name="skills" id="skills" value="digitalm"  />Digital Marketting<br> 
-		<input type="checkbox" name="skills" id="skills" value="electronics"  />Electronics <br> 
-		<input type="checkbox" name="skills" id="skills" value="mechanical"  />Mechanical <br> 
-	    <input type="checkbox" name="skills" id="skills" value="autocad"  />AutoCAD<br> 
-		<input type="checkbox" name="skills" id="skills" value="bigdata"  />Big Data<br> 
-		<input type="checkbox" name="skills" id="skills" value="html"  />HTML/CSS<br> 
+		 <input type="checkbox" name="skills" id="skills" value="Java"/>Java<br />
+		 <input type="checkbox" name="skills" id="skills" value="C++"  />C++<br /> 
+		 <input type="checkbox" name="skills" id="skills" value="Database"  />Database<br /> 
+		 <input type="checkbox" name="skills" id="skills" value="Networking"  />Networking<br>
+		 <input type="checkbox" name="skills" id="skills" value="Digitalm"  />Digital Marketing<br /> 
+		 <input type="checkbox" name="skills" id="skills" value="Electronics"  />Electronics<br /> 
+		 <input type="checkbox" name="skills" id="skills" value="Mechanical"  />Mechanical<br /> 
+		 <input type="checkbox" name="skills" id="skills" value="Autocad"  />AutoCAD<br /> 
+		 <input type="checkbox" name="skills" id="skills" value="BigData"  />Big Data<br /> 
+		 <input type="checkbox" name="skills" id="skills" value="Html"  />HTML/CSS<br /> 
 		</div>
 		</div>
 	
