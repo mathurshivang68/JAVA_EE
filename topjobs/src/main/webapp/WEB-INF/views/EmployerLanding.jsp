@@ -5,12 +5,10 @@
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../CSS/landingpage.css" />
 
 <title>Employers Home Page</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="../CSS/landingpage.css" />
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -23,6 +21,8 @@
 
 
 <body>
+
+
 
 	<ul class="nav navbar-nav navbar-right">
 		<li class="dropdown"><a href="#" class="dropdown-toggle"

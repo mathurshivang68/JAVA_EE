@@ -79,7 +79,6 @@ public class RegisterServlet extends HttpServlet {
 				RegisterUser(emp);
 			}
 
-			System.out.println("in try");
 			RequestDispatcher rd=request.getRequestDispatcher("/regs"); 		//MAKE REGISTERSUCCESS PAGE 
 			rd.forward(request, response); 
 		}

@@ -45,10 +45,6 @@
 					<input type="text" placeholder="Enter Last Name" name="lname" required/></p>
 	</div>				
 	<div class="form-group">				
-				<p><label for="email"><b>Email    </b></label>
-					<input type="text" placeholder="Enter Email " name="email" required/></p>
-	</div>
-	<div class="form-group">				
 				<p><label for="userid"><b>User ID  </b></label>	
 				<input type="text" placeholder="Enter Username" name="username" required/></p>
 	</div>
@@ -71,12 +67,12 @@
         
 	
 <script>
-var reg='<%=request.getAttribute("registrationFail")%>';
+var reg="<%=request.getAttribute("registrationFail")%>";
 if(reg!='null'){
-	alert(reg);
+	window.alert(reg);
 }
 </script>
-
+registrationFail
 </body>
 </html>
 

@@ -64,7 +64,9 @@ button{
 
 <script>
       function validate() {
-      var phone = "^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$";
+      var phone = "(0|\\+91)?[7-9][0-9]{9}";
+      var email = "[a-z]{1,}[.a-z0-9]{0,}@[a-z]{1,}(.[a-z]{1,})?.[a-z]{1,}";
+     
       var x = document.getElementsByName("skills");
       var i,j=0;
       for (i = 0; i < x.length; i++) {
@@ -78,7 +80,7 @@ button{
             document.getElementById("fname").focus() ;
             return false;
          }
-         if( document.getElementById("email").value == "" ) {
+         if( !document.getElementById("email").value.match(email) ) {
              alert( "Please provide your Email!" );
              document.getElementById("email").focus() ;
              return false;
@@ -132,7 +134,7 @@ button{
              return false;
           }
          
-         return( true );
+         return true ;
       }
 </script>
 
