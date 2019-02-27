@@ -1,4 +1,4 @@
-<%@ page pageEncoding="UTF-8" %>
+<%-- <%@ page pageEncoding="UTF-8" %>
 <style>
 .fon{
     position: absolute;
@@ -74,4 +74,4 @@
 </style>
 <a href="../../../topjobs/index.jsp"><div class="topj">TopJobs</div></a>
 <a href="../../../topjobs/login.jsp"><div class="fon">login/signup</div></a>
-<div class="footer">Copyright &copy; TopJobs Inc 2016   <a href="contactus.jsp">Contact us</a></div>
+<div class="footer">Copyright &copy; TopJobs Inc 2016   <a href="contactus.jsp">Contact us</a></div> --%>
