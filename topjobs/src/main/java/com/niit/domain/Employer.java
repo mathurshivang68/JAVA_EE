@@ -79,6 +79,7 @@ public class Employer extends User{
 		} else if (!purchaseDate.equals(other.purchaseDate))
 			return false;
 		return true;
+		
 	}
 	@Override
 	public String toString() {

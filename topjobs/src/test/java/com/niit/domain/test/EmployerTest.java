@@ -8,14 +8,21 @@ import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.niit.dao.EmployerDAO;
+import com.niit.dao.EmployerDAOCrudRepo;
 import com.niit.dao.PurchaseEventsDAO;
 import com.niit.domain.Employer;
 import com.niit.domain.PurchaseEvents;
 import com.niit.domain.UserRole;
 
+@SpringBootTest
 class EmployerTest {
+
+	@Autowired
+	EmployerDAOCrudRepo eCRDao;
 
 	@Test
 	void createEmployer() {
@@ -35,6 +42,22 @@ class EmployerTest {
 		eDAO.merge(emp);
 	}
 
+	@Test
+	void findEmployer() {
+		Employer emp = new Employer();
+		emp.setFname("Diwakar");
+		emp.setLname("Saini");
+		emp.setUser_name("d9");
+		EmployerDAO eDAO = new EmployerDAO();
+		assertEquals("d9", eDAO.findEmployerByUsername(emp).getUser_name());
+
+	}
+
+	@Test
+	void findEmpByCrudRepo() {
+		assertEquals("d9", eCRDao.findById("d9").get().getUser_name());
+
+	}
 
 	@Test
 	void isActiveTest() {
@@ -48,7 +71,7 @@ class EmployerTest {
 		System.out.println(emp);
 		emp.setIsActive(true);
 		emp.setLoginsPurchased(1L);
-		emp.setEndDate(new Date(119,01,01));
+		emp.setEndDate(new Date(119, 01, 01));
 //		emp.setPurchaseDate(new Date(118,01,01));
 //		if(emp.getEndDate()==null) {
 //			Date endDate = new Date(emp.getPurchaseDate().getTime()+TimeUnit.DAYS.toMillis(purchaseEvent.getLogins()*30));
